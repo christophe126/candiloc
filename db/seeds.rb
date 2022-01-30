@@ -1,24 +1,18 @@
 
 puts 'Destroying all files'
-Political_parties.destroy_all
-Candidates.destroy_all
+PoliticalParty.destroy_all
+Candidate.destroy_all
 Booking.destroy_all
 User.destroy_all
 
 puts 'Let the madness begin'
 
 puts 'Creating political parties'
-Political_partie.create(name: 'En Marche'
-)
-Political_partie.create(name: 'Les Républicains'
-)
-Political_partie.create(name: 'Gens Méchants'
-)
-Political_partie.create(name: 'Lutte Ouvrière'
-)
-Political_partie.create(name: 'Meurice2022'
-)
-
+PoliticalParty.create(name: 'En Marche')
+PoliticalParty.create(name: 'Les Républicains')
+PoliticalParty.create(name: 'Gens Méchants')
+PoliticalParty.create(name: 'Lutte Ouvrière')
+PoliticalParty.create(name: 'Meurice2022')
 
 puts 'Creating new candidates'
 Candidate.create(first_name: 'Emanuelle',
@@ -45,8 +39,6 @@ Candidate.create(first_name: 'Nathalie',
     description: "Oui le communisme existe encore",
     availability: true,
 )
-
-
 
 puts 'Creating new users'
 User.create(first_name: 'Jo',
