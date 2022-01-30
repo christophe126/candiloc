@@ -1,5 +1,5 @@
 class PoliticalParty < ApplicationRecord
-  belongs_to :candidate
+  belongs_to :candidate, optional: true
 
-  validates :name, presence: true
+  validates :name, uniqueness: true
 end

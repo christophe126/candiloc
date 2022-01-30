@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :candidates, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
-  validates :email_address, presence: true, uniqueness: true
-  validates :email_address, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only valid mail address" }
+  validates :email, presence: true, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only valid mail address" }
   validates :first_name, :last_name, presence: true
 end
