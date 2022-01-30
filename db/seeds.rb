@@ -73,7 +73,7 @@ candidate_three.user = user_admin
 candidate_three.save
 puts '----------Creating candidate 3/3 done----------'
 
-# puts 'Creating some bookings'
+puts 'Creating some bookings'
 # Booking.create(start_date: '12/01/22',
 #     end_date: '16/01/22',
 #     total_price: 50,
