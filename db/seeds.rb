@@ -74,16 +74,24 @@ candidate_three.save
 puts '----------Creating candidate 3/3 done----------'
 
 puts 'Creating some bookings'
-# Booking.create(start_date: '12/01/22',
-#     end_date: '16/01/22',
-#     total_price: 50,
-#     status: false,
-# )
+book1 = Booking.new(
+  start_date: '12/01/22',
+  end_date: '16/01/22',
+  total_price: 50,
+  status: false
+)
+book1.user = user_other
+book1.candidate = candidate_three
+book1.save
 
-# Booking.create(start_date: '15/02/22',
-#     end_date: '19/06/22',
-#     total_price: 170,
-#     status: true,
-# )
+book2 = Booking.new(
+  start_date: '18/01/22',
+  end_date: '12/01/22',
+  total_price: 50,
+  status: false
+)
+book2.user = user_other
+book2.candidate = candidate_one
+book2.save
 
 puts 'All done, go and hire a candidate'
