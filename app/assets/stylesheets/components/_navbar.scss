@@ -1,6 +1,12 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  // justify-content: space-between;
+    background: #000000;
+    //backdrop-filter: blur(44px);
+}
+.bckopa{
+
+  opacity: 0.6;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +14,28 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 32px;
+  height: 32px;
+}
+
+.title {
+  justify-content: flex-start;
+  color: white;
+  opacity: 1;
+  font-size: 21px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.navbar a {
+  color: white;
+  opacity: 1;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.bck a {
+  color: #000091;
+  background-color: white;
+  border-radius: 10px;
+  opacity: 1;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
