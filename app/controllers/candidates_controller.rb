@@ -1,6 +1,12 @@
 class CandidatesController < ApplicationController
   def index
-    @candidates = Candidate.all
+    if params[:query].present?
+      #@query = params[:query]
+      @candidates = Candidate.joins()where("political_party.name like '%#{params[:query]}%' ")
+      raise
+    else
+      @candidates = Candidate.all
+    end
   end
 
   def show
