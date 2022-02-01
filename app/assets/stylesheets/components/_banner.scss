@@ -1,0 +1,17 @@
+.banner {
+  background-image: asset-url('image_peuple.png');
+  //background-size: auto auto;
+  background-size: 100% 100%;
+  height: 450px;
+  width: 100%;
+}
+
+.textcenter {
+text-align: center;
+size: 30px;
+margin-top: 74px;
+color: white;
+font-weight: bold;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+}
