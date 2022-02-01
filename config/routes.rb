@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :candidates, only: %i[index show new create update destroy] do
-    resources :booking, only: [:new]
+    resources :bookings, only: [:new]
   end
-  resources :booking, only: %i[index update edit]
+  resources :bookings, only: %i[index update edit]
   resources :reviews, only: %i[new destroy]
 end
