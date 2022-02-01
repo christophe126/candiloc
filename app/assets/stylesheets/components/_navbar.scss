@@ -1,14 +1,9 @@
 .navbar-lewagon {
   // justify-content: space-between;
-    background: #000000;
     //backdrop-filter: blur(44px);
-}
-.bckopa{
-
   opacity: 0.6;
-
+  background: #000000;
 }
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -38,4 +33,15 @@
   border-radius: 10px;
   opacity: 1;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.flaglg {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.img_flag {
+  height: 3px;
+  width: 90%;
+
 }
