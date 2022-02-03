@@ -1,0 +1,108 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  position: absolute;
+  width: 972px;
+  height: 543px;
+  left: 110px;
+  top: 125px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 5px 10px rgba(16, 40, 101, 0.26);
+  border-radius: 20px;
+}
+
+.form-container h1 {
+  font-family: Marianne;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  color: #e1000f;
+}
+
+.form-body {
+  width: 441px;
+  height: 229px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.date-picker-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 25px;
+  width: 220px;
+  height: 109px;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+  border: 1px solid #a9a9a9;
+  border-radius: 15px 0px 0px 15px;
+}
+
+.date-picker-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 25px;
+
+  width: 220px;
+  height: 109px;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+  border: 1px solid #a9a9a9;
+  border-radius: 0px 15px 15px 0px;
+}
+.date-picker-left h5 {
+  font-family: Marianne;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.date-picker-right h5 {
+  font-family: Marianne;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.p {
+  position: static;
+  width: 74px;
+  height: 22px;
+  left: 183.5px;
+  top: 15px;
+  font-family: Marianne;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  position: static;
+  width: 152px;
+  height: 58px;
+  left: 144.5px;
+  top: 171px;
+  color: white;
+  background: #000091;
+  border-radius: 15px;
+}
