@@ -1,14 +1,26 @@
 <div class="form-container">
-    <h1>Réservez Eric Zemour !</h1>
-    <div class="form-body"> 
-        <div class="date-picker-left">
+    <h1>Réservez <%= @candidate.first_name %> !</h1>
+    <%= simple_form_for(@booking) do |f| %>
+
+      <div class="form-body">
+
+          <div class="date-picker-left">
             <h5>DEBUT</h5>
-        </div>
-        <div class="date-picker-right">
-        <p>FIN</p>
-        </div>
-    </div>
+            <div>
+              <%= f.input :start_date, as: :date, html5: true %>
+            </div>
+          </div>
+
+          <div class="date-picker-right">
+            <p>FIN</p>
+            <div>
+              <%= f.input :end_date, as: :date, html5: true %>
+            </div>
+          </div>
+      </div>
+    <% end %>
     <span><p>Total: 13€</p></span>
     <button>VALIDER</button>
 
 </div>
+<%# <%= @candidate.price_per_day * (@booking.end_date - @booking.start_date) %> %>
