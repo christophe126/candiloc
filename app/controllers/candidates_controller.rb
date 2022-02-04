@@ -34,6 +34,6 @@ class CandidatesController < ApplicationController
   private
 
   def candidates_params
-    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day)
+    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day, :partis, photos: [])
   end
 end
