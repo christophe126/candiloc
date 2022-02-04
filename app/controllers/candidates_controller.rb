@@ -1,12 +1,6 @@
 class CandidatesController < ApplicationController
   def index
-    if params[:query].present?
-      #@query = params[:query]
-      @candidates = Candidate.joins()where("political_party.name like '%#{params[:query]}%' ")
-      raise
-    else
-      @candidates = Candidate.all
-    end
+    @candidates = Candidate.all
   end
 
   def show
@@ -30,6 +24,6 @@ class CandidatesController < ApplicationController
   private
 
   def candidates_params
-    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day)
+    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day, :partis, photos: [])
   end
 end
