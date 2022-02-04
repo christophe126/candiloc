@@ -30,8 +30,8 @@
     </div>
 
     <div class="button-show-card text-center mt-5">
-      <button type="button" class="btn btn-action">BOOKER CE CANDIDAT</button>
-      <%= link_to "BOOKER CE CANDIDAT", new_candidate_booking_path(@candidate) %>
+      <button type="button" class="btn btn-action"><%= link_to "BOOKER CE CANDIDAT", new_candidate_booking_path(@candidate) %></button>
+      
     </div>
 
     <div class="description-show-card"> 
@@ -49,9 +49,6 @@
       <span><i class="fas fa-star"></i> 0,01 / 5 - 666 Votes</span>
     </div>
 
-    <% @candidate.reviews do |rev| %>
-        <%=  rev.comment %>
-    <% end %>
     
 
     <div class="comments-show-card">
