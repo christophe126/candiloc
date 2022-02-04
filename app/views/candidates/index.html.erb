@@ -21,7 +21,7 @@
       <%# début du each %>
       <% @candidates.each do |candidate| %>
       <div class="one-card ">
-        <%= image_tag "img_card.png", class: "card-imag-top", alt: "Candiloc 2022", width: 200, height: 200 %>
+      <%= link_to (image_tag "img_card.png", class: "card-imag-top", alt: "Candiloc 2022", width: 200, height: 200), candidate_path(candidate) %>
         <div class="one-card-body">
             <h5 class="one-card-title"><%= candidate.last_name %></h5>
             <h5 class="one-card-title"><%= candidate.first_name %></h5>
