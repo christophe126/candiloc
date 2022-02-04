@@ -12,7 +12,10 @@
         <th scope="col">Au</th>
         <th scope="col">Montant</th>
         <th scope="col">Candidate</th>
+        <th scope="col"></th>
         <th scope="col">Booking Confirmation</th>
+
+
       </tr>
     </thead>
     <tbody>
@@ -22,7 +25,10 @@
         <td><%= booking.start_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.end_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.total_price %>€</td>
-        <td>"<%= booking.candidate.first_name %> <%= booking.candidate.last_name %>"</td>
+        <td><%= booking.candidate.first_name %> <%= booking.candidate.last_name %>"</td>
+        <td><%= link_to candidate_path(booking.candidate) do %>
+          <i class="fas fa-search"></i>
+        <% end %></td>
         <% if booking.status %>
           <td><p class="bfinish">Confirmé</p></td>
         <% else %>
@@ -34,4 +40,3 @@
   </table>
   </div>
 </div>
-<%= @test %>

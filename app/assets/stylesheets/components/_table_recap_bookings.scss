@@ -28,17 +28,31 @@ tr {
 }
 
 
-// .brun {
-//   background-color: green;
-//   color: white;
-//   padding: 5px 5px;
-//   border-radius: 10px;
-//   text-align: center;
-// }
+.brun {
+  background-color: green;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 10px;
+  text-align: center;
+}
 
 .bfinish{
   background-color: red;
   border-radius: 10px;
   color: white;
   text-align: center;
+  padding: 5px 5px;
+}
+
+// .space{
+//   margin: px;
+// }
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+i {
+  font-size: 20px;
+  color: black;
 }
