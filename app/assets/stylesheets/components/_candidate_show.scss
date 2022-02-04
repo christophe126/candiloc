@@ -1,19 +1,24 @@
 .show-card {
-  width: 100%;
+  background-color: white;
+  width: 80%;
   box-shadow: 0px 5px 10px 0px #10286542;
   padding: 2rem 3rem;
   border-radius: 20px;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 125px;
+}
 
-  .intro-show-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    h1 {
-      color: #e1000f;
-    }
-    h2 {
-      color: #000091;
-    }
+.intro-show-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    color: #e1000f;
+  }
+  h2 {
+    color: #000091;
   }
 
   .pictures-show-card {

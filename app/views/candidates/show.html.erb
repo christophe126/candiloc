@@ -49,15 +49,17 @@
       <span><i class="fas fa-star"></i> 0,01 / 5 - 666 Votes</span>
     </div>
 
-    <div class="comments-show-card">
     <% @candidate.reviews do |rev| %>
+        <%=  rev.comment %>
+    <% end %>
+    
+
+    <div class="comments-show-card">
       <div class="comment">
         <i class="far fa-comment"></i>
-        <h3>User_name</h3>
-        <p>YYYY / MM / DD</p>
-        <p>  <%= rev.comment %> </p>
+        <%# <h3>User_name</h3>
+        <p>YYYY / MM / DD</p> %>
       </div>
-      <% end %>
     </div>
 
 
