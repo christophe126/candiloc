@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-
-  before_action :set_user, only: :new
+  #skip_before_action :authenticate_user!, only: :index
+  #before_action :set_user, only: :new
 
   def index
     @test = current_user
