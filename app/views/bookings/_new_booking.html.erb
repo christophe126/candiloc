@@ -1,6 +1,6 @@
 <div class="form-container">
     <h1>Réservez <%= @candidate.first_name %> !</h1>
-    <%= simple_form_for(@booking) do |f| %>
+    <%= simple_form_for [@candidate, @booking] do |f| %>
 
       <div class="form-body">
 
@@ -18,9 +18,9 @@
             </div>
           </div>
       </div>
+      <span><p>Total: 13€</p></span>
+      <%= f.submit "VALIDER", class: "Button" %>
     <% end %>
-    <span><p>Total: 13€</p></span>
-    <button>VALIDER</button>
 
 </div>
 <%# <%= @candidate.price_per_day * (@booking.end_date - @booking.start_date) %> %>
