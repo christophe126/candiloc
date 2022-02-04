@@ -12,10 +12,10 @@
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign-in</a>
+            <%= link_to "Sign-in", new_user_session_path, class: "nav-link"  %>
           </li>
           <li class="nav-item bck">
-            <a class="nav-link" href="#">Sign-Up</a>
+            <%= link_to "Sign-up", new_user_registration_path, class: "nav-link"  %>
           </li>
       </ul>
     </div>

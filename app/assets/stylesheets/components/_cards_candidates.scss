@@ -14,6 +14,11 @@
 .card-imag-top {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  opacity: 1;
+}
+
+.card-imag-top:hover {
+  opacity: 0.8;
 }
 
 .one-card-body {
