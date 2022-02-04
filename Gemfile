@@ -33,7 +33,10 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'date_validator'
-gem 'bootstrap', '~> 5.1.3'
+
+=======
+#gem 'bootstrap', '~> 5.1.3'
+
 gem 'cloudinary', '~> 1.16.0'
 
 group :development, :test do
