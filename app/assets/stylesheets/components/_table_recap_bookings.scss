@@ -1,0 +1,33 @@
+.containerrecap{
+  width: 80%;
+  background-color: white;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 125px;
+  border-radius: 20px;
+  padding: 65px;
+
+
+  h1 {
+    margin-bottom: 30px;
+    font-family: Marianne;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    color: #E1000F;
+  }
+  tr {
+    margin-top: 30px;
+  }
+  tr:hover{
+    //border: 1px solid blue;
+    //background-color: rgb(146, 214, 231);
+  }
+  .table-stripedd {
+    background-color: white;
+  }
+
+}

@@ -1,6 +1,12 @@
 class BookingsController < ApplicationController
 
   before_action :set_user, only: :new
+
+  def index
+    my_current_user = User.find(30)
+    @bookings = Booking.where(user_id: my_current_user)
+  end
+
   # CA NE MARCHE PAS POUR L'INSTANT
   def new
     @booking = Booking.new
