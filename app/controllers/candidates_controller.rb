@@ -7,7 +7,6 @@ class CandidatesController < ApplicationController
         candidates.political_party_id = political_parties.id WHERE
         political_parties.name ilike '%#{params[:query]}%'
         ")
-    #Author.joins("INNER JOIN books ON books.author_id = authors.id AND books.out_of_print = FALSE")
     else
       @candidates = Candidate.all
     end
