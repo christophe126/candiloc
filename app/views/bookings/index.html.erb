@@ -2,7 +2,7 @@
   <%= render "shared/navbar_home"%>
 </div>
 <div class="containerrecap">
-  <h1> Récapitulatif de vos Bookings</h1>
+  <h1> RECAPITULATIF DE VOS BOOKINGS</h1>
   <div class="container-table">
     <table class="table table-striped">
     <thead>
@@ -12,8 +12,7 @@
         <th scope="col">Au</th>
         <th scope="col">Montant</th>
         <th scope="col">Candidate</th>
-        <th scope="col">Status</th>
-        <th scope="col">Booking</th>
+        <th scope="col">Booking Confirmation</th>
       </tr>
     </thead>
     <tbody>
@@ -24,11 +23,15 @@
         <td><%= booking.end_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.total_price %>€</td>
         <td>"<%= booking.candidate.first_name %> <%= booking.candidate.last_name %>"</td>
-        <td><%= booking.status ? "Terminé" : "En cours" %></td>
-        <td><%= booking.status %></td>
+        <% if booking.status %>
+          <td><p class="bfinish">Confirmé</p></td>
+        <% else %>
+          <td><p class="brun">Encours</p></td>
+        <% end %>
       </tr>
       <% end %>
     </tbody>
   </table>
   </div>
 </div>
+<%= @test %>
