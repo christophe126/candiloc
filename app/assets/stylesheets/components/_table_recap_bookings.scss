@@ -1,0 +1,58 @@
+.containerrecap{
+  width: 80%;
+  background-color: white;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 125px;
+  border-radius: 20px;
+  padding: 65px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-family: Marianne;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  color: #E1000F;
+}
+tr {
+  margin-top: 30px;
+}
+
+.table-stripedd {
+  background-color: white;
+}
+
+
+.brun {
+  background-color: green;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.bfinish{
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding: 5px 5px;
+}
+
+// .space{
+//   margin: px;
+// }
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+i {
+  font-size: 20px;
+  color: black;
+}

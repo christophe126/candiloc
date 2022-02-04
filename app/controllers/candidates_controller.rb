@@ -1,6 +1,16 @@
 class CandidatesController < ApplicationController
+    #skip_before_action :authenticate_user!, only: :index
   def index
-    @candidates = Candidate.all
+    if params[:query].present?
+      @query = params[:query]
+      @candidates = Candidate.joins("
+        INNER JOIN political_parties ON
+        candidates.political_party_id = political_parties.id WHERE
+        political_parties.name ilike '%#{params[:query]}%'
+        ")
+    else
+      @candidates = Candidate.all
+    end
   end
 
   def show
