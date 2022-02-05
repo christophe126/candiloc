@@ -18,6 +18,7 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   opacity: 1;
+  object-fit: cover;
 }
 
 .card-imag-top:hover {
@@ -32,6 +33,7 @@
   padding-bottom: 5px;
   padding-left: 5px;
   text-align: center;
+  color: black;
 }
 
 .one-card-title {
@@ -41,7 +43,7 @@
   font-weight: bold;
 }
 
-.one-card-text{
+.one-card-text {
   margin-top: 8px;
   color: hsla(240, 100%, 28%, 1);
   font-size: 14px;
@@ -55,14 +57,14 @@
   height: 35px;
   left: 66px;
   top: 151px;
-  background: #E1000F;
+  background: #e1000f;
   border-radius: 19px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#one-card-price-p{
+#one-card-price-p {
   font-size: 14px;
   line-height: 18px;
   color: white;

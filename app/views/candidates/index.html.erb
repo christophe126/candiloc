@@ -20,19 +20,21 @@
     <div class="cards">
       <%# début du each %>
       <% @candidates.each do |candidate| %>
-      <div class="one-card ">
-      <%= link_to (image_tag "img_card.png", class: "card-imag-top", alt: "Candiloc 2022", width: 200, height: 200), candidate_path(candidate) %>
-        <div class="one-card-body">
-            <h5 class="one-card-title"><%= candidate.last_name %></h5>
-            <h5 class="one-card-title"><%= candidate.first_name %></h5>
-            <p class="one-card-text"><%= candidate.political_party.name %></p>
+        <div class="one-card ">
+          <%= link_to candidate_path(candidate) do %>
+            <%= cl_image_tag candidate.photos[0].key, class: "card-imag-top", alt: "Candiloc 2022", width: 200, height: 200 %>
+            <div class="one-card-body">
+                <h5 class="one-card-title"><%= candidate.last_name %></h5>
+                <h5 class="one-card-title"><%= candidate.first_name %></h5>
+                <p class="one-card-text"><%= candidate.political_party.name %></p>
+            </div>
+            <div class="one-card-price">
+              <p id="one-card-price-p"><%= candidate.price_per_day %>€ / J</p>
+            </div>
+          <% end %>
         </div>
-        <div class="one-card-price">
-          <p id="one-card-price-p"><%= candidate.price_per_day %>€ / J</p>
-        </div>
-      </div>
         <%# fin du each %>
-        <% end %>
+      <% end %>
     </div>
     
     <%# MAP %>

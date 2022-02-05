@@ -104,6 +104,8 @@ candidate_four = Candidate.new(
   address: '2 rue Richard Lenoir, 93100 Montreuil',
   availability: true
 )
+photo = URI.open('https://resize-europe1.lanmedia.fr/r/620,310,FFFFFF,center-middle/img/var/europe1/storage/images/europe1/dossiers/philippe-poutou/28871359-6-fre-FR/Philippe-Poutou.jpg')
+candidate_four.photos.attach(io: photo, filename: "candidate#{candidate_four.first_name.downcase}_#{candidate_four.last_name.downcase}.jpg", content_type: 'image/jpg')
 candidate_four.political_party = political_four
 candidate_four.user = user_admin
 candidate_four.save
@@ -119,6 +121,8 @@ candidate_five = Candidate.new(
   address: '8 rue torricelli, 75017 paris',
   availability: true
 )
+photo = URI.open('https://www.lalibre.be/resizer/O0ftXBvjohFjlz29K4TZiyKE2zQ=/0x0:2555x1705/768x512/filters:quality(70):format(jpg)/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/E5R7JMM77BEKZCZ3T3D44BYAQY.jpg')
+candidate_five.photos.attach(io: photo, filename: "candidate#{candidate_five.first_name.downcase}_#{candidate_five.last_name.downcase}.jpg", content_type: 'image/jpg')
 candidate_five.political_party = political_five
 candidate_five.user = user_admin
 candidate_five.save
@@ -135,6 +139,8 @@ candidate_six = Candidate.new(
   address: "58 rue de la chaussée d'antin, paris",
   availability: true
 )
+photo = URI.open('https://www.challenges.fr/assets/img/2021/09/27/cover-r4x3w1000-615336aed0f41-96ae30f1941824a294b109ff46a21d8fa5db7aab-jpg.jpg')
+candidate_six.photos.attach(io: photo, filename: "candidate#{candidate_six.first_name.downcase}_#{candidate_six.last_name.downcase}.jpg", content_type: 'image/jpg')
 candidate_six.political_party = political_six
 candidate_six.user = user_admin
 candidate_six.save
@@ -150,6 +156,8 @@ candidate_seven = Candidate.new(
   address: "2 rue d’Austerlitz 31000, Toulouse",
   availability: true
 )
+photo = URI.open('https://www.lamontagne.fr/photoSRC/Gw--/helenethouy1-crediter-alexandra-mocanu_5849867.jpeg')
+candidate_seven.photos.attach(io: photo, filename: "candidate#{candidate_seven.first_name.downcase}_#{candidate_seven.last_name.downcase}.jpg", content_type: 'image/jpg')
 candidate_seven.political_party = political_seven
 candidate_seven.user = user_admin
 candidate_seven.save
@@ -166,6 +174,8 @@ candidate_eight = Candidate.new(
   75012 Paris",
   availability: true
 )
+photo = URI.open('https://cdn.radiofrance.fr/s3/cruiser-production/2017/03/73712371-d227-4576-a0b8-d3628161fa90/1136_francois_asselineau000_mq2gv.jpg')
+candidate_eight.photos.attach(io: photo, filename: "candidate#{candidate_eight.first_name.downcase}_#{candidate_eight.last_name.downcase}.jpg", content_type: 'image/jpg')
 candidate_eight.political_party = political_eight
 candidate_eight.user = user_admin
 candidate_eight.save

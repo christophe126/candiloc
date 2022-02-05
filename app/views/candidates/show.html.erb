@@ -21,7 +21,7 @@
     <div class="pictures-show-card">
       <% @candidate.photos.each do |photo| %>
       <div class="picture-show-card-item">
-          <%= cl_image_tag photo.key, width: 325, height: 325 %>
+          <%= cl_image_tag photo.key, width: 325, height: 325, crop: "fill" %>
       </div>
       <% end %>
     </div>
