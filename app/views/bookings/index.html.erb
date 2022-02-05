@@ -1,0 +1,42 @@
+<div class="banner">
+  <%= render "shared/navbar_home"%>
+</div>
+<div class="containerrecap">
+  <h1> RECAPITULATIF DE VOS BOOKINGS</h1>
+  <div class="container-table">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">N° Résa</th>
+        <th scope="col">Du</th>
+        <th scope="col">Au</th>
+        <th scope="col">Montant</th>
+        <th scope="col">Candidate</th>
+        <th scope="col"></th>
+        <th scope="col">Booking Confirmation</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking|  %>
+      <tr>
+        <th scope="row"><%= booking.id %></th>
+        <td><%= booking.start_date.strftime("%d/%m/%Y") %></td>
+        <td><%= booking.end_date.strftime("%d/%m/%Y") %></td>
+        <td><%= booking.total_price %>€</td>
+        <td><%= booking.candidate.first_name %> <%= booking.candidate.last_name %>"</td>
+        <td><%= link_to candidate_path(booking.candidate) do %>
+          <i class="fas fa-search"></i>
+        <% end %></td>
+        <% if booking.status %>
+          <td><p class="bfinish">Confirmé</p></td>
+        <% else %>
+          <td><p class="brun">Encours</p></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>

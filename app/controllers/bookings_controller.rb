@@ -1,4 +1,12 @@
 class BookingsController < ApplicationController
+  #skip_before_action :authenticate_user!, only: :index
+  #before_action :set_user, only: :new
+
+  def index
+    @test = current_user
+    my_current_user = User.find(30)
+    @bookings = Booking.where(user_id: my_current_user)
+  end
 
   before_action :set_candidate
 
