@@ -41,6 +41,8 @@ candidate_one = Candidate.new(
   last_name: 'Macron',
   price_per_day: '100',
   description: 'En même temps, en marche, traverse les rues et e****** certains',
+  latitude: 48.868938,
+  longitude: 2.321658,
   availability: true
 )
 candidate_one.political_party = political_one
@@ -54,6 +56,8 @@ candidate_two = Candidate.new(
   last_name: 'Mélanchon',
   price_per_day: '1000',
   description: "J'aime le rouge, c'est beau et c'est bon le rouge",
+  latitude: 48.880768,
+  longitude: 2.350575,
   availability: true
 )
 candidate_two.political_party = political_two
