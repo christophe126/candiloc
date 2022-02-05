@@ -1,11 +1,11 @@
 .btn_enter {
-  background: #E1000F;
+  background: #e1000f;
   box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   width: 159px;
   height: 48px;
   color: white;
-  border: 1px solid #E1000F;
+  border: 1px solid #e1000f;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
@@ -17,4 +17,14 @@
 .btn_enter:hover {
   text-decoration: none;
   color: white;
+}
+
+.btn-action {
+  color: #fff;
+  background: #000091;
+  border-radius: 10px;
+  width: 271px;
+  height: 58px;
+  line-height: 18px;
+  letter-spacing: 0.0125em;
 }

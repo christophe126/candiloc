@@ -37,7 +37,7 @@ puts '----------Creating user One Done---------'
 puts '----------Creating candidates----------'
 
 candidate_one = Candidate.new(
-  first_name: 'Emanuelle',
+  first_name: 'Emanuel',
   last_name: 'Macron',
   price_per_day: '100',
   description: 'En même temps, en marche, traverse les rues et e****** certains',
@@ -53,7 +53,7 @@ candidate_two = Candidate.new(
   first_name: 'Jean-Luc',
   last_name: 'Mélanchon',
   price_per_day: '1000',
-  description: 'En même temps, en marche, traverse les rues et e****** certains',
+  description: "J'aime le rouge, c'est beau et c'est bon le rouge",
   availability: true
 )
 candidate_two.political_party = political_two
