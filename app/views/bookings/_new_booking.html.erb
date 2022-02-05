@@ -5,22 +5,23 @@
       <div class="form-body">
 
           <div class="date-picker-left">
-            <h5>DEBUT</h5>
             <div>
-              <%= f.input :start_date, as: :date, html5: true %>
+              <%= f.input :start_date, as: :date, html5: true, label: 'DEBUT' %>
             </div>
           </div>
 
           <div class="date-picker-right">
-            <p>FIN</p>
             <div>
-              <%= f.input :end_date, as: :date, html5: true %>
+              <%= f.input :end_date, as: :date, html5: true, label: 'FIN' %>
             </div>
           </div>
       </div>
-      <span><p>Total: 13€</p></span>
-      <%= f.submit "VALIDER", class: "Button" %>
+      <div class="bottom">
+        <% unless @booking.total_price.nil? %>
+          <span><p>Total : <%= @booking.total_price %> €</p></span>
+        <% end %>
+        <%= f.submit "VALIDER", class: "button" %>
+      </div>
     <% end %>
 
 </div>
-<%# <%= @candidate.price_per_day * (@booking.end_date - @booking.start_date) %> %>
