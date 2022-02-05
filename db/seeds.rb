@@ -180,7 +180,7 @@ book2 = Booking.new(
   start_date: '18/01/2022',
   end_date: '22/01/2022',
   total_price: 50,
-  status: false
+  status: true
 )
 book2.user = user_other
 book2.candidate = candidate_one
