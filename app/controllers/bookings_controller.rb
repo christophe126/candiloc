@@ -1,14 +1,12 @@
 class BookingsController < ApplicationController
   #skip_before_action :authenticate_user!, only: :index
   #before_action :set_user, only: :new
+  before_action :set_candidate, only: [:create]
 
   def index
-    @test = current_user
-    my_current_user = User.find(30)
+    my_current_user = User.find(2)
     @bookings = Booking.where(user_id: my_current_user)
   end
-
-  before_action :set_candidate
 
   def new
     @booking = Booking.new
@@ -26,17 +24,18 @@ class BookingsController < ApplicationController
     price_per_day = @candidate.price_per_day
 
     total_price = price_per_day * total_days
+    total_price = total_price.to_i
 
     @booking.total_price = total_price
 
-    @booking.user = current_user
+    @booking.user = User.first
 
-    @booking.candidate_id = @candidate
-
+    @booking.candidate = @candidate
     if @booking.save
-      redirect_to candidate_path(@candidate)
+      redirect_to bookings_path
     else
       render :new
+      raise
     end
   end
 
@@ -50,6 +49,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :total_price)
   end
 end
