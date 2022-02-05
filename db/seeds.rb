@@ -1,4 +1,4 @@
-require 'URI'
+require 'open-uri'
 
 
 puts 'Destroying all files'
@@ -52,6 +52,8 @@ candidate_one = Candidate.new(
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
   availability: true
 )
+photo = URI.open('https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1807/palinchak180700164.jpg')
+candidate_one.photos.attach(io: photo, filename: "candidate#{candidate_one.first_name.downcase}_#{candidate_one.last_name.downcase}.jpg", content_type: 'image/jpg')
 candidate_one.political_party = political_one
 candidate_one.user = user_admin
 candidate_one.save
@@ -68,6 +70,8 @@ candidate_two = Candidate.new(
   address: '43 rue de Dunkerque, 75010 Paris',
   availability: true
 )
+photo = URI.open('https://vsd.fr/images/2017/01/23/fae15786-76b6-4e1e-a3e9-863540a46e72.jpeg')
+candidate_two.photos.attach(io: photo, filename: "candidate#{candidate_two.first_name.downcase}_#{candidate_two.last_name.downcase}.jpg", content_type: 'image/jpg')
 candidate_two.political_party = political_two
 candidate_two.user = user_admin
 candidate_two.save
@@ -83,6 +87,8 @@ candidate_three = Candidate.new(
   address: '10 rue jean goujon, 75008 Paris',
   availability: true
 )
+photo = URI.open('https://www.babelio.com/users/AVT_Eric-Zemmour_5343.jpg')
+candidate_three.photos.attach(io: photo, filename: "candidate#{candidate_three.first_name.downcase}_#{candidate_three.last_name.downcase}.jpg", content_type: 'image/jpg')
 candidate_three.political_party = political_three
 candidate_three.user = user_admin
 candidate_three.save
