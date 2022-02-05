@@ -1,6 +1,7 @@
 # require 'URI'
 
 
+
 puts 'Destroying all files'
 Candidate.destroy_all
 PoliticalParty.destroy_all
