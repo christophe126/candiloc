@@ -1,0 +1,23 @@
+<div class="banner">
+  <%= render "shared/navbar_home"%>
+</div>
+<div class="container-card">
+  <div class="container white-background">
+  <div class="container">
+    <h3 class="textcenter">Ajoutez un candidat</h3>
+  </div>
+  <div class="justify-content-md-center container">
+    <%= simple_form_for @candidate do |f| %>
+      <div class="container input-basic"><%= f.input :first_name, label: 'Prénom du candidat' %></div>
+      <%= f.input :last_name, label: 'Nom du candidat' %>
+      <%# <%= f.input :photos, label: 'Photo(s) 5 max.' %>
+      <%= f.input :description %>
+      <%= f.association :political_party, label: 'Parti politique' %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.input :price_per_day, label: 'Prix' %>
+      <%= f.button :submit, class:"btn btn-outline-danger" %>
+    <% end %>
+  </div>
+</div>
+</div>
+<h3><%= @user %></h3>
