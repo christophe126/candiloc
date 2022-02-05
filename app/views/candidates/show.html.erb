@@ -31,40 +31,33 @@
 
     <div class="button-show-card text-center mt-5">
       <button type="button" class="btn btn-action"><%= link_to "BOOKER CE CANDIDAT", new_candidate_booking_path(@candidate) %></button>
-      
     </div>
 
     <div class="description-show-card"> 
       <div class="description-intro-show-card">
-          <h1>Description</h1>
-          <p class="status-show-candidate"></p>
-          <p><%= @candidate.description %></p>
-        </div>
-        <div class="item-description-show-card">
-          <p class="status-show-candidate"><%= @candidate.price_per_day %>€</p>
-        </div>
+        <h1>Description</h1>
+        <p class="status-show-candidate"></p>
+        <p><%= @candidate.description %></p>
+      </div>
+      <div class="item-description-show-card">
+        <p class="status-show-candidate"><%= @candidate.price_per_day %>€/Jour</p>
+      </div>
     </div>
 
     <div class="rating-show-card"> 
       <span><i class="fas fa-star"></i> 0,01 / 5 - 666 Votes</span>
     </div>
 
-    
-
     <div class="comments-show-card">
       <div class="comment">
         <i class="far fa-comment"></i>
-        <%# <h3>User_name</h3>
-        <p>YYYY / MM / DD</p> %>
+        <% @candidate.reviews.each do |review|  %>
+        <h3>Madame Michu </h3>
+        <p>2017 / 06 / 22</p>
+        <p><%= review.comment %></p>
+        <% end %>
       </div>
     </div>
 
-
-
-
-
   </div> <!--show card -->
 </div> <!-- container -->
-
-</div>
-</div>

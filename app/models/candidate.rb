@@ -4,7 +4,7 @@ class Candidate < ApplicationRecord
 
   has_many :bookings, dependent: :destroy
 
-  has_many :reviews, through: :booking
+  has_many :reviews, through: :bookings
 
   validates :first_name, :last_name, presence: true
   validates :price_per_day, presence: true, numericality: { only_integer: true }
