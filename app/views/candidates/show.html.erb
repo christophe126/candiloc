@@ -19,15 +19,11 @@
     </div>
 
     <div class="pictures-show-card">
+      <% @candidate.photos.each do |photo| %>
       <div class="picture-show-card-item">
-          <img src="https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1707/palinchak170700005.jpg" alt="">
+          <%= cl_image_tag photo.key, width: 325, height: 325 %>
       </div>
-      <div class="picture-show-card-item pictures-size-small-show-card">
-        <img src="https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1707/palinchak170700003.jpg" alt="">
-        <img src="https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1807/palinchak180700164.jpg" alt="">
-        <img src="https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1707/palinchak170700003.jpg" alt="">
-        <img src="https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1807/palinchak180700164.jpg" alt="">
-      </div>
+      <% end %>
     </div>
 
     <div class="button-show-card text-center mt-5">
