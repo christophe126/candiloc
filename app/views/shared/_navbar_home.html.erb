@@ -31,6 +31,7 @@
             <img src="https://images.alexonsager.net/pokemon/fused/143/143.25.png" width="30" height="30" alt="">
           </a>
         </div>
+        <%= link_to "Sign-out", destroy_user_session_path, method: :delete, class: "nav-link"  %>
       </div>
     <% else %>
       <div class="collapse navbar-collapse">
