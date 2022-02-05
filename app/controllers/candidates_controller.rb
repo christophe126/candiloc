@@ -9,7 +9,14 @@ class CandidatesController < ApplicationController
         political_parties.name ilike '%#{params[:query]}%'
         ")
     else
-      @candidates = Candidate.all
+      @candidates = Candidate.where.not(latitude: nil, longitude: nil)
+    end
+    
+    @markers = @candidates.map do |candidate|
+      {
+        lat: candidate.latitude,
+        lng: candidate.longitude
+      }
     end
   end
 

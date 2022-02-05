@@ -1,5 +1,4 @@
-# require 'URI'
-
+require 'open-uri'
 
 
 puts 'Destroying all files'
