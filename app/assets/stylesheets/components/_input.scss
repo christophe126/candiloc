@@ -1,0 +1,42 @@
+.input-basic {
+  position: static;
+  width: 441px;
+  height: 54px;
+  left: 0px;
+  top: 25px;
+
+  /* Vote Blanc */
+
+  background: #ffffff;
+  /* Bleu en marche */
+
+  border: 1px solid #000091;
+  box-sizing: border-box;
+  border-radius: 15px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 10px 0px;
+}
+.input-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: static;
+  width: 441px;
+  height: 54px;
+  left: 0px;
+  top: 25px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 10px 0px;
+}

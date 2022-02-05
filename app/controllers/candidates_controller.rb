@@ -1,4 +1,5 @@
 class CandidatesController < ApplicationController
+    #skip_before_action :authenticate_user!, only: :index
   def index
     if params[:query].present?
       @query = params[:query]
@@ -7,7 +8,6 @@ class CandidatesController < ApplicationController
         candidates.political_party_id = political_parties.id WHERE
         political_parties.name ilike '%#{params[:query]}%'
         ")
-    # Author.joins("INNER JOIN books ON books.author_id = authors.id AND books.out_of_print = FALSE")
     else
       @candidates = Candidate.all
     end
@@ -34,6 +34,6 @@ class CandidatesController < ApplicationController
   private
 
   def candidates_params
-    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day)
+    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day, :partis, photos: [])
   end
 end

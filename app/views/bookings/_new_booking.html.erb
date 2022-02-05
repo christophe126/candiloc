@@ -1,0 +1,27 @@
+<div class="form-container">
+    <h1>Réservez <%= @candidate.first_name %> !</h1>
+    <%= simple_form_for [@candidate, @booking] do |f| %>
+
+      <div class="form-body">
+
+          <div class="date-picker-left">
+            <div>
+              <%= f.input :start_date, as: :date, html5: true, label: 'DEBUT' %>
+            </div>
+          </div>
+
+          <div class="date-picker-right">
+            <div>
+              <%= f.input :end_date, as: :date, html5: true, label: 'FIN' %>
+            </div>
+          </div>
+      </div>
+      <div class="bottom">
+        <% unless @booking.total_price.nil? %>
+          <span><p>Total : <%= @booking.total_price %> €</p></span>
+        <% end %>
+        <%= f.submit "VALIDER", class: "button" %>
+      </div>
+    <% end %>
+
+</div>
