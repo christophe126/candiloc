@@ -21,16 +21,32 @@
           </li>
       </ul>
     </div> -->
-    <div class="logo">
-      <a class="reservation" href="/bookings">
-        Vos réservations
-      </a>
-      <div class="fuck-bootstrap">
-        <a href="">
-          <img src="https://images.alexonsager.net/pokemon/fused/143/143.25.png" width="30" height="30" alt="">
+    <% if user_signed_in? %>
+      <div class="logo">
+        <a class="reservation" href="/bookings">
+          Vos réservations
         </a>
+        <div class="fuck-bootstrap">
+          <a href="">
+            <img src="https://images.alexonsager.net/pokemon/fused/143/143.25.png" width="30" height="30" alt="">
+          </a>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign-in", new_user_session_path, class: "nav-link"  %>
+            </li>
+            <li class="nav-item bck">
+              <%= link_to "Sign-up", new_user_registration_path, class: "nav-link"  %>
+            </li>
+        </ul>
+      </div>
+    <% end %>
   </div>
   <div class="flaglg">
     <%= image_tag 'flag_line.png', class: "img_flag"%>
