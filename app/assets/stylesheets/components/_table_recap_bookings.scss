@@ -28,9 +28,7 @@ tr {
 }
 
 
-.bcktdon td {
-  background-color: #DFE9F8;
-}
+
 .brun {
   color: hsla(240, 100%, 28%, 1);
   padding: 5px 5px;
@@ -58,6 +56,10 @@ i {
   font-size: 20px;
   color: black;
 }
-.table td .bcktdof {
-  background-color: hsla(360, 96%, 92%, 1);
+.bcktdof {
+  background-color: hsla(360, 96%, 92%, 1) !important;;
+}
+
+.bcktdon {
+  background-color: #DFE9F8 !important;;
 }

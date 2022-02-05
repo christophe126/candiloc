@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   before_action :set_candidate, only: [:create]
 
   def index
-    my_current_user = User.find(2)
+    my_current_user = User.find(4)
     @bookings = Booking.where(user_id: my_current_user)
   end
 
