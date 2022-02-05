@@ -1,11 +1,11 @@
 class BookingsController < ApplicationController
   #skip_before_action :authenticate_user!, only: :index
   #before_action :set_user, only: :new
-  before_action :set_candidate, only: [:create]
+  before_action :set_candidate, only: [:create, :new]
 
   def index
     my_current_user = User.find(4)
-    @bookings = Booking.where(user_id: my_current_user)
+    @bookings = Booking.where(user_id: my_current_user).order(id: :desc)
   end
 
   def new
@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
 
     @booking.total_price = total_price
 
-    @booking.user = User.first
+    @booking.user = User.find(4)
 
     @booking.candidate = @candidate
     if @booking.save
