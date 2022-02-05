@@ -11,4 +11,7 @@ class Candidate < ApplicationRecord
   validates :price_per_day, presence: true, numericality: { only_integer: true }
   validates :description, length: { minimum: 5 }
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
 end

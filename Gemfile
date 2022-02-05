@@ -36,6 +36,7 @@ gem 'date_validator'
 
 gem 'bootstrap', '~> 5.1.3'
 gem 'cloudinary', '~> 1.16.0'
+gem 'geocoder'
 
 
 group :development, :test do
