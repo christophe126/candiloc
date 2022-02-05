@@ -61,6 +61,13 @@
   border: 1px solid #a9a9a9;
   border-radius: 0px 15px 15px 0px;
 }
+
+.date-picker-right:hover, .date-picker-left:hover, .date:hover {
+  border: 1px solid #7a7ac9;
+  background: #DFE9F8;
+  color: #000091;
+}
+
 .date-picker-left h5 {
   font-family: Marianne;
   font-style: normal;
@@ -69,10 +76,10 @@
   line-height: 18px;
 }
 
-.date-picker-right h5 {
+.date {
   font-family: Marianne;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 16px;
   line-height: 18px;
 }
@@ -88,21 +95,22 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  color: #000000;
+  color: #ce0000;
 }
 
-button {
+.bottom {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 20px 40px;
+}
+
+.button {
+  font-family: 'Marianne';
+  font-weight: bold;
   position: static;
-  width: 152px;
-  height: 58px;
-  left: 144.5px;
-  top: 171px;
+  padding: 20px 40px 20px 40px;
   color: white;
   background: #000091;
   border-radius: 15px;
+  display: flex;
 }
