@@ -1,4 +1,5 @@
-#require 'URI'
+# require 'URI'
+
 
 
 puts 'Destroying all files'
