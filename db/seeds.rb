@@ -1,3 +1,6 @@
+require 'URI'
+
+
 puts 'Destroying all files'
 Candidate.destroy_all
 PoliticalParty.destroy_all
@@ -10,11 +13,11 @@ puts '----------Creating political parties---------'
 political_one = PoliticalParty.create(name: 'En Marche')
 political_two = PoliticalParty.create(name: 'Les Insoumis')
 political_three = PoliticalParty.create(name: 'Indépendant')
-political_four = PoliticalParty.create(name: 'Nouveau parti anticapitaliste')
+political_four = PoliticalParty.create(name: 'NPA')
 political_five = PoliticalParty.create(name: 'Libres !')
-political_six = PoliticalParty.create(name: 'Europe Ecologie-Les Verts')
+political_six = PoliticalParty.create(name: 'EELV')
 political_seven = PoliticalParty.create(name: 'Parti animaliste')
-political_eight = PoliticalParty.create(name: 'Union populaire républicaine')
+political_eight = PoliticalParty.create(name: 'Union Républicaine')
 puts '----------Creating political parties done---------'
 
 puts '----------Creating new users---------'
@@ -164,8 +167,8 @@ puts '----------Creating candidate 8/8 done----------'
 
 puts 'Creating some bookings'
 book1 = Booking.new(
-  start_date: '12/01/22',
-  end_date: '16/01/22',
+  start_date: '12/01/2022',
+  end_date: '16/01/2022',
   total_price: 50,
   status: false
 )
@@ -174,8 +177,8 @@ book1.candidate = candidate_three
 book1.save
 
 book2 = Booking.new(
-  start_date: '18/01/22',
-  end_date: '12/01/22',
+  start_date: '18/01/2022',
+  end_date: '22/01/2022',
   total_price: 50,
   status: false
 )
