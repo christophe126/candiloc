@@ -2,7 +2,7 @@
   <%= render "shared/navbar_home"%>
 </div>
 <div class="containerrecap">
-  <h1> RECAPITULATIF DE VOS BOOKINGS</h1>
+  <h1> Récapitulatif de vos réservations</h1>
   <div class="container-table">
     <table class="table table-striped">
     <thead>
@@ -11,9 +11,9 @@
         <th scope="col">Du</th>
         <th scope="col">Au</th>
         <th scope="col">Montant</th>
-        <th scope="col">Candidate</th>
+        <th scope="col">Candidat</th>
         <th scope="col"></th>
-        <th scope="col">Booking Confirmation</th>
+        <th scope="col">Réservation</th>
 
 
       </tr>
@@ -25,14 +25,12 @@
         <td><%= booking.start_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.end_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.total_price %>€</td>
-        <td><%= booking.candidate.first_name %> <%= booking.candidate.last_name %>"</td>
-        <td><%= link_to candidate_path(booking.candidate) do %>
-          <i class="fas fa-search"></i>
-        <% end %></td>
+        <td><%= booking.candidate.first_name %> <%= booking.candidate.last_name %></td>
+        <td><%= link_to (image_tag "ArrowSquareOut.png", width: 20, height: 20 ), candidate_path(booking.candidate) %></td>
         <% if booking.status %>
-          <td><p class="bfinish">Confirmé</p></td>
+          <td class="bcktdof"><span class="bfinish">Confirmée<span></td>
         <% else %>
-          <td><p class="brun">Encours</p></td>
+          <td class="bcktdon"><span class="brun">En cours</span></td>
         <% end %>
       </tr>
       <% end %>
