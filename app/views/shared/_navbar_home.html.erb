@@ -26,10 +26,11 @@
         Vos réservations
       </a>
       <div class="fuck-bootstrap">
-        <a href="">
+        <%= link_to new_user_session_path, class: "reservation" do %>
           <img src="https://images.alexonsager.net/pokemon/fused/143/143.25.png" width="30" height="30" alt="">
-        </a>
+        <% end %>
       </div>
+        <%= link_to "close", destroy_user_session_path, class: "reservation" %>
     </div>
   </div>
   <div class="flaglg">
