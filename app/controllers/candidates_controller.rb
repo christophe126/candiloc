@@ -22,10 +22,11 @@ class CandidatesController < ApplicationController
   end
 
   def create
-    @candidate = Candidate.new(candidate_params)
-    @candidate.save
+    curr_user = User.find(29)
+    @candidate = Candidate.new(candidates_params)
+    @candidate.user = curr_user
     if @candidate.save
-      redirect_to candidate_path(@candidate)
+      redirect_to candidates_path
     else
       render :new
     end
@@ -34,6 +35,6 @@ class CandidatesController < ApplicationController
   private
 
   def candidates_params
-    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day, :partis, photos: [])
+    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day, :political_party_id, photos: [])
   end
 end
