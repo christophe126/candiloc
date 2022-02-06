@@ -6,6 +6,7 @@ Candidate.destroy_all
 PoliticalParty.destroy_all
 User.destroy_all
 Booking.destroy_all
+Review.destroy_all
 
 puts 'Let the madness begin'
 
@@ -201,5 +202,15 @@ book2 = Booking.new(
 book2.user = user_other
 book2.candidate = candidate_one
 book2.save
+
+puts '----------Generating reviews----------'
+puts '----------Interrogating customers----------'
+review_one = Review.new(
+  comment: "Emmanuel Macron, dont une des expressions favorites est ' et en même temps', pourrait se reconnaître dans le mouvement de balancier d'une horloge suisse. ",
+  rating: 7,
+  booking_id: book1
+)
+review_one.save
+puts '----------Writting it up----------'
 
 puts 'All done, go and hire a candidate'
