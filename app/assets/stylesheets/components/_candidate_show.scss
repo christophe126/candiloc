@@ -14,6 +14,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   h1 {
     color: #e1000f;
   }
@@ -26,6 +30,8 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-left: 100px;
+  margin-right: 100px;
 
   .picture-show-card-item {
     height: 350px;
@@ -92,28 +98,40 @@
 a {
   color: white;
 }
+
 .description-show-card {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.description-intro-show-card {
+  display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 40px;
-  .item-description-show-card {
-    color: white;
-    background: #e1000f;
-    border-radius: 15px;
-    text-align: center;
-    padding: 5px 10px;
-  }
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.price-show-candidate {
+  padding-top: 15px;
+  color: #ef4135;
+  font-weight: bold;
 }
 
 .rating-show-card {
   padding-bottom: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
-.comments {
+.comments-show-card {
   padding-bottom: 10px;
   width: 687px;
   height: 106px;
   margin-bottom: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .comments h3 {
@@ -138,6 +156,5 @@ a {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-
   color: #4e4e4e;
 }

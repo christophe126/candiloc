@@ -33,11 +33,10 @@
     <div class="description-show-card">
       <div class="description-intro-show-card">
         <h1>Description</h1>
-        <p class="status-show-candidate"></p>
-        <p><%= @candidate.description %></p>
+        <div class="price-show-candidate"><%= @candidate.price_per_day %>€/Jour</div>
       </div>
       <div class="item-description-show-card">
-        <p class="status-show-candidate"><%= @candidate.price_per_day %>€/Jour</p>
+      <p><%= @candidate.description %></p>
       </div>
     </div>
 
