@@ -19,11 +19,15 @@
     </div>
 
     <div class="pictures-show-card">
-      <% @candidate.photos.each do |photo| %>
       <div class="picture-show-card-item">
-          <%= cl_image_tag photo.key, width: 325, height: 325, crop: "fill" %>
+          <%= cl_image_tag @photo_main.key, width: 325, height: 325, crop: "fill" %>
       </div>
-      <% end %>
+      <div class="picture-show-card-thumbnails">
+       <%= cl_image_tag @photo_thumb_1.key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %>
+       <%= cl_image_tag @photo_thumb_2.key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %>
+       <%= cl_image_tag @photo_thumb_3.key, width: 150, height: 150, crop: "fill", effect: "improve" %>
+       <%= cl_image_tag @photo_thumb_4.key, width: 150, height: 150, crop: "fill", effect: "improve" %>
+      </div>
     </div>
 
     <div class="button-show-card text-center mt-5">
@@ -48,8 +52,8 @@
       <div class="comment">
         <i class="far fa-comment"></i>
         <% @candidate.reviews.each do |review|  %>
-        <h3>Madame Michu </h3>
-        <p>2017 / 06 / 22</p>
+        <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
+        <p> <%= current_user.last_name %> </p>
         <p><%= review.comment %></p>
         <% end %>
       </div>

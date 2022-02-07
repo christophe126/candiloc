@@ -1,6 +1,7 @@
 .show-card {
   background-color: white;
   width: 70%;
+  height: 1450px;
   box-shadow: 0px 5px 10px 0px #10286542;
   padding: 2rem 3rem;
   border-radius: 20px;
@@ -20,9 +21,11 @@
   margin-bottom: 30px;
   h1 {
     color: #e1000f;
+    font-family: Marianne-Regular;
   }
   h2 {
     color: #000091;
+    font-family: Marianne-Regular;
   }
 }
 
@@ -30,31 +33,30 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  height: 325px;
+  width: 675px;
   margin-left: 100px;
   margin-right: 100px;
 
   .picture-show-card-item {
-    height: 350px;
+    height: 325px;
     border-radius: 5px;
+    margin-right: 20px;
     img {
       border-radius: 5px;
       box-shadow: 0px 5px 10px 0px #10286542;
     }
   }
 
-  .pictures-size-small-show-card {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-left: 10px;
-  }
-
-  .pictures-size-small-show-card img {
-    width: 150px;
-    height: 150px;
-    flex: 0 0 33%;
-    border-radius: 5px;
+  .picture-show-card-thumbnails {
+    height: 325px;
+    width: 350px;
+    img {
+      border-radius: 5px;
+      box-shadow: 0px 5px 10px 0px #10286542;
+      margin-bottom: 20px;
+      margin-right: 10px;
+    }
   }
 }
 
@@ -86,7 +88,7 @@
   margin-right: 41px;
   margin-top: 10px;
 
-  font-family: Marianne;
+  font-family: Marianne-Regular;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -134,6 +136,10 @@ a {
   margin-right: 100px;
 }
 
+.comment {
+  height: 900px;
+}
+
 .comments h3 {
   position: static;
   width: 87px;
@@ -141,7 +147,7 @@ a {
   left: 0px;
   top: 0px;
 
-  font-family: Marianne;
+  font-family: Marianne-Regular;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -151,7 +157,7 @@ a {
 }
 
 .comments p {
-  font-family: Marianne;
+  font-family: Marianne-Regular;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
