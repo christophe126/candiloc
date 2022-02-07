@@ -1,5 +1,5 @@
 class CandidatesController < ApplicationController
-    #skip_before_action :authenticate_user!, only: :index
+  # skip_before_action :authenticate_user!, only: :index
   def index
     if params[:query].present?
       sql_query = " \
@@ -23,6 +23,11 @@ class CandidatesController < ApplicationController
 
   def show
     @candidate = Candidate.find(params[:id])
+    @photo_main = @candidate.photos.find_by(blob_id: 1)
+    @photo_thumb_1 = @candidate.photos.find_by(blob_id: 2)
+    @photo_thumb_2 = @candidate.photos.find_by(blob_id: 3)
+    @photo_thumb_3 = @candidate.photos.find_by(blob_id: 4)
+    @photo_thumb_4 = @candidate.photos.find_by(blob_id: 5)
   end
 
   def new
@@ -43,6 +48,7 @@ class CandidatesController < ApplicationController
   private
 
   def candidates_params
-    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day, :political_party_id, photos: [])
+    params.require(:candidate).permit(:first_name, :last_name, :description, :price_per_day, :political_party_id,
+                                      photos: [])
   end
 end

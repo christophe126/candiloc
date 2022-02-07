@@ -1,0 +1,37 @@
+.footer {
+  background: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0px 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  opacity: 1;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-text {
+  padding: 15px;
+  color: white;
+}
+
+.footer .fa-instagram {
+  color: #000091;
+}
+
+.footer .fa-facebook {
+  color: white;
+}
+.footer .fa-twitter {
+  color: rgb(224, 1, 14);
+}

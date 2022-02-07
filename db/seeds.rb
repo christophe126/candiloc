@@ -53,12 +53,19 @@ candidate_one = Candidate.new(
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
   availability: true
 )
-photo = URI.open('https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1807/palinchak180700164.jpg')
-candidate_one.photos.attach(io: photo, filename: "candidate#{candidate_one.first_name.downcase}_#{candidate_one.last_name.downcase}.jpg", content_type: 'image/jpg')
+photo_main = URI.open('https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1807/palinchak180700164.jpg')
+candidate_one.photos.attach(io: photo_main, filename: "photo_main.jpg", content_type: 'image/jpg')
+photo_thumb_1 = URI.open('https://static.mediapart.fr/etmagine/default/files/2021/11/07/000-9qh8kn.jpg')
+candidate_one.photos.attach(io: photo_thumb_1, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+photo_thumb_2 = URI.open('https://www.babelio.com/users/AVT_Emmanuel-MACRON_261.jpg')
+candidate_one.photos.attach(io: photo_thumb_2, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+photo_thumb_3 = URI.open('https://www.gala.fr/imgre/fit/https.3A.2F.2Fi.2Epmdstatic.2Enet.2Fgal.2F2021.2F07.2F30.2F8abf6c2b-5eb5-498f-b9c3-e155cfd14034.2Ejpeg/480x480/quality/80/focus-point/2805%2C1560/emmanuel-macron-pourquoi-il-prend-moins-de-vacances-que-ses-predecesseurs.jpg')
+candidate_one.photos.attach(io: photo_thumb_3, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+photo_thumb_4 = URI.open('https://www.lalibre.be/resizer/NdHf5ezgBKoAzdE6G8cBOwJMYsk=/768x512/filters:quality(70):format(jpg):focal(1275x858:1285x848)/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/CAILUDX47ZHYPNTCIUQTTFSUTI.jpg')
+candidate_one.photos.attach(io: photo_thumb_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 candidate_one.political_party = political_one
 candidate_one.user = user_admin
 candidate_one.save
-
 puts '----------Creating candidate 1/1 done----------'
 
 candidate_two = Candidate.new(
@@ -71,8 +78,16 @@ candidate_two = Candidate.new(
   address: '43 rue de Dunkerque, 75010 Paris',
   availability: true
 )
-photo = URI.open('https://vsd.fr/images/2017/01/23/fae15786-76b6-4e1e-a3e9-863540a46e72.jpeg')
-candidate_two.photos.attach(io: photo, filename: "candidate#{candidate_two.first_name.downcase}_#{candidate_two.last_name.downcase}.jpg", content_type: 'image/jpg')
+photo_main = URI.open('https://vsd.fr/images/2017/01/23/fae15786-76b6-4e1e-a3e9-863540a46e72.jpeg')
+candidate_two.photos.attach(io: photo_main, filename: "photo_main.jpg", content_type: 'image/jpg')
+# photo_thumb_1 = URI.open('https://www.babelio.com/users/AVT_Jean-Luc-Melenchon_6547.jpg')
+# candidate_two.photos.attach(io: photo_thumb_1, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
+# photo_thumb_2 = URI.open('https://media.gettyimages.com/photos/politic-jean-luc-melenchon-poses-during-a-photoshoot-on-march-05-2017-picture-id654587626?s=612x612')
+# candidate_two.photos.attach(io: photo_thumb_2, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
+# photo_thumb_3 = URI.open('https://www.babelio.com/users/AVT_Jean-Luc-Melenchon_2189.jpg')
+# candidate_two.photos.attach(io: photo_thumb_3, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
+# photo_thumb_4 = URI.open('https://www.babelio.com/users/AVT_Jean-Luc-Melenchon_5205.jpg')
+# candidate_two.photos.attach(io: photo_thumb_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
 candidate_two.political_party = political_two
 candidate_two.user = user_admin
 candidate_two.save
@@ -190,7 +205,7 @@ book1 = Booking.new(
   status: false
 )
 book1.user = user_other
-book1.candidate = candidate_three
+book1.candidate = candidate_one
 book1.save
 
 book2 = Booking.new(
@@ -208,9 +223,22 @@ puts '----------Interrogating customers----------'
 review_one = Review.new(
   comment: "Emmanuel Macron, dont une des expressions favorites est ' et en même temps', pourrait se reconnaître dans le mouvement de balancier d'une horloge suisse. ",
   rating: 7,
-  booking_id: book1
+  booking: book1
 )
 review_one.save
+review_two = Review.new(
+  comment: "J'ai entendu un président de la République qui n'est pas face aux Français, mais un président de la République qui est avec les Français",
+  rating: 9,
+  booking: book1
+)
+review_two.save
+review_three = Review.new(
+  comment: "Un macron enjôleur, on dit qu'il a le sens de l'écoute, peut-être, mais cela ne change rien s'il a décidé de faire autrement. Macron manipulateur, orgueilleux, charmeur, opportuniste, très certainement. Macron c'est Dieu !",
+  rating: 3,
+  booking: book1
+)
+review_three.save
+
 puts '----------Writting it up----------'
 
 puts 'All done, go and hire a candidate'
