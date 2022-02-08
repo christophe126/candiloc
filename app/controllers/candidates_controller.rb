@@ -16,7 +16,8 @@ class CandidatesController < ApplicationController
     @markers = @candidates.map do |candidate|
       {
         lat: candidate.latitude,
-        lng: candidate.longitude
+        lng: candidate.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { candidate: candidate })
       }
     end
   end
