@@ -1,5 +1,6 @@
 // MAPBOX
 import mapboxgl from '!mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
+const mapElement = document.getElementById('map');
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
@@ -19,7 +20,6 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const initMapbox = () => {
-  const mapElement = document.getElementById('map');
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     
@@ -29,7 +29,6 @@ const initMapbox = () => {
       center: [2.3200410217200766, 48.8588897], // starting position [lng, lat]
       zoom: 12 // starting zoom
     });
-
   
     const markers = JSON.parse(mapElement.dataset.markers);
     
