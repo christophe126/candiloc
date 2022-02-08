@@ -13,9 +13,8 @@
         <th scope="col">Montant</th>
         <th scope="col">Candidat</th>
         <th scope="col"></th>
+        <th scope="col"></th>
         <th scope="col">Réservation</th>
-
-
       </tr>
     </thead>
     <tbody>
@@ -26,6 +25,7 @@
         <td><%= booking.end_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.total_price %>€</td>
         <td><%= booking.candidate.first_name %> <%= booking.candidate.last_name %></td>
+        <td><%= image_tag "Vector.png", width: 20, height: 20, data: {toggle: "modal", target: "#exampleModal", value:"#{booking.id}" } %></td>
         <td><%= link_to (image_tag "ArrowSquareOut.png", width: 20, height: 20 ), candidate_path(booking.candidate) %></td>
         <% if booking.status %>
           <td class="bcktdof"><span class="bfinish">Confirmée<span></td>
@@ -37,4 +37,35 @@
     </tbody>
   </table>
   </div>
+  <%# ....Modal add new reviews %>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Laisser un commentaire</h5>
+          </div>
+          <div class="flaglg">
+            <%= image_tag 'flag_line.png', class: "img_flag"%>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-4">
+                  <%= simple_form_for @review do |f| %>
+                    <%= f.input :comment, label: "Commentaire"%>
+                    <%= f.input :rating, collection: (1..5).to_a, label: "Noter votre experience", class: "space-form-review" %>
+                    <%= f.input :booking_id, :as => :hidden, :input_html => { :value => "" }  %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <%= f.submit "Soumettre votre commentaire", class: "btn btn-primary" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%# ....end Modal add new reviews %>
 </div>
