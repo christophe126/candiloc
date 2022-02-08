@@ -20,13 +20,13 @@
 
     <div class="pictures-show-card">
       <div class="picture-show-card-item">
-          <%= cl_image_tag @photo_main.key, width: 325, height: 325, crop: "fill" %>
+          <%= cl_image_tag @candidate.photos[0].key, width: 325, height: 325, crop: "fill" %>
       </div>
       <div class="picture-show-card-thumbnails">
-       <%= cl_image_tag @photo_thumb_1.key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %>
-       <%= cl_image_tag @photo_thumb_2.key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %>
-       <%= cl_image_tag @photo_thumb_3.key, width: 150, height: 150, crop: "fill", effect: "improve" %>
-       <%= cl_image_tag @photo_thumb_4.key, width: 150, height: 150, crop: "fill", effect: "improve" %>
+       <%= cl_image_tag @candidate.photos[1].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %>
+       <%= cl_image_tag @candidate.photos[2].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %>
+       <%= cl_image_tag @candidate.photos[3].key, width: 150, height: 150, crop: "fill", effect: "improve" %>
+       <%= cl_image_tag @candidate.photos[4].key, width: 150, height: 150, crop: "fill", effect: "improve" %>
       </div>
     </div>
 
