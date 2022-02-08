@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
 
     @booking.total_price = total_price
 
-    @booking.user = User.find(4)
+    @booking.user = current_user
 
     @booking.candidate = @candidate
     if @booking.save
