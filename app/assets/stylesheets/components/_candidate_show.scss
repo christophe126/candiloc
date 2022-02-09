@@ -1,5 +1,5 @@
 .show-card {
-  background-color: white;
+  background-color: whitesmoke;
   width: 70%;
   height: fit-content;
   box-shadow: 0px 5px 10px 0px #10286542;
@@ -101,6 +101,12 @@ a {
   color: white;
 }
 
+.rating-show-card {
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+}
 .fa-star {
   color: #e1000f;
 }
@@ -122,12 +128,19 @@ a {
 
 .price-show-candidate {
   padding-top: 15px;
-  color: #ef4135;
+  background-color: #ef4135;
+  color: #ffffff;
   font-weight: bold;
+  border: 1px solid #ef4135;
+  padding: 8px 24px;
+  border-radius: 15px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .rating-show-card {
-  padding-bottom: 40px;
+  padding-bottom: 15px;
   margin-left: 100px;
   margin-right: 100px;
 }
@@ -136,14 +149,42 @@ a {
   width: 687px;
   height: fit-content;
   margin-bottom: 50px;
+  margin-top: 20px;
   margin-left: 100px;
   margin-right: 100px;
   display: flex;
   flex-direction: column;
+
+  .h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
 }
 
 .comment {
   height: fit-content;
   width: 687px;
   padding-bottom: 40px;
+}
+
+.comment-header {
+  display: flex;
+}
+
+.comment-body {
+  display: flex;
+}
+
+#user-name {
+  margin-right: 10px;
+}
+#comment-background {
+  border-radius: 5px;
+  width: 600px;
+}
+
+.logo_test {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
