@@ -36,29 +36,16 @@
         <%# fin du each %>
       <% end %>
     </div>
-    
-    <%# MAP %>
-    <div class="accordion m-5" id="accordionExample">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Voir sur la carte
-            </button>
-          </h2>
-        </div>
 
-        <div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <%# <div class="card-body"> %>
-            <div id="map"
-              style="width: 100%; height: 600px;"
-              data-markers="<%= @markers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-            </div>
-          <%# </div> %>
-        </div>
-      </div>
-      
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>      
+  
     </div>
   </div>
+</div>
+<div>
+
 </div>
