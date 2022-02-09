@@ -11,14 +11,14 @@ Review.destroy_all
 puts 'Let the madness begin'
 
 puts '----------Creating political parties---------'
-political_one = PoliticalParty.create(name: 'En Marche')
-political_two = PoliticalParty.create(name: 'Les Insoumis')
-political_three = PoliticalParty.create(name: 'Indépendant')
-political_four = PoliticalParty.create(name: 'NPA')
-political_five = PoliticalParty.create(name: 'Libres !')
-political_six = PoliticalParty.create(name: 'EELV')
-political_seven = PoliticalParty.create(name: 'Parti animaliste')
-political_eight = PoliticalParty.create(name: 'Union Républicaine')
+political_one = PoliticalParty.create(name: 'En Marche', logo: 'En_Marche.png', slogan: 'En Marche')
+political_two = PoliticalParty.create(name: 'Les Insoumis', logo: 'FI.png', slogan: "L'Avenir en Commun")
+political_three = PoliticalParty.create(name: 'Reconquete', logo:'Reconquete.png', slogan: "Impossible n'est pas français")
+political_four = PoliticalParty.create(name: 'NPA', logo: 'NPA.png', slogan: 'Nos vies valent plus que leurs profits')
+political_five = PoliticalParty.create(name: 'Libres !', logo: 'Libres.png', slogan: 'Pour que la France reste la France')
+political_six = PoliticalParty.create(name: 'EELV', logo: 'EELV.png', slogan: "L'ecologie pour agir")
+political_seven = PoliticalParty.create(name: 'Parti animaliste', logo: 'Animaliste.png', slogan: 'Les animaux comptent votre voix aussi')
+political_eight = PoliticalParty.create(name: 'Union Républicaine', logo: 'UPR.png', slogan: "L'union du peuple pour rétablir la démocratie")
 puts '----------Creating political parties done---------'
 
 puts '----------Creating new users---------'
@@ -51,6 +51,7 @@ candidate_one = Candidate.new(
   latitude: 48.868938,
   longitude: 2.321658,
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
+  score: 4,
   availability: true
 )
 photo_main_candidate_1 = URI.open('https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1807/palinchak180700164.jpg')
@@ -200,7 +201,7 @@ candidate_seven = Candidate.new(
   description: "Les marques sont toujours plus nombreuses à abandonner la fourrure animale ! ",
   latitude: 43.605769,
   longitude: 1.447566,
-  address: "2 rue d’Austerlitz 31000, Toulouse",
+  address: "12 Place Léon Blum, 75011 Paris",
   availability: true
 )
 photo_main_candidate_7 = URI.open('https://www.lamontagne.fr/photoSRC/Gw--/helenethouy1-crediter-alexandra-mocanu_5849867.jpeg')
