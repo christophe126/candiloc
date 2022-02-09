@@ -13,20 +13,21 @@
         <th scope="col">Montant</th>
         <th scope="col">Candidat</th>
         <th scope="col"></th>
+        <th scope="col"></th>
         <th scope="col">Réservation</th>
-
-
       </tr>
     </thead>
     <tbody>
       <% @bookings.each do |booking|  %>
       <tr>
         <th scope="row"><%= booking.id %></th>
+        <% @info_id = booking.id %>
         <td><%= booking.start_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.end_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.total_price %>€</td>
         <td><%= booking.candidate.first_name %> <%= booking.candidate.last_name %></td>
-        <td><%= link_to (image_tag "ArrowSquareOut.png", width: 20, height: 20 ), candidate_path(booking.candidate) %></td>
+        <td><%= link_to (image_tag "Vector.png", width: 20, height: 20), new_booking_review_path(booking) %></td>
+        <td><%= link_to (image_tag "ArrowSquareOut.png", width: 20, height: 20 ), candidate_path(booking.candidate)%></td>
         <% if booking.status %>
           <td class="bcktdof"><span class="bfinish">Confirmée<span></td>
         <% else %>
@@ -38,4 +39,3 @@
   </table>
   </div>
 </div>
-<%# comment %>
