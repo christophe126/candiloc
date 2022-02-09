@@ -134,7 +134,7 @@ photo_thumb_1_candidate_4 = URI.open('https://images.midilibre.fr/api/v1/images/
 candidate_four.photos.attach(io: photo_thumb_1_candidate_4, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
 photo_thumb_2_candidate_4 = URI.open('https://www.ouest-france.fr/stories/qui-est-philippe-poutou-candidat-dextreme-gauche-a-lelection-presidentielle-de-2022-o0DrtPE/public/ouest-france/cover/qui-est-philippe-poutou-candidat-dextreme-gauche-a-lelection-presidentielle-de-2022-o0DrtPE/928x696.png')
 candidate_four.photos.attach(io: photo_thumb_2_candidate_4, filename: "photo_thumb_2.jpg", content_type: 'image/jpg')
-photo_thumb_3_candidate_4 = URI.open('https://images.rtl.fr/~c/880v587/rtl/www/1144511-philippe-poutou-est-candidat-a-la-presidentielle-de-2017-pour-le-nouveau-parti-anticapitaliste.jpg')
+photo_thumb_3_candidate_4 = URI.open('https://img.lemde.fr/2017/03/16/0/0/5568/3712/664/0/75/0/d3863f4_11761-xab261.ufvnh77gb9.jpg')
 candidate_four.photos.attach(io: photo_thumb_3_candidate_4, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
 photo_thumb_4_candidate_4 = URI.open('https://static.latribune.fr/article_body/1384258/philippe-poutou.jpg')
 candidate_four.photos.attach(io: photo_thumb_4_candidate_4, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
