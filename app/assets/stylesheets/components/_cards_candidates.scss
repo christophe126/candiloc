@@ -1,18 +1,39 @@
 .cards {
-  display: flex;
-  justify-content: space-around;
-  width: 933px;
-  flex-wrap: wrap;
+  width: 900;
+  display: grid;
+  grid-template-columns: 285px 285px 285px;
+  grid-column-gap: 2em;
 }
 
 .one-card {
-  width: 200px;
-  height: 302px;
+  width: 285px;
+  height: 351px;
   box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   position: relative;
   margin-bottom: 50px;
 }
+.one-card-logo {
+  position: absolute;
+  width: 82;
+  height: 50;
+  top: 133px;
+  left: 178px;
+  right: 25px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
+}
+
+.one-card-logo img {
+  width: 57px;
+  height: 29px;
+  object-fit: cover;
+
+}
+
 
 .card-imag-top {
   border-top-left-radius: 15px;
@@ -33,41 +54,61 @@
   padding-bottom: 5px;
   padding-left: 5px;
   text-align: center;
-  color: black;
+  color: #01031B;
 }
 
 .one-card-title {
-  margin: 0 0;
-  font-size: 26px;
-  line-height: 28px;
-  font-weight: bold;
+  font-size: 21px;
+  line-height: 20px;
+  text-align: left;
+  margin-left: 14px;
+  margin-top: 20px;
+  height: 20px;
 }
 
 .one-card-text {
+  font-size: 12px;
+  text-align: left;
+  margin-left: 14px;
   margin-top: 8px;
-  color: hsla(240, 100%, 28%, 1);
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: bold;
+  color: #4E4E4E;
+  text-overflow: clip;
+  width: 244px;
+}
+
+.one-card-text-data {
+  font-size: 12px;
+  text-align: left;
+  margin-left: 14px;
+  margin-right: 14px;
+  margin-top: 8px;
+  color: #A9A9A9;
+  text-overflow: clip;
+  width: 244px;
+  height: 54px;
+  text-align: justify ;
+}
+
+.one-card-text-data span {
+  height: 54px;
+  color: black;
 }
 
 .one-card-price {
-  position: absolute;
-  width: 69px;
-  height: 35px;
-  left: 66px;
-  top: 151px;
-  background: #e1000f;
-  border-radius: 19px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  bottom: 11px;
+  align-items: baseline;
 }
 
-#one-card-price-p {
+.one-card-price-p {
   font-size: 14px;
-  line-height: 18px;
-  color: white;
+  color: black;
   margin-top: 0;
   margin-bottom: 0;
+  margin-right: 19px;
+  margin-left: 21px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
 }
