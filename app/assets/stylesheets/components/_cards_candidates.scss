@@ -1,9 +1,8 @@
 .cards {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
   width: 900;
-
+  display: grid;
+  grid-template-columns: 285px 285px 285px;
+  grid-column-gap: 2em;
 }
 
 .one-card {
