@@ -23,12 +23,8 @@
         <div class="one-card ">
           <%= link_to candidate_path(candidate) do %>
             <%= cl_image_tag candidate.photos[0].key, class: "card-imag-top", alt: "Candiloc 2022", width: 200, height: 200 %>
-            <div>
-            <%= image_tag candidate.political_party.logo %>
-
-            </div>
             <div class="one-card-body">
-                <h5 class="one-card-title"><%= candidate.last_name %> <%= candidate.first_name %></h5>
+                <h5 class="one-card-title"><%= candidate.last_name %></h5>
                 <h5 class="one-card-title"><%= candidate.first_name %></h5>
                 <p class="one-card-text"><%= candidate.political_party.name %></p>
             </div>
@@ -53,24 +49,3 @@
 <div>
 
 </div>
-
-
-    <div class="cards">
-      <%# début du each %>
-      <% @candidates.each do |candidate| %>
-        <div class="one-card ">
-          <%= link_to candidate_path(candidate) do %>
-            <%= cl_image_tag candidate.photos[0].key, class: "card-imag-top", alt: "Candiloc 2022", width: 200, height: 200 %>
-            <div class="one-card-body">
-                <h5 class="one-card-title"><%= candidate.last_name %></h5>
-                <h5 class="one-card-title"><%= candidate.first_name %></h5>
-                <p class="one-card-text"><%= candidate.political_party.name %></p>
-            </div>
-            <div class="one-card-price">
-              <p id="one-card-price-p"><%= candidate.price_per_day %>€ / J</p>
-            </div>
-          <% end %>
-        </div>
-        <%# fin du each %>
-      <% end %>
-    </div>
