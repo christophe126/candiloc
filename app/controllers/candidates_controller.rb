@@ -21,6 +21,7 @@ class CandidatesController < ApplicationController
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
+
   end
 
   def show
