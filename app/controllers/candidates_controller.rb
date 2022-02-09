@@ -16,7 +16,9 @@ class CandidatesController < ApplicationController
     @markers = @candidates.map do |candidate|
       {
         lat: candidate.latitude,
-        lng: candidate.longitude
+        lng: candidate.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { candidate: candidate }),
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
   end
