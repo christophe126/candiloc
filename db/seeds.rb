@@ -11,14 +11,14 @@ Review.destroy_all
 puts 'Let the madness begin'
 
 puts '----------Creating political parties---------'
-political_one = PoliticalParty.create(name: 'En Marche', logo: 'En_Marche.png', slogan: 'En Marche')
-political_two = PoliticalParty.create(name: 'Les Insoumis', logo: 'FI.png', slogan: "L'Avenir en Commun")
-political_three = PoliticalParty.create(name: 'Reconquete', logo:'Reconquete.png', slogan: "Impossible n'est pas français")
-political_four = PoliticalParty.create(name: 'NPA', logo: 'NPA.png', slogan: 'Nos vies valent plus que leurs profits')
-political_five = PoliticalParty.create(name: 'Libres !', logo: 'Libres.png', slogan: 'Pour que la France reste la France')
-political_six = PoliticalParty.create(name: 'EELV', logo: 'EELV.png', slogan: "L'ecologie pour agir")
-political_seven = PoliticalParty.create(name: 'Parti animaliste', logo: 'Animaliste.png', slogan: 'Les animaux comptent votre voix aussi')
-political_eight = PoliticalParty.create(name: 'Union Républicaine', logo: 'UPR.png', slogan: "L'union du peuple pour rétablir la démocratie")
+political_one = PoliticalParty.create(name: 'En Marche', logo: 'En_Marche.png', slogan: 'En Marche.')
+political_two = PoliticalParty.create(name: 'Les Insoumis', logo: 'FI.png', slogan: "L'Avenir en Commun.")
+political_three = PoliticalParty.create(name: 'Reconquete', logo:'Reconquete.png', slogan: "Impossible n'est pas Français.")
+political_four = PoliticalParty.create(name: 'NPA', logo: 'NPA.png', slogan: 'Nos vies valent plus que leurs profits.')
+political_five = PoliticalParty.create(name: 'Libres !', logo: 'Libres.png', slogan: 'Pour que la France reste la France.')
+political_six = PoliticalParty.create(name: 'EELV', logo: 'EELV.png', slogan: "L'écologie pour agir.")
+political_seven = PoliticalParty.create(name: 'Parti animaliste', logo: 'Animaliste.png', slogan: 'Les animaux comptent votre voix aussi.')
+political_eight = PoliticalParty.create(name: 'Union Républicaine', logo: 'UPR.png', slogan: "L'union du peuple pour rétablir la démocratie.")
 puts '----------Creating political parties done---------'
 
 puts '----------Creating new users---------'
@@ -26,7 +26,7 @@ puts '----------Creating new users---------'
 user_admin = User.create(
   first_name: 'Jo',
   last_name: 'Lambda',
-  email: 'jo.lambda@vote.fr',
+  email: 'admin@candiloc.com',
   admin: true,
   password: "password"
 )
@@ -35,7 +35,7 @@ puts '----------Creating admin One Done---------'
 user_other = User.create(
   first_name: 'Jane',
   last_name: 'Gamma',
-  email: 'jane.gamma@vote.fr',
+  email: 'not-admin@candiloc.com',
   admin: false,
   password: "password"
 )
@@ -46,8 +46,8 @@ puts '----------Creating candidates----------'
 candidate_one = Candidate.new(
   first_name: 'Emmanuel',
   last_name: 'Macron',
-  price_per_day: '100',
-  description: 'En même temps, en marche, traverse les rues et e****** certains',
+  price_per_day: '1000',
+  description: 'En même temps, en marche, traverse souvent rue, peut en e****** certains.',
   latitude: 48.868938,
   longitude: 2.321658,
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
@@ -72,11 +72,12 @@ puts '----------Creating candidate 1/1 done----------'
 candidate_two = Candidate.new(
   first_name: 'Jean-Luc',
   last_name: 'Mélanchon',
-  price_per_day: '1000',
-  description: "J'aime le rouge, c'est beau et c'est bon le rouge",
+  price_per_day: '100',
+  description: "J'aime le rouge, c'est beau et c'est bon le rouge.",
   latitude: 48.880768,
   longitude: 2.350575,
   address: '43 rue de Dunkerque, 75010 Paris',
+  score: 3,
   availability: true
 )
 photo_main_candidate_2 = URI.open('https://vsd.fr/images/2017/01/23/fae15786-76b6-4e1e-a3e9-863540a46e72.jpeg')
@@ -102,6 +103,7 @@ candidate_three = Candidate.new(
   latitude: 48.880768,
   longitude: 2.308744,
   address: '10 rue jean goujon, 75008 Paris',
+  score: 1,
   availability: true
 )
 photo_main_candidate_3 = URI.open('https://actualitte.com/uploads/images/eric-zemmour-albin-michel-60dabf6274c24859155384.png')
@@ -122,11 +124,12 @@ puts '----------Creating candidate 3/3 done----------'
 candidate_four = Candidate.new(
   first_name: 'Philippe',
   last_name: 'Poutou',
-  price_per_day: '0',
+  price_per_day: '10',
   description: "Je crois que je suis le seul à avoir un métier normal.",
   latitude: 48.854499,
   longitude: 2.418708,
   address: '2 rue Richard Lenoir, 93100 Montreuil',
+  score: 2,
   availability: true
 )
 photo_main_candidate_4 = URI.open('https://resize-europe1.lanmedia.fr/r/620,310,FFFFFF,center-middle/img/var/europe1/storage/images/europe1/dossiers/philippe-poutou/28871359-6-fre-FR/Philippe-Poutou.jpg')
@@ -148,10 +151,11 @@ candidate_five = Candidate.new(
   first_name: 'Valérie',
   last_name: 'Pécresse',
   price_per_day: '500',
-  description: "Je vais ressortir le Karcher de la cave. Cela fait dix ans qu’il y est et il est temps de l’utiliser. Il s’agit de remettre de l’ordre dans la rue.",
+  description: "Je vais ressortir le Karcher de la cave. Cela fait dix ans qu'il y est et il est temps de l'utiliser. Il s'agit de remettre de l'ordre dans la rue.",
   latitude: 48.880438,
   longitude: 2.291582,
   address: '8 rue torricelli, 75017 paris',
+  score: 2,
   availability: true
 )
 photo_main_candidate_5 = URI.open('https://www.lalibre.be/resizer/O0ftXBvjohFjlz29K4TZiyKE2zQ=/0x0:2555x1705/768x512/filters:quality(70):format(jpg)/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/E5R7JMM77BEKZCZ3T3D44BYAQY.jpg')
@@ -172,11 +176,12 @@ puts '----------Creating candidate 5/5 done----------'
 candidate_six = Candidate.new(
   first_name: 'Yannick',
   last_name: 'Jadot',
-  price_per_day: '20',
+  price_per_day: '300',
   description: "L'écologie ce n'est pas prendre une douche froide dans le noir une fois par semaine.",
   latitude: 48.874676,
   longitude: 2.332760,
   address: "58 rue de la chaussée d'antin, paris",
+  score: 3,
   availability: true
 )
 photo_main_candidate_6 = URI.open('https://www.challenges.fr/assets/img/2021/09/27/cover-r4x3w1000-615336aed0f41-96ae30f1941824a294b109ff46a21d8fa5db7aab-jpg.jpg')
@@ -197,11 +202,12 @@ puts '----------Creating candidate 6/6 done----------'
 candidate_seven = Candidate.new(
   first_name: 'Hélène',
   last_name: 'Thouy',
-  price_per_day: '3',
-  description: "Les marques sont toujours plus nombreuses à abandonner la fourrure animale ! ",
+  price_per_day: '50',
+  description: "Les marques sont toujours plus nombreuses à abandonner la fourrure animale !",
   latitude: 43.605769,
   longitude: 1.447566,
   address: "12 Place Léon Blum, 75011 Paris",
+  score: 1,
   availability: true
 )
 photo_main_candidate_7 = URI.open('https://cdn.radiofrance.fr/s3/cruiser-production/2021/11/83d99bfe-be22-4023-b4db-706420d3c50d/1200x680_000-9nv6x9.jpg')
@@ -222,12 +228,13 @@ puts '----------Creating candidate 7/7 done----------'
 candidate_eight = Candidate.new(
   first_name: 'François',
   last_name: 'Asselineau',
-  price_per_day: '66',
-  description: "C'est un peu comme le sparadrap du capitaine Haddock dans « L'affaire Tournesol » , on ne s'en débarrasse jamais.",
+  price_per_day: '200',
+  description: "C'est un peu comme le sparadrap du capitaine Haddock dans 'L'affaire Tournesol', on ne s'en débarrasse jamais.",
   latitude: 48.845965,
   longitude: 2.385109,
   address: "15 Rue Erard,
   75012 Paris",
+  score: 1,
   availability: true
 )
 photo_main_candidate_8 = URI.open('https://cdn.radiofrance.fr/s3/cruiser-production/2017/03/73712371-d227-4576-a0b8-d3628161fa90/1136_francois_asselineau000_mq2gv.jpg')
@@ -270,19 +277,19 @@ puts '----------Generating reviews----------'
 puts '----------Interrogating customers----------'
 review_one = Review.new(
   comment: "Emmanuel Macron, dont une des expressions favorites est ' et en même temps', pourrait se reconnaître dans le mouvement de balancier d'une horloge suisse. ",
-  rating: 7,
+  rating: 3,
   booking: book1
 )
 review_one.save
 review_two = Review.new(
   comment: "J'ai entendu un président de la République qui n'est pas face aux Français, mais un président de la République qui est avec les Français",
-  rating: 9,
+  rating: 5,
   booking: book1
 )
 review_two.save
 review_three = Review.new(
   comment: "Un macron enjôleur, on dit qu'il a le sens de l'écoute, peut-être, mais cela ne change rien s'il a décidé de faire autrement. Macron manipulateur, orgueilleux, charmeur, opportuniste, très certainement. Macron c'est Dieu !",
-  rating: 3,
+  rating: 4,
   booking: book1
 )
 review_three.save
