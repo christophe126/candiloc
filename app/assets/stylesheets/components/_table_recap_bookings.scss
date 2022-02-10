@@ -1,46 +1,90 @@
 .containerrecap{
-  width: 80%;
+  width: 70%;
   background-color: white;
   position: absolute;
-  left: 10%;
-  right: 10%;
-  top: 210px;
+  top: 208px;
   border-radius: 20px;
-  padding: 65px;
+  padding: 50px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 h1 {
-  margin-bottom: 30px;
+  width: 478px;
+  height: 104px;
   font-family: Marianne;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 45px;
+  line-height: 45px;
   text-align: center;
   color: #E1000F;
-}
-tr {
-  margin-top: 30px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
-.table-stripedd {
-  background-color: white;
+.container-table {
+  width: 872px;
+  background-color: #D5EDFE;
+  box-shadow: inset 0px 2px 4.5px rgba(0, 0, 0, 0.2);
+  border-radius: 23px;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.table-striped > tbody > th:nth-of-type(1) {
+  border-radius: 10px;
+
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) > * {
+  --bs-table-accent-bg: #FFFF;
+  color: #545454;
+}
+.bck-color {
+  background-color: #F9F9F9;
+}
+
+td {
+  height: 80px;
+}
+thead {
+  border: 1 solid white;
+  padding: Opx;
+}
+
+th {
+  font-size: 14px;
+  color: #4E4E4E;
+}
+
+.aligntxt {
+  text-align: center;
+}
+
 
 
 
 .brun {
-  color: hsla(240, 100%, 28%, 1);
-  padding: 5px 5px;
-  border-radius: 10px;
+  color: #000091;
+  padding: 6px 8px;
+  border-radius: 18px;
   text-align: center;
+  background-color: #D5EDFE;
+  border: 1px solid #AFC5E7;
+  padding: 6px 8px;
+  font-size: 14px;
 }
 
 .bfinish{
-  border-radius: 10px;
-  color: hsla(356, 100%, 44%, 1);
+  border-radius: 18px;
+  color: #E1000F;
   text-align: center;
-  padding: 5px 5px;
+  background-color: #FED5D5;
+  border: 1px solid #F8A2A2;
+  padding: 6px 8px;
+  font-size: 14px;
 }
 .span {
   text-align: center;
@@ -55,11 +99,4 @@ tr {
 i {
   font-size: 20px;
   color: black;
-}
-.bcktdof {
-  background-color: hsla(360, 96%, 92%, 1) !important;;
-}
-
-.bcktdon {
-  background-color: #DFE9F8 !important;;
 }

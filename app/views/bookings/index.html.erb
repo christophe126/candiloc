@@ -7,17 +7,17 @@
     <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">N° Résa</th>
+        <th scope="col">N°</th>
         <th scope="col">Du</th>
         <th scope="col">Au</th>
         <th scope="col">Montant</th>
         <th scope="col">Candidat</th>
         <th scope="col"></th>
-        <th scope="col"></th>
         <th scope="col">Réservation</th>
+        <th scope="col"></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="bck-color">
       <% @bookings.each do |booking|  %>
       <tr>
         <th scope="row"><%= booking.id %></th>
@@ -26,19 +26,20 @@
         <td><%= booking.end_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.total_price %>€</td>
         <td><%= booking.candidate.first_name %> <%= booking.candidate.last_name %></td>
-        <td><%= link_to (image_tag "Vector.png", width: 20, height: 20), new_booking_review_path(booking) %></td>
         <td><%= link_to (image_tag "ArrowSquareOut.png", width: 20, height: 20 ), candidate_path(booking.candidate)%></td>
         <% if booking.status %>
-          <td class="bcktdof"><span class="bfinish">Confirmée<span></td>
+          <td><span class="bfinish">Confirmée<span></td>
         <% else %>
-          <td class="bcktdon"><span class="brun">En cours</span></td>
+          <td><span class="brun">En cours</span></td>
         <% end %>
+        <td><%= link_to (image_tag "ChatCircleDots.png", width: 20, height: 20), new_booking_review_path(booking) %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
   </div>
+
 </div>
 <div>
-
+  <%= render "shared/footer"%>
 </div>
