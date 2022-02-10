@@ -26,10 +26,19 @@
         <a class="reservation" href="/bookings">
           Vos réservations
         </a>
-        <div class="fuck-bootstrap">
-          <a href="">
-            <img src="https://images.alexonsager.net/pokemon/fused/143/143.25.png" width="30" height="30" alt="">
-          </a>
+        <div class="wagont-aut">
+          <% if current_user.email == "mederic@candiloc.com" %>
+            <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/medericmesle" width="30" height="30" alt="">
+          <% end %>
+          <% if current_user.email == "christophe@candiloc.com" %>
+            <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/christophe126" width="30" height="30" alt="">
+          <% end %>
+          <% if current_user.email == "bastien@candiloc.com" %>
+            <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/Tetreur" width="30" height="30" alt="">
+          <% end %>
+          <% if current_user.email == "camille@candiloc.com" %>
+            <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/Caaam333" width="30" height="30" alt="">
+          <% end %>
         </div>
         <%= link_to "Sign-out", destroy_user_session_path, method: :delete, class: "nav-link"  %>
       </div>
