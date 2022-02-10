@@ -23,23 +23,41 @@ puts '----------Creating political parties done---------'
 
 puts '----------Creating new users---------'
 
-user_admin = User.create(
-  first_name: 'Jo',
-  last_name: 'Lambda',
-  email: 'admin@candiloc.com',
+User.create(
+  first_name: 'Mederic',
+  last_name: 'Mederic',
+  email: 'mederic@candiloc.com',
   admin: true,
   password: "password"
 )
-puts '----------Creating admin One Done---------'
+puts '----------Creating User Mederic Done---------'
 
-user_other = User.create(
-  first_name: 'Jane',
-  last_name: 'Gamma',
-  email: 'not-admin@candiloc.com',
-  admin: false,
+User.create(
+  first_name: 'Christophe',
+  last_name: 'Christophe',
+  email: 'christophe@candiloc.com',
+  admin: true,
   password: "password"
 )
-puts '----------Creating user One Done---------'
+puts '----------Creating user Christophe Done---------'
+
+User.create(
+  first_name: 'Camille',
+  last_name: 'Camille',
+  email: 'camille@candiloc.com',
+  admin: true,
+  password: "password"
+)
+puts '----------Creating user Camille Done---------'
+
+User.create(
+  first_name: 'Bastien',
+  last_name: 'Bastien',
+  email: 'bastien@candiloc.com',
+  admin: true,
+  password: "password"
+)
+puts '----------Creating user Bastien Done---------'
 
 puts '----------Creating candidates----------'
 
@@ -47,7 +65,7 @@ candidate_one = Candidate.new(
   first_name: 'Emmanuel',
   last_name: 'Macron',
   price_per_day: '1000',
-  description: 'En même temps, en marche, traverse souvent rue, peut en e****** certains.',
+  description: '',
   latitude: 48.868938,
   longitude: 2.321658,
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
