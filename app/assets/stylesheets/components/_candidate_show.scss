@@ -1,15 +1,15 @@
 .show-card {
+  margin: 0 auto;
   background-color: whitesmoke;
   width: 70%;
   height: fit-content;
   box-shadow: 0px 5px 10px 0px #10286542;
   padding: 2rem 3rem;
   border-radius: 20px;
-  position: absolute;
-  left: 15%;
-  right: 15%;
-  top: 125px;
+  top: 0px;
   font-family: Marianne-Regular;
+  position: relative;
+  top: -150px;
 }
 
 .intro-show-card {
@@ -20,7 +20,7 @@
   margin-right: 100px;
   margin-top: 50px;
   margin-bottom: 30px;
-  font-family: Marianne;
+  font-family: Marianne-Regular;
 }
 
 #title-show-card {
@@ -188,4 +188,10 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.show-footer {
+  padding-bottom: 0px;
+  bottom: 0;
+  width: 100%;
 }
