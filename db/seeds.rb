@@ -54,7 +54,7 @@ candidate_one = Candidate.new(
   score: 4,
   availability: true
 )
-photo_main_candidate_1 = URI.open('https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1807/palinchak180700164.jpg')
+photo_main_candidate_1 = URI.open('https://cdn.radiofrance.fr/s3/cruiser-production/2020/04/85cf94fd-6364-49f7-a4df-c6883cc78ad5/838_000_1qg3cv.jpg')
 candidate_one.photos.attach(io: photo_main_candidate_1, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_candidate_1 = URI.open('https://static.mediapart.fr/etmagine/default/files/2021/11/07/000-9qh8kn.jpg')
 candidate_one.photos.attach(io: photo_thumb_1_candidate_1, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
@@ -129,7 +129,7 @@ candidate_four = Candidate.new(
   address: '2 rue Richard Lenoir, 93100 Montreuil',
   availability: true
 )
-photo_main_candidate_4 = URI.open('https://s1.lemde.fr/media/img/personalities/f609912_1506-ev65kf.6i7wrk9.jpg')
+photo_main_candidate_4 = URI.open('https://resize-europe1.lanmedia.fr/r/620,310,FFFFFF,center-middle/img/var/europe1/storage/images/europe1/dossiers/philippe-poutou/28871359-6-fre-FR/Philippe-Poutou.jpg')
 candidate_four.photos.attach(io: photo_main_candidate_4, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_candidate_4 = URI.open('https://images.midilibre.fr/api/v1/images/view/61f956253e45467a60463b1c/full/image.jpg?v=1')
 candidate_four.photos.attach(io: photo_thumb_1_candidate_4, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
@@ -204,7 +204,7 @@ candidate_seven = Candidate.new(
   address: "12 Place Léon Blum, 75011 Paris",
   availability: true
 )
-photo_main_candidate_7 = URI.open('https://www.lamontagne.fr/photoSRC/Gw--/helenethouy1-crediter-alexandra-mocanu_5849867.jpeg')
+photo_main_candidate_7 = URI.open('https://cdn.radiofrance.fr/s3/cruiser-production/2021/11/83d99bfe-be22-4023-b4db-706420d3c50d/1200x680_000-9nv6x9.jpg')
 candidate_seven.photos.attach(io: photo_main_candidate_7, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_candidate_7 = URI.open('https://upload.wikimedia.org/wikipedia/commons/7/73/Helene_Thouy_%28cropped%29.jpg')
 candidate_seven.photos.attach(io: photo_thumb_1_candidate_7, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
