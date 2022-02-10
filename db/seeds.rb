@@ -23,7 +23,7 @@ puts '----------Creating political parties done---------'
 
 puts '----------Creating new users---------'
 
-User.create(
+user_admin = User.create(
   first_name: 'Mederic',
   last_name: 'Mederic',
   email: 'mederic@candiloc.com',
@@ -57,6 +57,7 @@ User.create(
   admin: true,
   password: "password"
 )
+
 puts '----------Creating user Bastien Done---------'
 
 puts '----------Creating candidates----------'
@@ -65,7 +66,7 @@ candidate_one = Candidate.new(
   first_name: 'Emmanuel',
   last_name: 'Macron',
   price_per_day: '1000',
-  description: '',
+  description: "Lors de son émergence sur la scène politique française, Emmanuel Macron est alternativement qualifié de social-libéral ou de social-démocrate. Il est alors soutenu par l'aile droite du Parti socialiste et par une partie de la droite. Proche de Michel Rocardq, il revendique une filiation politique avec Pierre Mendès France et François Mitterrand. Mediapart relève au cours de sa campagne de 2017 qu'il « mobilise dans ses discours et entretiens un panthéon hétéroclite de figures politiques et intellectuelles » (« plus de 80 auteurs et intellectuels, philosophes, artistes et écrivains, souvent des classiques »), avec Charles de Gaulle comme « référence favorite »",
   latitude: 48.868938,
   longitude: 2.321658,
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
@@ -277,7 +278,7 @@ book1 = Booking.new(
   total_price: 50,
   status: false
 )
-book1.user = user_other
+book1.user = user_admin
 book1.candidate = candidate_one
 book1.save
 
@@ -287,7 +288,7 @@ book2 = Booking.new(
   total_price: 50,
   status: true
 )
-book2.user = user_other
+book2.user = user_admin
 book2.candidate = candidate_one
 book2.save
 
