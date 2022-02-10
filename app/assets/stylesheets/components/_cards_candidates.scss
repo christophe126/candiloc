@@ -1,3 +1,11 @@
+
+.container-card {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 933px;
+}
+
 .cards {
   width: 900;
   display: grid;
@@ -13,6 +21,7 @@
   position: relative;
   margin-bottom: 50px;
 }
+
 .one-card-logo {
   position: absolute;
   width: 82;
