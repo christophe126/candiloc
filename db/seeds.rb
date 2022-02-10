@@ -22,7 +22,7 @@ puts '----------Creating political parties done---------'
 
 puts '----------Creating new users---------'
 
-User.create(
+user_admin = User.create(
   first_name: 'Mederic',
   last_name: 'Mederic',
   email: 'mederic@candiloc.com',
@@ -57,7 +57,6 @@ User.create(
   password: "password"
 )
 
-user_admin = User.find(1)
 puts '----------Creating user Bastien Done---------'
 
 puts '----------Creating candidates----------'
@@ -66,7 +65,7 @@ candidate_one = Candidate.new(
   first_name: 'Emmanuel',
   last_name: 'Macron',
   price_per_day: '1000',
-  description: '',
+  description: "Lors de son émergence sur la scène politique française, Emmanuel Macron est alternativement qualifié de social-libéral ou de social-démocrate. Il est alors soutenu par l'aile droite du Parti socialiste et par une partie de la droite. Proche de Michel Rocardq, il revendique une filiation politique avec Pierre Mendès France et François Mitterrand. Mediapart relève au cours de sa campagne de 2017 qu'il « mobilise dans ses discours et entretiens un panthéon hétéroclite de figures politiques et intellectuelles » (« plus de 80 auteurs et intellectuels, philosophes, artistes et écrivains, souvent des classiques »), avec Charles de Gaulle comme « référence favorite »",
   latitude: 48.868938,
   longitude: 2.321658,
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
@@ -92,7 +91,7 @@ candidate_two = Candidate.new(
   first_name: 'Jean-Luc',
   last_name: 'Mélanchon',
   price_per_day: '100',
-  description: "J'aime le rouge, c'est beau et c'est bon le rouge.",
+  description: "Si Jean-Luc Mélenchon se qualifie lui-même de socialiste républicain, son ambition est de parvenir à « être le rassembleur de toute la gauche » sur une ligne politique antilibérale voire anticapitaliste, dans le cadre de ce qu'il désigne comme « révolution citoyenne », pour gouverner et transformer profondément la France dans le sens du progrès massif de l'intérêt général (refondation républicaine).",
   latitude: 48.880768,
   longitude: 2.350575,
   address: '43 rue de Dunkerque, 75010 Paris',
@@ -118,7 +117,7 @@ candidate_three = Candidate.new(
   first_name: 'Eric',
   last_name: 'Zemour',
   price_per_day: '10',
-  description: "L'avenir de la France du futur !",
+  description: "Éric Zemmour indique avoir voté deux fois pour François Mitterrand et avoir rompu avec la gauche avec l'avènement de SOS Racisme au milieu des années 1980 et l'affaire de Creil en 1989164. Lors de la campagne du référendum français sur le traité de Maastricht en 1992, il revendique son attachement à Philippe Séguin et Jean-Pierre Chevènement.",
   latitude: 48.880768,
   longitude: 2.308744,
   address: '10 rue jean goujon, 75008 Paris',
@@ -144,7 +143,7 @@ candidate_four = Candidate.new(
   first_name: 'Philippe',
   last_name: 'Poutou',
   price_per_day: '10',
-  description: "Je crois que je suis le seul à avoir un métier normal.",
+  description: "Militant de la LCR devenue ensuite le Nouveau Parti anticapitaliste (NPA), Philippe Poutou est candidat pour ce parti aux élections législatives de 2007 en Gironde, puis conduit la liste du NPA aux élections régionales de 2010 en Aquitaine, qui recueille 2,52 % des suffrages exprimés.",
   latitude: 48.854499,
   longitude: 2.418708,
   address: '2 rue Richard Lenoir, 93100 Montreuil',
@@ -170,7 +169,7 @@ candidate_five = Candidate.new(
   first_name: 'Valérie',
   last_name: 'Pécresse',
   price_per_day: '500',
-  description: "Je vais ressortir le Karcher de la cave. Cela fait dix ans qu'il y est et il est temps de l'utiliser. Il s'agit de remettre de l'ordre dans la rue.",
+  description: "Se déclarant en faveur du libéralisme économique, elle affirme en août 2021 qu'elle est « deux tiers Merkel, un tiers Thatcher ». Dans la perspective de l'élection présidentielle de 2022, elle promet de diminuer les dépenses publiques et les impôts sur les entreprises et sur les donations successorales à travers quatre réformes majeures : la suppression de 200 000 postes dans la fonction publique avant d'en recréer 50 000114, le passage de l'âge légal de départ à la retraite de 62 à 65 ans, la fin des 35 heures, la diminution des allocations-chômage et le désengagement de l'État des entreprises concurrentielles dont il est actionnaire minoritaire. ",
   latitude: 48.880438,
   longitude: 2.291582,
   address: '8 rue torricelli, 75017 paris',
@@ -196,7 +195,8 @@ candidate_six = Candidate.new(
   first_name: 'Yannick',
   last_name: 'Jadot',
   price_per_day: '300',
-  description: "L'écologie ce n'est pas prendre une douche froide dans le noir une fois par semaine.",
+  description: "Le 28 septembre 2021, Yannick Jadot remporte la primaire présidentielle de l'écologie face à Sandrine Rousseau, avec 51,03 % des voix au second tour. Il devient ainsi le candidat du Pôle écologiste (Europe Écologie Les Verts, Génération.s, Génération écologie, Cap écologie, Mouvement des progressistes) à l'élection présidentielle de 2022.
+  Par rapport à ses propositions de la primaire écologiste, il propose notamment un plan de relance de 50 milliards d'euros par an sur le quinquennat (au lieu de 20 milliards).",
   latitude: 48.874676,
   longitude: 2.332760,
   address: "58 rue de la chaussée d'antin, paris",
@@ -222,7 +222,7 @@ candidate_seven = Candidate.new(
   first_name: 'Hélène',
   last_name: 'Thouy',
   price_per_day: '50',
-  description: "Les marques sont toujours plus nombreuses à abandonner la fourrure animale !",
+  description: "En 2016, Hélène Thouy participe à la fondation du Parti animaliste, qu'elle copréside depuis et dont elle devient la figure médiatique1. En 2017, candidate dans la deuxième circonscription de la Gironde, Hélène Thouy rassemble 0,96 % des voix. La même année, elle est tête de liste aux élections sénatoriales à Paris, où elle obtient 0,34 %.",
   latitude: 43.605769,
   longitude: 1.447566,
   address: "12 Place Léon Blum, 75011 Paris",
@@ -248,7 +248,7 @@ candidate_eight = Candidate.new(
   first_name: 'François',
   last_name: 'Asselineau',
   price_per_day: '200',
-  description: "C'est un peu comme le sparadrap du capitaine Haddock dans 'L'affaire Tournesol', on ne s'en débarrasse jamais.",
+  description: "Il se fait connaître durant la campagne présidentielle en citant régulièrement des articles des traités européens et les grandes orientations des politiques économiques de la Commission européenne, qui témoigneraient selon lui de l'abandon de la souveraineté française au profit des institutions européennes.",
   latitude: 48.845965,
   longitude: 2.385109,
   address: "15 Rue Erard,
