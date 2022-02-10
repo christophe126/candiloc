@@ -13,10 +13,7 @@
     </form>
   </div>
 </div>
-<div class="container-card">
-  <div class="bastien">
-  <%= image_tag "frame_bastien.png", alt: "To do", width: 933, height: 36 %>
-  </div>
+<!-- <div class="container-card">
   <div class="cards">
     <%# début du each %>
     <% @candidates.each do |candidate| %>
@@ -28,10 +25,10 @@
           </div>
 
           <div class="one-card-body">
-              <h5 class="one-card-title"><%= candidate.last_name %> <%= candidate.first_name %></h5>
-              <p class="one-card-text"><%= candidate.political_party.slogan[0,40] %></p>
-              <p class="one-card-text-data"><%= candidate.description[0,110] %>... <span>Lire plus</span></p>
-          </div>
+            <h5 class="one-card-title"><%= candidate.last_name %> <%= candidate.first_name %></h5>
+            <p class="one-card-text"><%= candidate.political_party.slogan[0,40] %></p>
+            <p class="one-card-text-data"><%= candidate.description[0,110] %>... <span>Lire plus</span></p>
+        </div>
 
           <div class="one-card-price">
             <p class="one-card-price-p"><%= image_tag "Star.png", alt: "Candiloc 2022", width: 14, height: 14 %><%= candidate.score %></p>
@@ -51,4 +48,46 @@
 
     </div>
   </div>
+</div> -->
+<div class="container-card-list">
+  <div class="card-inside">
+    <div class="cards-list">
+      <% @candidates.each do |candidate| %>
+        <%= link_to candidate_path(candidate) do %>
+          <div class="card-content">
+            <%= cl_image_tag candidate.photos[0].key, class: "card-imag-list", alt: "Candiloc 2022", width: 232, height:200, gravity: "faces" %>
+            <div class="card-txt">
+              <div class="txt-top">
+                <div class="header">
+                  <h5 class="one-card-title"><%= candidate.last_name %> <%= candidate.first_name %></h5>
+                  <p class="one-card-price-p"><%= candidate.price_per_day %>€ / Jour</p>
+                </div>
+                <p class="one-card-text"><%= candidate.political_party.slogan[0,40] %></p>
+                <p class="one-card-text-data"><%= candidate.description[0,110] %>... <span>Lire plus</span></p>
+              </div>
+              <div class="txt-bottom">
+                <div class="header">
+                  <div class="star">
+                    <p class="one-card-price-p"><%= image_tag "Star.png", alt: "Candiloc 2022", width: 14, height: 14 %></p>
+                    <p><%= candidate.score %></p>
+                  </div>
+                  <%= image_tag candidate.political_party.logo, alt: "Candiloc 2022", width: 57, height:29 %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr style="margin-left:100px;margin-right:100px;opacity:0">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="map">
+      <div id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
 </div>
