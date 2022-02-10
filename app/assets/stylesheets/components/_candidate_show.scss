@@ -1,4 +1,12 @@
+.main-container {
+  display: flex;
+}
+
+.container-card {
+  flex-direction: row;
+}
 .show-card {
+  flex-direction: row;
   background-color: whitesmoke;
   width: 70%;
   height: fit-content;
@@ -28,38 +36,6 @@
   margin-bottom: 30px;
 }
 
-.pictures-show-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 325px;
-  width: 750px;
-  margin-left: 100px;
-  margin-right: 100px;
-
-  .picture-show-card-item {
-    height: 325px;
-    border-radius: 5px;
-    margin-right: 20px;
-    img {
-      border-radius: 5px;
-      box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
-    }
-  }
-
-  .picture-show-card-thumbnails {
-    height: 325px;
-    width: 350px;
-
-  }
-  img {
-  border-radius: 5px;
-  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
-  margin-bottom: 25px;
-  margin-right: 17px;
-}
-}
-
 #available-button {
   display: flex;
   flex-direction: row;
@@ -70,15 +46,6 @@
   height: 42px;
   left: 561px;
   top: 1px;
-
-  background: radial-gradient(
-      100% 914.34% at 0% 53.57%,
-      rgba(208, 75, 255, 0.6) 0%,
-      rgba(191, 32, 217, 0) 100%
-    ),
-    #ef4135;
-  border-radius: 15px;
-  color: #ffffff;
 }
 
 #available-button p {
@@ -187,4 +154,42 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 25px 25px;
+  grid-template-areas:
+    "Main_photo Main_photo Thumb_1 Thumb_3"
+    "Main_photo Main_photo Thumb_2 Thumb_4"
+    ". . . .";
+  width: 650px;
+  height: 325px;
+}
+.Main_photo {
+  grid-area: Main_photo;
+  width: 325px;
+  height: 325px;
+}
+.Thumb_1 {
+  grid-area: Thumb_1;
+  width: 150px;
+  height: 150px;
+}
+.Thumb_2 {
+  grid-area: Thumb_2;
+  width: 150px;
+  height: 150px;
+}
+.Thumb_3 {
+  grid-area: Thumb_3;
+  width: 150px;
+  height: 150px;
+}
+.Thumb_4 {
+  grid-area: Thumb_4;
+  width: 150px;
+  height: 150px;
 }
