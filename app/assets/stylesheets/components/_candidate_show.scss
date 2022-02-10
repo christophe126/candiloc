@@ -7,16 +7,17 @@
 }
 .show-card {
   flex-direction: row;
+  margin: 0 auto;
   background-color: whitesmoke;
   width: 70%;
   height: fit-content;
   box-shadow: 0px 5px 10px 0px #10286542;
   padding: 2rem 3rem;
   border-radius: 20px;
-  position: absolute;
-  left: 15%;
-  right: 15%;
-  top: 125px;
+  top: 0px;
+  font-family: Marianne-Regular;
+  position: relative;
+  top: -150px;
 }
 
 .intro-show-card {
@@ -27,7 +28,7 @@
   margin-right: 100px;
   margin-top: 50px;
   margin-bottom: 30px;
-  font-family: Marianne;
+  font-family: Marianne-Regular;
 }
 
 #title-show-card {
@@ -126,6 +127,7 @@ a {
   .h3 {
     margin-top: 40px;
     margin-bottom: 15px;
+    font-family: Marianne-regular;
   }
 }
 
@@ -172,24 +174,40 @@ a {
   grid-area: Main_photo;
   width: 325px;
   height: 325px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
 }
 .Thumb_1 {
   grid-area: Thumb_1;
   width: 150px;
   height: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
 }
 .Thumb_2 {
   grid-area: Thumb_2;
   width: 150px;
   height: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
 }
 .Thumb_3 {
   grid-area: Thumb_3;
   width: 150px;
   height: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
 }
 .Thumb_4 {
   grid-area: Thumb_4;
   width: 150px;
   height: 150px;
+  border-radius: 5px;
+   box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
+
+.show-footer {
+  padding-bottom: 0px;
+  bottom: 0;
+  width: 100%;
+
 }
