@@ -17,7 +17,7 @@ political_four = PoliticalParty.create(name: 'NPA', logo: 'NPA.png', slogan: 'No
 political_five = PoliticalParty.create(name: 'Libres !', logo: 'Libres.png', slogan: 'Pour que la France reste la France.')
 political_six = PoliticalParty.create(name: 'EELV', logo: 'EELV.png', slogan: "L'écologie pour agir.")
 political_seven = PoliticalParty.create(name: 'Parti animaliste', logo: 'Animaliste.png', slogan: 'Les animaux comptent votre voix aussi.')
-political_eight = PoliticalParty.create(name: 'Union Républicaine', logo: 'UPR.png', slogan: "L'union du peuple pour rétablir la démocratie.")
+political_eight = PoliticalParty.create(name: 'Union Républicaine', logo: 'UPR.png', slogan: "L'union du peuple pour la démocratie.")
 puts '----------Creating political parties done---------'
 
 puts '----------Creating new users---------'

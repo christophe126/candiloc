@@ -1,16 +1,15 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-//@import url('/app/assets/fonts/Marianne-Regular.woff');
-// @import url('../../stylesheets/config/fonts/Marianne-ExtraBold.otf');
+@import url('/app/assets/fonts/Marianne-Regular.woff');
+//@import url('../../stylesheets/config/fonts/Marianne-ExtraBold.otf');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Marianne-Regular", "Helvetica", "sans-serif";
+$headers-font: "Marianne-Regular", "Helvetica", "sans-serif";
 
 // // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Marianne-Regular";
-//   src: font-url('/fonts/Marianne-Regular.woff') format('woff');
-
-// }
-// $my-font: "Marianne-Regular";
+@font-face {
+  font-family: "Marianne-Regular";
+   src: font-url('/fonts/Marianne-Regular.woff') format('woff');
+ }
+ $my-font: "Marianne-Regular";
