@@ -1,6 +1,5 @@
 require 'open-uri'
 
-
 puts 'Destroying all files'
 Candidate.destroy_all
 PoliticalParty.destroy_all
@@ -57,6 +56,8 @@ User.create(
   admin: true,
   password: "password"
 )
+
+user_admin = User.find(1)
 puts '----------Creating user Bastien Done---------'
 
 puts '----------Creating candidates----------'
@@ -277,7 +278,7 @@ book1 = Booking.new(
   total_price: 50,
   status: false
 )
-book1.user = user_other
+book1.user = user_admin
 book1.candidate = candidate_one
 book1.save
 
@@ -287,7 +288,7 @@ book2 = Booking.new(
   total_price: 50,
   status: true
 )
-book2.user = user_other
+book2.user = user_admin
 book2.candidate = candidate_one
 book2.save
 
