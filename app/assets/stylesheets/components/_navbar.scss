@@ -1,4 +1,3 @@
-
 .navbar {
   padding-bottom: 0% !important;
 }
@@ -70,8 +69,43 @@
 
 .logo {
   display: flex;
-  flex-direction: row;
-  align-content: center;
+  align-items: center;
+
+  > * {
+    margin: 0;
+  }
+
+  > a:nth-child(2) {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: white;
+    border-radius: 15px;
+    padding: 0 0 0 5px;
+    height: fit-content;
+    color: black;
+
+    > * {
+      padding-left: 7px;
+    }
+  }
+}
+.dropdown-menu.show {
+  border-radius: 15px;
+  top: 55px;
+  right: 10px;
+
+  > a:first-child {
+    padding: 0;
+  }
+
+  > a:last-child {
+    color: #4E4E4E
+  }
+
+  > a:last-child:hover {
+    color: #1266c9;
+  }
 }
 
 .navbar-brand {

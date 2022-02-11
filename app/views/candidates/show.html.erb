@@ -3,7 +3,9 @@
     <%= render "shared/navbar_home"%>
   </div>
 
-    <div class="container-card">
+    <div class="wrapper">
+
+    <div class="main-show-card">
       <div class="show-card">
         <div class="intro-show-card">
           <div class="item-intro-show-card">
@@ -23,25 +25,18 @@
             <div class="Thumb_4"><%= cl_image_tag @candidate.photos[4].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
           </div>
 
-        <div class="button-show-card text-center mt-5">
-          <button type="button" class="btn btn-action"><%= link_to "BOOKER CE CANDIDAT", new_candidate_booking_path(@candidate) %></button>
-        </div>
-
         <div class="description-show-card">
-          <div class="description-intro-show-card">
-            <h3>Description</h3>
-            <div class="price-show-candidate"><%= @candidate.price_per_day %>€/Jour</div>
-          </div>
           <div class="item-description-show-card">
-          <p><%= @candidate.description %></p>
+            <p><%= @candidate.description %></p>
           </div>
         </div>
 
         <%= image_tag 'flag_line.png', class: "img_flag"%>
         
-        <div class="rating-show-card">
-        <h3>Moyenne des commentaires</h3>
-          <%= image_tag "Star.png", alt: "Candiloc 2022", width: 18, height: 18 %><%= @candidate.score %></p>
+        <div class="stats-show-card">
+          <div >
+            <%= image_tag "Star.png", alt: "Candiloc 2022", width: 18, height: 18 %><%= @candidate.score %></p>
+          </div>
         </div>
 
         <div class="comments-show-card">
@@ -65,6 +60,15 @@
         </div>
 
       </div> <!--show card -->
+    </div>
+
+    <div class="sidebar">
+      <h3>Reserver votre candidat</h3>
+        <div class="button-show-card text-center mt-5">
+          <button type="button" class="btn btn-action"><%= link_to "BOOKER CE CANDIDAT", new_candidate_booking_path(@candidate) %></button>
+        </div>
+    </div>
+
     </div> <!-- container -->
 
 <div class="show-footer">
