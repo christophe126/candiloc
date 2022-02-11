@@ -60,7 +60,8 @@ border: 5px white !important;
   background-clip: padding-box;
   border: 1px solid #fff;
   transition: box-shadow 0.15s ease-in-out;
- }
+  outline: none;
+}
 
 .input-groups {
   position: relative;
