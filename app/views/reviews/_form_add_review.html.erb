@@ -1,11 +1,11 @@
-<div class="container_review">
+<div class="container_review2">
   <div class="row">
     <div class="col-6 img_rev">
-        <%= cl_image_tag @candidate.photos[0].key, width: 327, height: 338, class: "img_rev" %>
+        <%# <%= cl_image_tag @candidate.photos[0].key, width: 327, height: 338, class: "img_rev" %>
     </div>
     <div class="col-6 rev-txt">
-      <p>Votre commentaire à <span><%= @candidate.first_name %> <%= @candidate.last_name %><span></p>
-      <%= simple_form_for [ @booking, @review ] do |f| %>
+      <p>Votre commentaire à <span><span></p>
+      <%= simple_form_for  [ @bookings, @review ] do |f| %>
         <%= f.input :comment ,label: " ", class: "space-form-review-comment"%>
         <%= f.input :rating, collection: (1..5).to_a, label: "Note :", class: "space-form-review" %>
         <%= f.submit "Envoyer le commentaire", class: "btn btn-primary w-100 txt-btn" %>
