@@ -1,62 +1,73 @@
-<div class="banner">
-<%= render "shared/navbar_home"%>
+<div class="body">
+  <div class="banner">
+    <%= render "shared/navbar_home"%>
+  </div>
+
+    <div class="container-card">
+      <div class="show-card">
+        <div class="intro-show-card">
+          <div class="item-intro-show-card">
+            <h2 id="title-show-card"><%= @candidate.first_name %> <%= @candidate.last_name %></h2>
+            <h3 id="title-show-card"><%= @candidate.political_party.name %></h3>
+          </div>
+          <div class="item-intro-show-card">
+            <%= image_tag @candidate.political_party.logo, alt: "Candiloc 2022", width: 57, height:29 %>
+          </div>
+        </div>
+
+          <div class="container">
+            <div class="Main_photo"><%= cl_image_tag @candidate.photos[0].key, width: 325, height: 325, crop: "fill" %></div>
+            <div class="Thumb_1"><%= cl_image_tag @candidate.photos[1].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
+            <div class="Thumb_2"><%= cl_image_tag @candidate.photos[2].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
+            <div class="Thumb_3"><%= cl_image_tag @candidate.photos[3].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
+            <div class="Thumb_4"><%= cl_image_tag @candidate.photos[4].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
+          </div>
+
+        <div class="button-show-card text-center mt-5">
+          <button type="button" class="btn btn-action"><%= link_to "BOOKER CE CANDIDAT", new_candidate_booking_path(@candidate) %></button>
+        </div>
+
+        <div class="description-show-card">
+          <div class="description-intro-show-card">
+            <h3>Description</h3>
+            <div class="price-show-candidate"><%= @candidate.price_per_day %>€/Jour</div>
+          </div>
+          <div class="item-description-show-card">
+          <p><%= @candidate.description %></p>
+          </div>
+        </div>
+
+        <%= image_tag 'flag_line.png', class: "img_flag"%>
+        
+        <div class="rating-show-card">
+        <h3>Moyenne des commentaires</h3>
+          <%= image_tag "Star.png", alt: "Candiloc 2022", width: 18, height: 18 %><%= @candidate.score %></p>
+        </div>
+
+        <div class="comments-show-card">
+        <h3>Commentaires</h3>
+        <% @candidate.reviews.each do |review|  %>
+          <div class="comment">
+            <div class="comment-header">
+              <p id="user-name"><%= current_user.last_name %></p>
+              <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
+            </div>
+            <div class="comment-body">
+              <p id="comment-background"><%= review.comment %></p>
+            </div>
+          </div>
+        <% end %>
+        </div>
+        <%= image_tag 'flag_line.png', class: "img_flag"%>
+
+        <div class="logo_test">
+            <i class="fa-solid fa-grip-lines"></i>
+        </div>
+
+      </div> <!--show card -->
+    </div> <!-- container -->
+
+<div class="show-footer">
+  <%= render "shared/footer"%>
 </div>
 
-
-<div class="container">
-  <div class="show-card">
-    <div class="intro-show-card">
-      <div class="item-intro-show-card">
-        <h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
-        <h2><%= @candidate.political_party.name %></h2>
-
-      </div>
-      <div class="item-intro-show-card">
-        <% if @candidate.availability? %>
-          <p class="status-show-candidate" id="available-button">Disponible</p>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="pictures-show-card">
-      <div class="picture-show-card-item">
-          <%= cl_image_tag @candidate.photos[0].key, width: 325, height: 325, crop: "fill" %>
-      </div>
-      <div class="picture-show-card-thumbnails">
-       <%= cl_image_tag @candidate.photos[1].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %>
-       <%= cl_image_tag @candidate.photos[2].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %>
-       <%= cl_image_tag @candidate.photos[3].key, width: 150, height: 150, crop: "fill", effect: "improve" %>
-       <%= cl_image_tag @candidate.photos[4].key, width: 150, height: 150, crop: "fill", effect: "improve" %>
-      </div>
-    </div>
-
-    <div class="button-show-card text-center mt-5">
-      <button type="button" class="btn btn-action"><%= link_to "BOOKER CE CANDIDAT", new_candidate_booking_path(@candidate) %></button>
-    </div>
-
-    <div class="description-show-card">
-      <div class="description-intro-show-card">
-        <h1>Description</h1>
-        <div class="price-show-candidate"><%= @candidate.price_per_day %>€/Jour</div>
-      </div>
-      <div class="item-description-show-card">
-      <p><%= @candidate.description %></p>
-      </div>
-    </div>
-
-    <div class="rating-show-card">
-      <h5><i class="fas fa-star"></i> 0,01 / 5</h5><p><% @candidate.reviews.count %></p>
-    </div>
-
-    <div class="comments-show-card">
-    <% @candidate.reviews.each do |review|  %>
-      <div class="comment">
-        <p><strong><%= current_user.last_name %></strong></p>
-        <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
-        <p><%= review.comment %></p>
-      </div>
-     <% end %>
-    </div>
-
-  </div> <!--show card -->
-</div> <!-- container -->

@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
     # my_current_user =
     @bookings = Booking.where(user_id: current_user.id).order(id: :desc)
     @review = Review.new
+
   end
 
   def new
@@ -17,7 +18,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     start_date = Date.parse(params[:booking][:start_date])
     end_date = Date.parse(params[:booking][:end_date])
-    total_days = end_date - start_date
+    total_days = (end_date - start_date) + 1
     price_per_day = @candidate.price_per_day
     total_price = price_per_day * total_days
     total_price = total_price.to_i

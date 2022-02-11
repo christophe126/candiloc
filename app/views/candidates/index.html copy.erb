@@ -1,0 +1,51 @@
+<div class="banner">
+  <%= render "shared/navbar_home"%>
+  <div class="container">
+    <h1 class="textcenter">Candidats disponible à la location</h1>
+  </div>
+  <div class="">
+    <form action="" class="container_form">
+      <div class="input-groups mb-3">
+        <span class="input-group-textl"><%= image_tag "logosearch.png", alt: "Candiloc 2022", width: 24, height: 24 %></span>
+        <input type="search" class="form-controlm" name="query" value="<%= params[:query] %>" placeholder="Chercher un parti politique" >
+        <span type="submit" class="input-group-textr">Search</span>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="container-card">
+  <div class="bastien">
+  <%= image_tag "frame_bastien.png", alt: "To do", width: 933, height: 36 %>
+  </div>
+    <div class="cards">
+      <%# début du each %>
+      <% @candidates.each do |candidate| %>
+        <div class="one-card ">
+          <%= link_to candidate_path(candidate) do %>
+            <%= cl_image_tag candidate.photos[0].key, class: "card-imag-top", alt: "Candiloc 2022", width: 200, height: 200 %>
+            <div class="one-card-body">
+                <h5 class="one-card-title"><%= candidate.last_name %></h5>
+                <h5 class="one-card-title"><%= candidate.first_name %></h5>
+                <p class="one-card-text"><%= candidate.political_party.name %></p>
+            </div>
+            <div class="one-card-price">
+              <p id="one-card-price-p"><%= candidate.price_per_day %>€ / J</p>
+            </div>
+          <% end %>
+        </div>
+        <%# fin du each %>
+      <% end %>
+    </div>
+
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+    </div>
+  </div>
+</div>
+<div>
+
+</div>

@@ -1,6 +1,5 @@
 require 'open-uri'
 
-
 puts 'Destroying all files'
 Candidate.destroy_all
 PoliticalParty.destroy_all
@@ -11,49 +10,69 @@ Review.destroy_all
 puts 'Let the madness begin'
 
 puts '----------Creating political parties---------'
-political_one = PoliticalParty.create(name: 'En Marche')
-political_two = PoliticalParty.create(name: 'Les Insoumis')
-political_three = PoliticalParty.create(name: 'Indépendant')
-political_four = PoliticalParty.create(name: 'NPA')
-political_five = PoliticalParty.create(name: 'Libres !')
-political_six = PoliticalParty.create(name: 'EELV')
-political_seven = PoliticalParty.create(name: 'Parti animaliste')
-political_eight = PoliticalParty.create(name: 'Union Républicaine')
+political_one = PoliticalParty.create(name: 'En Marche', logo: 'En_Marche.png', slogan: 'En Marche.')
+political_two = PoliticalParty.create(name: 'Les Insoumis', logo: 'FI.png', slogan: "L'Avenir en Commun.")
+political_three = PoliticalParty.create(name: 'Reconquete', logo:'Reconquete.png', slogan: "Impossible n'est pas Français.")
+political_four = PoliticalParty.create(name: 'NPA', logo: 'NPA.png', slogan: 'Nos vies valent plus que leurs profits.')
+political_five = PoliticalParty.create(name: 'Libres !', logo: 'Libres.png', slogan: 'Pour que la France reste la France.')
+political_six = PoliticalParty.create(name: 'EELV', logo: 'EELV.png', slogan: "L'écologie pour agir.")
+political_seven = PoliticalParty.create(name: 'Parti animaliste', logo: 'Animaliste.png', slogan: 'Les animaux comptent votre voix aussi.')
+political_eight = PoliticalParty.create(name: 'Union Républicaine', logo: 'UPR.png', slogan: "L'union du peuple pour la démocratie.")
 puts '----------Creating political parties done---------'
 
 puts '----------Creating new users---------'
 
 user_admin = User.create(
-  first_name: 'Jo',
-  last_name: 'Lambda',
-  email: 'jo.lambda@vote.fr',
+  first_name: 'Mederic',
+  last_name: 'Mederic',
+  email: 'mederic@candiloc.com',
   admin: true,
   password: "password"
 )
-puts '----------Creating admin One Done---------'
+puts '----------Creating User Mederic Done---------'
 
-user_other = User.create(
-  first_name: 'Jane',
-  last_name: 'Gamma',
-  email: 'jane.gamma@vote.fr',
-  admin: false,
+User.create(
+  first_name: 'Christophe',
+  last_name: 'Christophe',
+  email: 'christophe@candiloc.com',
+  admin: true,
   password: "password"
 )
-puts '----------Creating user One Done---------'
+puts '----------Creating user Christophe Done---------'
+
+User.create(
+  first_name: 'Camille',
+  last_name: 'Camille',
+  email: 'camille@candiloc.com',
+  admin: true,
+  password: "password"
+)
+puts '----------Creating user Camille Done---------'
+
+User.create(
+  first_name: 'Bastien',
+  last_name: 'Bastien',
+  email: 'bastien@candiloc.com',
+  admin: true,
+  password: "password"
+)
+
+puts '----------Creating user Bastien Done---------'
 
 puts '----------Creating candidates----------'
 
 candidate_one = Candidate.new(
   first_name: 'Emmanuel',
   last_name: 'Macron',
-  price_per_day: '100',
-  description: 'En même temps, en marche, traverse les rues et e****** certains',
+  price_per_day: '1000',
+  description: "Lors de son émergence sur la scène politique française, Emmanuel Macron est alternativement qualifié de social-libéral ou de social-démocrate. Il est alors soutenu par l'aile droite du Parti socialiste et par une partie de la droite. Proche de Michel Rocardq, il revendique une filiation politique avec Pierre Mendès France et François Mitterrand. Mediapart relève au cours de sa campagne de 2017 qu'il « mobilise dans ses discours et entretiens un panthéon hétéroclite de figures politiques et intellectuelles » (« plus de 80 auteurs et intellectuels, philosophes, artistes et écrivains, souvent des classiques »), avec Charles de Gaulle comme « référence favorite »",
   latitude: 48.868938,
   longitude: 2.321658,
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
+  score: 4,
   availability: true
 )
-photo_main_candidate_1 = URI.open('https://images.assetsdelivery.com/compings_v2/palinchak/palinchak1807/palinchak180700164.jpg')
+photo_main_candidate_1 = URI.open('https://cdn.radiofrance.fr/s3/cruiser-production/2020/04/85cf94fd-6364-49f7-a4df-c6883cc78ad5/838_000_1qg3cv.jpg')
 candidate_one.photos.attach(io: photo_main_candidate_1, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_candidate_1 = URI.open('https://static.mediapart.fr/etmagine/default/files/2021/11/07/000-9qh8kn.jpg')
 candidate_one.photos.attach(io: photo_thumb_1_candidate_1, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
@@ -71,11 +90,12 @@ puts '----------Creating candidate 1/1 done----------'
 candidate_two = Candidate.new(
   first_name: 'Jean-Luc',
   last_name: 'Mélanchon',
-  price_per_day: '1000',
-  description: "J'aime le rouge, c'est beau et c'est bon le rouge",
+  price_per_day: '100',
+  description: "Si Jean-Luc Mélenchon se qualifie lui-même de socialiste républicain, son ambition est de parvenir à « être le rassembleur de toute la gauche » sur une ligne politique antilibérale voire anticapitaliste, dans le cadre de ce qu'il désigne comme « révolution citoyenne », pour gouverner et transformer profondément la France dans le sens du progrès massif de l'intérêt général (refondation républicaine).",
   latitude: 48.880768,
   longitude: 2.350575,
   address: '43 rue de Dunkerque, 75010 Paris',
+  score: 3,
   availability: true
 )
 photo_main_candidate_2 = URI.open('https://vsd.fr/images/2017/01/23/fae15786-76b6-4e1e-a3e9-863540a46e72.jpeg')
@@ -97,10 +117,11 @@ candidate_three = Candidate.new(
   first_name: 'Eric',
   last_name: 'Zemour',
   price_per_day: '10',
-  description: "L'avenir de la France du futur !",
+  description: "Éric Zemmour indique avoir voté deux fois pour François Mitterrand et avoir rompu avec la gauche avec l'avènement de SOS Racisme au milieu des années 1980 et l'affaire de Creil en 1989164. Lors de la campagne du référendum français sur le traité de Maastricht en 1992, il revendique son attachement à Philippe Séguin et Jean-Pierre Chevènement.",
   latitude: 48.880768,
   longitude: 2.308744,
   address: '10 rue jean goujon, 75008 Paris',
+  score: 1,
   availability: true
 )
 photo_main_candidate_3 = URI.open('https://actualitte.com/uploads/images/eric-zemmour-albin-michel-60dabf6274c24859155384.png')
@@ -121,14 +142,15 @@ puts '----------Creating candidate 3/3 done----------'
 candidate_four = Candidate.new(
   first_name: 'Philippe',
   last_name: 'Poutou',
-  price_per_day: '0',
-  description: "Je crois que je suis le seul à avoir un métier normal.",
+  price_per_day: '10',
+  description: "Militant de la LCR devenue ensuite le Nouveau Parti anticapitaliste (NPA), Philippe Poutou est candidat pour ce parti aux élections législatives de 2007 en Gironde, puis conduit la liste du NPA aux élections régionales de 2010 en Aquitaine, qui recueille 2,52 % des suffrages exprimés.",
   latitude: 48.854499,
   longitude: 2.418708,
   address: '2 rue Richard Lenoir, 93100 Montreuil',
+  score: 2,
   availability: true
 )
-photo_main_candidate_4 = URI.open('https://s1.lemde.fr/media/img/personalities/f609912_1506-ev65kf.6i7wrk9.jpg')
+photo_main_candidate_4 = URI.open('https://resize-europe1.lanmedia.fr/r/620,310,FFFFFF,center-middle/img/var/europe1/storage/images/europe1/dossiers/philippe-poutou/28871359-6-fre-FR/Philippe-Poutou.jpg')
 candidate_four.photos.attach(io: photo_main_candidate_4, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_candidate_4 = URI.open('https://images.midilibre.fr/api/v1/images/view/61f956253e45467a60463b1c/full/image.jpg?v=1')
 candidate_four.photos.attach(io: photo_thumb_1_candidate_4, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
@@ -147,10 +169,11 @@ candidate_five = Candidate.new(
   first_name: 'Valérie',
   last_name: 'Pécresse',
   price_per_day: '500',
-  description: "Je vais ressortir le Karcher de la cave. Cela fait dix ans qu’il y est et il est temps de l’utiliser. Il s’agit de remettre de l’ordre dans la rue.",
+  description: "Se déclarant en faveur du libéralisme économique, elle affirme en août 2021 qu'elle est « deux tiers Merkel, un tiers Thatcher ». Dans la perspective de l'élection présidentielle de 2022, elle promet de diminuer les dépenses publiques et les impôts sur les entreprises et sur les donations successorales à travers quatre réformes majeures : la suppression de 200 000 postes dans la fonction publique avant d'en recréer 50 000114, le passage de l'âge légal de départ à la retraite de 62 à 65 ans, la fin des 35 heures, la diminution des allocations-chômage et le désengagement de l'État des entreprises concurrentielles dont il est actionnaire minoritaire. ",
   latitude: 48.880438,
   longitude: 2.291582,
   address: '8 rue torricelli, 75017 paris',
+  score: 2,
   availability: true
 )
 photo_main_candidate_5 = URI.open('https://www.lalibre.be/resizer/O0ftXBvjohFjlz29K4TZiyKE2zQ=/0x0:2555x1705/768x512/filters:quality(70):format(jpg)/cloudfront-eu-central-1.images.arcpublishing.com/ipmgroup/E5R7JMM77BEKZCZ3T3D44BYAQY.jpg')
@@ -171,11 +194,13 @@ puts '----------Creating candidate 5/5 done----------'
 candidate_six = Candidate.new(
   first_name: 'Yannick',
   last_name: 'Jadot',
-  price_per_day: '20',
-  description: "L'écologie ce n'est pas prendre une douche froide dans le noir une fois par semaine.",
+  price_per_day: '300',
+  description: "Le 28 septembre 2021, Yannick Jadot remporte la primaire présidentielle de l'écologie face à Sandrine Rousseau, avec 51,03 % des voix au second tour. Il devient ainsi le candidat du Pôle écologiste (Europe Écologie Les Verts, Génération.s, Génération écologie, Cap écologie, Mouvement des progressistes) à l'élection présidentielle de 2022.
+  Par rapport à ses propositions de la primaire écologiste, il propose notamment un plan de relance de 50 milliards d'euros par an sur le quinquennat (au lieu de 20 milliards).",
   latitude: 48.874676,
   longitude: 2.332760,
   address: "58 rue de la chaussée d'antin, paris",
+  score: 3,
   availability: true
 )
 photo_main_candidate_6 = URI.open('https://www.challenges.fr/assets/img/2021/09/27/cover-r4x3w1000-615336aed0f41-96ae30f1941824a294b109ff46a21d8fa5db7aab-jpg.jpg')
@@ -196,14 +221,15 @@ puts '----------Creating candidate 6/6 done----------'
 candidate_seven = Candidate.new(
   first_name: 'Hélène',
   last_name: 'Thouy',
-  price_per_day: '3',
-  description: "Les marques sont toujours plus nombreuses à abandonner la fourrure animale ! ",
+  price_per_day: '50',
+  description: "En 2016, Hélène Thouy participe à la fondation du Parti animaliste, qu'elle copréside depuis et dont elle devient la figure médiatique1. En 2017, candidate dans la deuxième circonscription de la Gironde, Hélène Thouy rassemble 0,96 % des voix. La même année, elle est tête de liste aux élections sénatoriales à Paris, où elle obtient 0,34 %.",
   latitude: 43.605769,
   longitude: 1.447566,
-  address: "2 rue d’Austerlitz 31000, Toulouse",
+  address: "12 Place Léon Blum, 75011 Paris",
+  score: 1,
   availability: true
 )
-photo_main_candidate_7 = URI.open('https://www.lamontagne.fr/photoSRC/Gw--/helenethouy1-crediter-alexandra-mocanu_5849867.jpeg')
+photo_main_candidate_7 = URI.open('https://cdn.radiofrance.fr/s3/cruiser-production/2021/11/83d99bfe-be22-4023-b4db-706420d3c50d/1200x680_000-9nv6x9.jpg')
 candidate_seven.photos.attach(io: photo_main_candidate_7, filename: "photo_main.jpg", content_type: 'image/jpg')
 photo_thumb_1_candidate_7 = URI.open('https://upload.wikimedia.org/wikipedia/commons/7/73/Helene_Thouy_%28cropped%29.jpg')
 candidate_seven.photos.attach(io: photo_thumb_1_candidate_7, filename: "photo_thumb_1.jpg", content_type: 'image/jpg')
@@ -221,12 +247,13 @@ puts '----------Creating candidate 7/7 done----------'
 candidate_eight = Candidate.new(
   first_name: 'François',
   last_name: 'Asselineau',
-  price_per_day: '66',
-  description: "C'est un peu comme le sparadrap du capitaine Haddock dans « L'affaire Tournesol » , on ne s'en débarrasse jamais.",
+  price_per_day: '200',
+  description: "Il se fait connaître durant la campagne présidentielle en citant régulièrement des articles des traités européens et les grandes orientations des politiques économiques de la Commission européenne, qui témoigneraient selon lui de l'abandon de la souveraineté française au profit des institutions européennes.",
   latitude: 48.845965,
   longitude: 2.385109,
   address: "15 Rue Erard,
   75012 Paris",
+  score: 1,
   availability: true
 )
 photo_main_candidate_8 = URI.open('https://cdn.radiofrance.fr/s3/cruiser-production/2017/03/73712371-d227-4576-a0b8-d3628161fa90/1136_francois_asselineau000_mq2gv.jpg')
@@ -251,7 +278,7 @@ book1 = Booking.new(
   total_price: 50,
   status: false
 )
-book1.user = user_other
+book1.user = user_admin
 book1.candidate = candidate_one
 book1.save
 
@@ -261,7 +288,7 @@ book2 = Booking.new(
   total_price: 50,
   status: true
 )
-book2.user = user_other
+book2.user = user_admin
 book2.candidate = candidate_one
 book2.save
 
@@ -269,19 +296,19 @@ puts '----------Generating reviews----------'
 puts '----------Interrogating customers----------'
 review_one = Review.new(
   comment: "Emmanuel Macron, dont une des expressions favorites est ' et en même temps', pourrait se reconnaître dans le mouvement de balancier d'une horloge suisse. ",
-  rating: 7,
+  rating: 3,
   booking: book1
 )
 review_one.save
 review_two = Review.new(
   comment: "J'ai entendu un président de la République qui n'est pas face aux Français, mais un président de la République qui est avec les Français",
-  rating: 9,
+  rating: 5,
   booking: book1
 )
 review_two.save
 review_three = Review.new(
   comment: "Un macron enjôleur, on dit qu'il a le sens de l'écoute, peut-être, mais cela ne change rien s'il a décidé de faire autrement. Macron manipulateur, orgueilleux, charmeur, opportuniste, très certainement. Macron c'est Dieu !",
-  rating: 3,
+  rating: 4,
   booking: book1
 )
 review_three.save

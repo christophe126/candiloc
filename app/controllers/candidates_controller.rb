@@ -1,6 +1,7 @@
 class CandidatesController < ApplicationController
   # skip_before_action :authenticate_user!, only: :index
   def index
+    
     if params[:query].present?
       sql_query = " \
         candidates.last_name ILIKE :query \
@@ -17,10 +18,11 @@ class CandidatesController < ApplicationController
       {
         lat: candidate.latitude,
         lng: candidate.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { candidate: candidate }),
+        info_window: render_to_string(partial: "info_window", locals: { candidate: candidate })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
+
   end
 
   def show
@@ -30,6 +32,8 @@ class CandidatesController < ApplicationController
     @photo_thumb_2 = @candidate.photos.find_by(blob_id: 3)
     @photo_thumb_3 = @candidate.photos.find_by(blob_id: 4)
     @photo_thumb_4 = @candidate.photos.find_by(blob_id: 5)
+    political_party = PoliticalParty.find(@candidate.political_party_id)
+    @logo = political_party.logo
   end
 
   def new

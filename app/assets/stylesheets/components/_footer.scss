@@ -9,9 +9,8 @@
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
+  margin-top: 20px;
   opacity: 0.9;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: absolute;
 }
 .footer-links {
   display: flex;
@@ -46,4 +45,25 @@
 .grrenn {
   color: green;
   vertical-align: middle;
+}
+
+.wagont {
+  vertical-align: middle;
+  opacity: 0;
+}
+.wagont:hover {
+  opacity: 1;
+}
+
+.wagont img {
+  border-radius: 50% !important;
+  border: 1px solid #fff !important;
+}
+
+.wagont-aut {
+  vertical-align: middle;
+}
+.wagont-aut img {
+  border-radius: 50% !important;
+  border: 1px solid #fff !important;
 }
