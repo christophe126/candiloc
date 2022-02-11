@@ -3,6 +3,7 @@ class CandidatesController < ApplicationController
   def index
     
     if params[:query].present?
+      @query = params[:query]
       sql_query = " \
         candidates.last_name ILIKE :query \
         OR candidates.first_name ILIKE :query \
