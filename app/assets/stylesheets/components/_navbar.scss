@@ -69,9 +69,7 @@
 
 .logo {
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  height: fit-content;
+  align-items: center;
 
   > * {
     margin: 0;
@@ -81,7 +79,21 @@
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
+    background-color: white;
+    border-radius: 15px;
+    padding: 0 0 0 5px;
+    height: fit-content;
+    color: black;
+
+    > * {
+      padding-left: 7px;
+    }
   }
+}
+.dropdown-menu.show {
+  border-radius: 15px;
+  top: 55px;
+  right: 10px;
 }
 
 .navbar-brand {
