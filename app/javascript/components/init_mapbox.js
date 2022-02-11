@@ -1,5 +1,7 @@
 // MAPBOX
 import mapboxgl from '!mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 const mapElement = document.getElementById('map');
 
 const addMarkersToMap = (map, markers) => {
