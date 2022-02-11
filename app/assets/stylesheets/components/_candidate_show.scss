@@ -1,15 +1,14 @@
-.main-container {
+.wrapper {
   display: flex;
 }
 
-.container-card {
-  flex-direction: row;
+.main-show-card {
+  justify-content: center;
 }
+
 .show-card {
   flex-direction: row;
-  margin: 0 auto;
   background-color: whitesmoke;
-  width: 70%;
   height: fit-content;
   box-shadow: 0px 5px 10px 0px #10286542;
   padding: 2rem 3rem;
@@ -18,6 +17,8 @@
   font-family: Marianne-Regular;
   position: relative;
   top: -150px;
+  margin-left: 100px;
+  width: 1300px;
 }
 
 .intro-show-card {
@@ -82,6 +83,7 @@ a {
 .description-show-card {
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 100px;
   margin-right: 100px;
@@ -107,11 +109,12 @@ a {
   transition: opacity 0.3s ease;
 }
 
-.rating-show-card {
+.stats-show-card {
   padding-bottom: 15px;
   margin-left: 100px;
   margin-right: 100px;
   margin-top: 40px;
+  display: flex;
 }
 .comments-show-card {
   padding-bottom: 10px;
@@ -209,4 +212,18 @@ a {
   padding-bottom: 0px;
   bottom: 0;
   width: 100%;
+}
+
+.sidebar {
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  height: 25vh;
+  min-height: 200px;
+  overflow: auto;
+  position: sticky;
+  top: 5%;
+  margin-right: 100px;
 }
