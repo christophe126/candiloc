@@ -94,6 +94,18 @@
   border-radius: 15px;
   top: 55px;
   right: 10px;
+
+  > a:first-child {
+    padding: 0;
+  }
+
+  > a:last-child {
+    color: #4E4E4E
+  }
+
+  > a:last-child:hover {
+    color: #1266c9;
+  }
 }
 
 .navbar-brand {
