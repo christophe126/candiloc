@@ -4,6 +4,7 @@
 
 .main-show-card {
   justify-content: center;
+  margin: 0 auto;
 }
 
 .show-card {
@@ -11,24 +12,24 @@
   background-color: whitesmoke;
   height: fit-content;
   box-shadow: 0px 5px 10px 0px #10286542;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
   border-radius: 20px;
   top: 0px;
   font-family: Marianne-Regular;
   position: relative;
   top: -150px;
-  margin-left: 100px;
-  width: 900px;
+  margin: 0 auto;
+  width: 1100px;
 }
 
 .intro-show-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 30px;
+  width: 680px;
   font-family: Marianne-Regular;
   .h3 {
     margin-bottom: Opx;
@@ -44,22 +45,6 @@
 .item-intro-show-card-logo {
   position: relative;
   top: -27px;
-}
-
-#available-button p {
-  position: static;
-  width: 71px;
-  height: 22px;
-  margin-right: 41px;
-  margin-top: 10px;
-
-  font-family: Marianne-Regular;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #ffffff;
 }
 
 a {
@@ -79,9 +64,9 @@ a {
 .description-show-card {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 100px;
+  margin-top: 120px;
+  margin-bottom: 60px;
+  margin: 0 auto;
   width: 680px;
   text-align: justify;
 }
@@ -89,7 +74,7 @@ a {
 .description-intro-show-card {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 80px;
   margin-bottom: 30px;
 }
 
@@ -104,6 +89,10 @@ a {
   font-weight: lighter;
   opacity: 1;
   transition: opacity 0.3s ease;
+}
+
+.item-description-show-card {
+  margin-bottom: 40px;
 }
 
 .stats-show-card {
@@ -135,21 +124,6 @@ a {
   }
 }
 
-.comment {
-  height: fit-content;
-  width: 687px;
-  padding-bottom: 40px;
-  text-align: justify;
-}
-
-.comment-header {
-  display: flex;
-}
-
-.comment-body {
-  display: flex;
-}
-
 #user-name {
   margin-right: 10px;
 }
@@ -161,7 +135,8 @@ a {
 }
 
 .container {
-  margin-left: 85px;
+  margin-bottom: 80px;
+  margin-right: 220px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -170,7 +145,7 @@ a {
     "Main_photo Main_photo Thumb_1 Thumb_3"
     "Main_photo Main_photo Thumb_2 Thumb_4"
     ". . . .";
-  width: 650px;
+  width: 645px;
   height: 325px;
 }
 .Main_photo {
@@ -208,10 +183,34 @@ a {
   border-radius: 5px;
   box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
 }
-.show-footer {
-  padding-bottom: 0px;
-  bottom: 0;
-  width: 100%;
+
+.card-bottom-container {
+  display: grid;
+  grid-template-columns: 600.2px 0.1px 300px;
+  grid-template-rows: 88.9px 511.1px 300px;
+  gap: 0px 0px;
+  margin-bottom: 40px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Stats . Sidebar"
+    "Comments . Sidebar"
+    ". . .";
+}
+
+.Stats {
+  grid-area: Stats;
+}
+.Comments {
+  grid-area: Comments;
+  width: 550px;
+  text-align: justify;
+  margin-left: 20px;
+}
+.comment-body {
+  font-size: small;
+}
+.Sidebar {
+  grid-area: Sidebar;
 }
 
 .sidebar {
@@ -219,7 +218,7 @@ a {
   background-color: white;
   border-radius: 10px;
   padding: 15px;
-  width: 500px;
+  width: 400px;
   height: 40vh;
   min-height: 200px;
   overflow: auto;
@@ -227,5 +226,20 @@ a {
   top: 5%;
   margin-left: 20px;
   margin-right: 100px;
+  margin-top: 40px;
   text-align: center;
+}
+
+.show-footer {
+  padding-bottom: 0px;
+  bottom: 0;
+  width: 100%;
+}
+
+.btn-french {
+  width: 110px;
+  height: 50px;
+  margin-top: 20px;
+  background-color: #e1000f;
+  border-radius: 20px;
 }
