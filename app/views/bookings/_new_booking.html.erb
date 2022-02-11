@@ -1,7 +1,4 @@
 <div class="form-container">
-    <h1>Réservez <%= @candidate.first_name %> !</h1>
-    <%= simple_form_for [@candidate, @booking] do |f| %>
-
       <div class="form-body">
 
           <div class="date-picker-left">
@@ -23,5 +20,5 @@
         <%= f.submit "VALIDER", class: "button" %>
       </div>
     <% end %>
-
+    
 </div>
