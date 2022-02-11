@@ -41,8 +41,9 @@
   margin-bottom: 30px;
 }
 
-.logo-intro-show-card {
-  width: 160px;
+.item-intro-show-card-logo {
+  position: relative;
+  top: -27px;
 }
 
 #available-button p {
@@ -219,7 +220,7 @@ a {
   border-radius: 10px;
   padding: 15px;
   width: 500px;
-  height: 25vh;
+  height: 40vh;
   min-height: 200px;
   overflow: auto;
   position: sticky;

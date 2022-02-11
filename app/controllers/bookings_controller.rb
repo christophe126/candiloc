@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
-  #skip_before_action :authenticate_user!, only: :index
-  #before_action :set_user, only: :new
-  before_action :set_candidate, only: [:create, :new]
+  # skip_before_action :authenticate_user!, only: :index
+  # before_action :set_user, only: :new
+  before_action :set_candidate, only: %i[create new]
 
   def index
     # my_current_user =
@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+    @candidate = Candidate.find(params[:candidate_id])
   end
 
   def create
@@ -24,23 +24,11 @@ class BookingsController < ApplicationController
     @booking.total_price = total_price
     @booking.user = current_user
     @booking.candidate = @candidate
-
     if @booking.save
       redirect_to bookings_path
     else
-      raise
-      render :new
+      render :show
     end
-    #-----------------Creation de la reviews-------------------
-    @review = Review.new(review_params)
-    @booking_rev = Booking.find(params[:booking_id])
-    @review.booking = @booking_rev
-    if @review.save
-      redirect_to bookings_path
-    else
-      render :new
-    end
-    #------------------------------------------------------------
   end
 
   def destroy

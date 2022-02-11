@@ -12,8 +12,8 @@
               <h2 id="title-show-card"><%= @candidate.first_name %> <%= @candidate.last_name %></h2>
               <h3 id="title-show-card"><%= @candidate.political_party.name %></h3>
             </div>
-            <div class="item-intro-show-card">
-              <%= image_tag 'LREM-Large.png', alt: "La republique en marche", width: 160, height:40 %>
+            <div class="item-intro-show-card-logo">
+              <%= image_tag("large/#{@candidate.political_party.logo}", alt: "La republique en marche", width: 160, height:50) %>
             </div>
           </div>
 
@@ -64,9 +64,13 @@
 
       <div class="sidebar">
         <h3>Reserver votre candidat</h3>
-          <div class="button-show-card text-center mt-5">
-            <button type="button" class="btn btn-action"><%= link_to "Réserver", new_candidate_booking_path(@candidate) %></button>
-          </div>
+        <div class="date-pickr"> 
+          <%= simple_form_for [ @candidate, @booking ] do |f| %>
+            <%= f.input :start_date, label: "Date de début", as: :string, input_html: { class: "datepicker"} %>
+            <%= f.input :end_date, label: "Date de fin",  as: :string, input_html: { class: "datepicker"} %>
+            <%= f.submit "Reserver", class: 'btn btn-french' %>
+          <% end  %>
+        </div>          
       </div>
 
     </div> <!-- wrapper -->
