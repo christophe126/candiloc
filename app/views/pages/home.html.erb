@@ -2,6 +2,9 @@
   <%= render "shared/navbar_home"%>
   <div class="container text-center centr">
     <p class="title-home">Louer votre candidat préféré</p>
-    <%= link_to "COMMENCER", candidates_path, class: "btn_enter text-center"  %>
+    <%# <%= link_to "COMMENCER", candidates_path, class: "btn_enter text-center"  %>
+    <div class="center-search">
+      <%= render "shared/search_b"%>
+    </div>
   </div>
 </div>
