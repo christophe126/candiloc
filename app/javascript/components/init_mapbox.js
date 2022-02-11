@@ -29,7 +29,7 @@ const initMapbox = () => {
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/streets-v10', // style URL
       center: [2.3200410217200766, 48.8588897], // starting position [lng, lat]
-      zoom: 12 // starting zoom
+      zoom: 15 // starting zoom
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
