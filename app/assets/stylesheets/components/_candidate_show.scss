@@ -11,14 +11,14 @@
   background-color: whitesmoke;
   height: fit-content;
   box-shadow: 0px 5px 10px 0px #10286542;
-  padding: 2rem 3rem;
+  padding: 2rem 1rem;
   border-radius: 20px;
   top: 0px;
   font-family: Marianne-Regular;
   position: relative;
   top: -150px;
   margin-left: 100px;
-  width: 1300px;
+  width: 900px;
 }
 
 .intro-show-card {
@@ -30,6 +30,9 @@
   margin-top: 50px;
   margin-bottom: 30px;
   font-family: Marianne-Regular;
+  .h3 {
+    margin-bottom: Opx;
+  }
 }
 
 #title-show-card {
@@ -38,16 +41,8 @@
   margin-bottom: 30px;
 }
 
-#available-button {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px 25px;
-  position: static;
-  width: 127px;
-  height: 42px;
-  left: 561px;
-  top: 1px;
+.logo-intro-show-card {
+  width: 160px;
 }
 
 #available-button p {
@@ -86,7 +81,8 @@ a {
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 100px;
-  margin-right: 100px;
+  width: 680px;
+  text-align: justify;
 }
 
 .description-intro-show-card {
@@ -116,14 +112,18 @@ a {
   margin-top: 40px;
   display: flex;
 }
+
+.stats {
+  flex-direction: column;
+}
+
 .comments-show-card {
   padding-bottom: 10px;
-  width: 687px;
+  width: 680px;
   height: fit-content;
   margin-bottom: 50px;
   margin-top: 20px;
   margin-left: 100px;
-  margin-right: 100px;
   display: flex;
   flex-direction: column;
 
@@ -138,6 +138,7 @@ a {
   height: fit-content;
   width: 687px;
   padding-bottom: 40px;
+  text-align: justify;
 }
 
 .comment-header {
@@ -151,9 +152,6 @@ a {
 #user-name {
   margin-right: 10px;
 }
-#comment-background {
-  border-radius: 5px;
-}
 
 .logo_test {
   display: flex;
@@ -162,6 +160,7 @@ a {
 }
 
 .container {
+  margin-left: 85px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -215,7 +214,7 @@ a {
 }
 
 .sidebar {
-  border: 5px solid black;
+  box-shadow: 0px 5px 10px 0px #10286542;
   background-color: white;
   border-radius: 10px;
   padding: 15px;
@@ -225,5 +224,7 @@ a {
   overflow: auto;
   position: sticky;
   top: 5%;
+  margin-left: 20px;
   margin-right: 100px;
+  text-align: center;
 }
