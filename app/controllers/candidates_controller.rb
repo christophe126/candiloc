@@ -1,7 +1,6 @@
 class CandidatesController < ApplicationController
   # skip_before_action :authenticate_user!, only: :index
   def index
-    
     if params[:query].present?
       @query = params[:query]
       sql_query = " \
@@ -23,7 +22,6 @@ class CandidatesController < ApplicationController
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
-
   end
 
   def show
@@ -35,6 +33,7 @@ class CandidatesController < ApplicationController
     @photo_thumb_4 = @candidate.photos.find_by(blob_id: 5)
     political_party = PoliticalParty.find(@candidate.political_party_id)
     @logo = political_party.logo
+    @booking = Booking.new
   end
 
   def new
@@ -42,6 +41,7 @@ class CandidatesController < ApplicationController
   end
 
   def create
+    raise
     curr_user = User.find(29)
     @candidate = Candidate.new(candidates_params)
     @candidate.user = curr_user
