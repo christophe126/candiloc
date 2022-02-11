@@ -16,8 +16,8 @@ border: 5px white !important;
   line-height: 1.5;
   color: #FFF;
   text-align: center;
-  white-space: nowrap;
   background-color: #000;
+  white-space: nowrap;
   border: 1px solid #000;
   border-radius: 0px 10px 10px 0px;
   height: calc(2.5em + 0.75rem + 2px);
@@ -31,9 +31,7 @@ border: 5px white !important;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #FFF;
     text-align: center;
-    white-space: nowrap;
     background-color: #fff;
     border: 1px solid #fff;
     border-radius: 10px 0px 0px 10px;
@@ -51,10 +49,9 @@ border: 5px white !important;
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #FFF;
-  border-radius: 0px;
+  border: 1px solid #fff;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
+ }
 
 .input-groups {
   position: relative;
@@ -62,4 +59,5 @@ border: 5px white !important;
   //flex-wrap: wrap;
   align-items: stretch;
   width: 100%;
+
 }
