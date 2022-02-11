@@ -10,6 +10,8 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @booking = Booking.new
+    #@review = Review.new
     @candidate = Candidate.find(params[:candidate_id])
   end
 

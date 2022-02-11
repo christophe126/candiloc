@@ -22,6 +22,9 @@
       <tr>
         <th scope="row"><%= booking.id %></th>
         <% @info_id = booking.id %>
+        <% @info_img = booking.candidate.photos[0].key %>
+        <% @info_first = booking.candidate.first_name %>
+        <% @info_last = booking.candidate.last_name %>
         <td><%= booking.start_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.end_date.strftime("%d/%m/%Y") %></td>
         <td><%= booking.total_price %>€</td>
@@ -32,14 +35,43 @@
         <% else %>
           <td><span class="brun">En cours</span></td>
         <% end %>
-        <td><%= link_to (image_tag "ChatCircleDots.png", width: 20, height: 20), new_booking_review_path(booking) %></td>
+        <%# <td><%= link_to (image_tag "ChatCircleDots.png", width: 20, height: 20), new_booking_review_path(booking) %>
+       <td><%= image_tag "ChatCircleDots.png", width: 20, height: 20, data: { toggle: "modal" , target: "#exampleModal#{@info_id}" }  %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
   </div>
+</div>
 
-</div>
-<div>
-  <%= render "shared/footer"%>
-</div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal<%= @info_id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-contentt">
+
+            <div class="modal-bodyy">
+
+            <div class="container_review2">
+              <div class="row">
+                <div class="col-6 img_rev">
+                  <%= cl_image_tag @info_img, width: 327, height: 338, class: "img_rev" %>
+                </div>
+                <div class="col-6 rev-txt">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                  <p>Votre commentaire à <span><%= @info_first %> <%= @info_last%></span></p>
+                  <%= simple_form_for @review do |f| %>
+                    <%= f.input :comment ,label: " ", class: "space-form-review-comment"%>
+                    <%= f.input :rating, collection: (1..5).to_a, label: "Note :", class: "space-form-review" %>
+                    <%= f.input :id, :as => :hidden, input_html: { value: @info_id } %>
+                    <%= f.submit "Envoyer le commentaire", class: "btn btn-primary w-100 txt-btn" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
