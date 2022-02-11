@@ -1,13 +1,13 @@
 <div class="banner">
   <%= render "shared/navbar_home"%>
-  <div class="container">
+  <div class="container-b">
     <h1 class="textcenter">Candidats disponible à la location</h1>
   </div>
   <div class="">
     <form action="" class="container_form">
       <div class="input-groups mb-3">
         <span class="input-group-textl"><%= image_tag "logosearch.png", alt: "Candiloc 2022", width: 24, height: 24 %></span>
-        <input type="search" class="form-controlm" name="query" value="<%= params[:query] %>" placeholder="Chercher un parti politique" >
+        <input type="search" class="form-controlm" name="query" value="<%= params[:query] %>" placeholder="Vous rechercher : un candidat ?, un parti politique ?, une compétence ? " >
         <span type="submit" class="input-group-textr">Search</span>
       </div>
     </form>
@@ -46,6 +46,13 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div> -->
+<div class="container-number-candidates">
+  <% if @query %>
+    <p>Vous avez recherché <strong>"<%= @query %>"</strong>. Nous avons trouvé <%= @candidates.count %> résultat(s) sur notre site.</p>
+  <% else %>
+    <p>Voici les <%= Candidate.count %> candidats disponible.</p>
+  <% end %>
+</div>
 <div class="container-card-list">
   <div class="card-inside">
     <div class="cards-list">

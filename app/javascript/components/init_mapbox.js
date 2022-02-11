@@ -10,7 +10,7 @@ const addMarkersToMap = (map, markers) => {
       .setLngLat([ marker.lng, marker.lat ])
       .setPopup(popup)
       .addTo(map);
-  }); 
+  });
 };
 
 const fitMapToMarkers = (map, markers) => {
@@ -22,19 +22,19 @@ const fitMapToMarkers = (map, markers) => {
 const initMapbox = () => {
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    
+
     const map = new mapboxgl.Map({
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/streets-v10', // style URL
       center: [2.3200410217200766, 48.8588897], // starting position [lng, lat]
       zoom: 12 // starting zoom
     });
-  
+
     const markers = JSON.parse(mapElement.dataset.markers);
-    
+
     fitMapToMarkers(map, markers);
     addMarkersToMap(map, markers);
   };
-  
+
 };
 export { initMapbox };

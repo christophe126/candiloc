@@ -1,3 +1,6 @@
+.conatainer-b {
+  text-align: center;
+}
 .container_form {
 width: 925px;
 margin: 0 auto;
@@ -9,18 +12,24 @@ border: 5px white !important;
 .input-group-textr {
   display: flex;
   align-items: center;
-  padding: 0.375rem 0.75rem;
+  padding: 0.25rem 1rem;
   margin-bottom: 0;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #FFF;
   text-align: center;
+  background-color: #000091;
   white-space: nowrap;
-  background-color: #000;
-  border: 1px solid #000;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 15px;
   height: calc(2.5em + 0.75rem + 2px);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background-color: #6161ff;
+      transition: 0.2s ease-out;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 1);
+    }
 }
 
 .input-group-textl {
@@ -31,9 +40,7 @@ border: 5px white !important;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #FFF;
     text-align: center;
-    white-space: nowrap;
     background-color: #fff;
     border: 1px solid #fff;
     border-radius: 10px 0px 0px 10px;
@@ -51,10 +58,9 @@ border: 5px white !important;
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #FFF;
-  border-radius: 0px;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
+  border: 1px solid #fff;
+  transition: box-shadow 0.15s ease-in-out;
+ }
 
 .input-groups {
   position: relative;
@@ -62,4 +68,11 @@ border: 5px white !important;
   //flex-wrap: wrap;
   align-items: stretch;
   width: 100%;
+  border: 5px solid white;
+  border-radius: 17px;
+  background-color: white;
+}
+
+.center-search {
+  text-align: center;
 }
