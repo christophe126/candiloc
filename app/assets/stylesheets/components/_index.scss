@@ -16,7 +16,7 @@
 @import "map";
 
 .container-card-list {
-  display: flex;
+  display: none;
   flex-direction: row;
 }
 
@@ -48,10 +48,16 @@ hr {
 .container-number-candidates {
   padding-left: 15px;
   margin-left: 25px;
+  margin-right: 25px;
   margin-top: 25px;
   margin-bottom: 0;
 
   > p {
     margin-bottom: 0;
   }
+
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  background-color: aqua;
 }

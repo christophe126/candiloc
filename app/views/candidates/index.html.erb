@@ -13,7 +13,17 @@
     </form>
   </div>
 </div>
-<!-- <div class="container-card">
+<div class="container-number-candidates">
+  <% if @query %>
+    <p>Vous avez recherché <strong>"<%= @query %>"</strong>. Nous avons trouvé <%= @candidates.count %> résultat(s) sur notre site.</p>
+  <% else %>
+    <p>Voici les <%= Candidate.count %> candidats disponible.</p>
+  <% end %>
+  <div id="btswitch">
+    <%= image_tag "toggleCard.png",alt: "Candiloc 2022", width: 72, height:35, display: true %>
+  </div>
+</div>
+<div id="disp_card" class="container-card">
   <div class="cards">
     <%# début du each %>
     <% @candidates.each do |candidate| %>
@@ -39,21 +49,9 @@
       <%# fin du each %>
     <% end %>
   </div>
-
-  <div id="map"
-    style="width: 100%; height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div> -->
-<div class="container-number-candidates">
-  <% if @query %>
-    <p>Vous avez recherché <strong>"<%= @query %>"</strong>. Nous avons trouvé <%= @candidates.count %> résultat(s) sur notre site.</p>
-  <% else %>
-    <p>Voici les <%= Candidate.count %> candidats disponible.</p>
-  <% end %>
 </div>
-<div class="container-card-list">
+
+<div id="disp_list" class="container-card-list">
   <div class="card-inside">
     <div class="cards-list">
       <% @candidates.each do |candidate| %>

@@ -4,6 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 933px;
+  display: flex;
 }
 
 .cards {
@@ -21,6 +22,11 @@
   position: relative;
   margin-bottom: 50px;
 }
+
+.one-card:hover {
+  box-shadow: 0 0 0 3px rgb(71, 172, 255);
+}
+
 
 .one-card-logo {
   position: absolute;
