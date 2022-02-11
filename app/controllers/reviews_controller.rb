@@ -8,19 +8,19 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    # @review = Review.new(review_params)
-    # @booking = Booking.find(params[:booking_id])
-    # @review.booking = @booking
-    # if @review.save
-    #   redirect_to bookings_path
-    # else
-    #   render :new
-    # end
+    @review = Review.new(review_params)
+    @booking = Booking.find(params[:review][:id])
+    @review.booking = @booking
+    if @review.save
+      redirect_to bookings_path
+    else
+      render "bookings/index"
+    end
   end
 
   private
 
   def review_params
-    # params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:comment, :rating)
   end
 end

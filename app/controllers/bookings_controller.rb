@@ -10,6 +10,8 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @booking = Booking.new
+    #@review = Review.new
     @candidate = Candidate.find(params[:candidate_id])
   end
 
@@ -43,9 +45,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :total_price)
   end
-  #-----------------C'est pour la reviews-------------------
-  def reviews_params
-    params.require(:review).permit(:comment, :rating, :id)
-  end
-  #-----------------------------------------------------
 end
