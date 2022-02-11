@@ -26,21 +26,27 @@
         <a class="nav-link" href="/bookings">
           Vos réservations
         </a>
-        <div class="wagont-aut">
-          <% if current_user.email == "mederic@candiloc.com" %>
-            <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/medericmesle" width="30" height="30" alt="">
-          <% end %>
-          <% if current_user.email == "christophe@candiloc.com" %>
-            <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/christophe126" width="30" height="30" alt="">
-          <% end %>
-          <% if current_user.email == "bastien@candiloc.com" %>
-            <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/Tetreur" width="30" height="30" alt="">
-          <% end %>
-          <% if current_user.email == "camille@candiloc.com" %>
-            <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/Caaam333" width="30" height="30" alt="">
-          <% end %>
+
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="wagont-aut">
+            <% if current_user.email == "mederic@candiloc.com" %>
+              <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/medericmesle" width="30" height="30" alt="">
+            <% end %>
+            <% if current_user.email == "christophe@candiloc.com" %>
+              <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/christophe126" width="30" height="30" alt="">
+            <% end %>
+            <% if current_user.email == "bastien@candiloc.com" %>
+              <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/Tetreur" width="30" height="30" alt="">
+            <% end %>
+            <% if current_user.email == "camille@candiloc.com" %>
+              <img class="wagont-aut" src="https://kitt.lewagon.com/placeholder/users/Caaam333" width="30" height="30" alt="">
+            <% end %>
+          </div>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#"><%= link_to "Sign-out", destroy_user_session_path, method: :delete, class: "nav-link"  %></a>
         </div>
-        <%= link_to "Sign-out", destroy_user_session_path, method: :delete, class: "nav-link"  %>
+        
       </div>
     <% else %>
       <div class="collapse navbar-collapse">
