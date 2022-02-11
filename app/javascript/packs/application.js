@@ -23,7 +23,6 @@ import "bootstrap";
 import { initMapbox } from "../components/init_mapbox";
 import { initStarRating } from '../components/init_star_rating';
 
-initStarRating();
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 

@@ -1,12 +1,12 @@
 .containerrecap{
-  width: 70%;
+  width: 76%;
   background-color: white;
   position: absolute;
   top: 208px;
   border-radius: 20px;
   padding: 50px;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 12%;
+  margin-right: 12%;
 }
 
 h1 {
@@ -107,30 +107,33 @@ i {
     margin: 1.75rem auto;
 }
 
-.modal-content {
+.modal-contentt {
     position: relative;
     display: flex;
     flex-direction: column;
     width: 800px;
     pointer-events: auto;
-    background-color: #fff;
-    background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     outline: 0;
 
 }
 
-.modal-body {
-    position: relative;
-    flex: 1 1 auto;
-    padding: 1rem;
-    background-color: #E9ECEF;
+.modal-bodyy {
+  position: relative;
+  border-radius: 15px 15px 15px 15px;
+  background-color: white;
+
 }
 
 .container_review2 {
-  background-color: white;
   border-radius: 0px 15px 15px 0px;
+
+}
+
+.row {
+  border-radius: 0px 15px 15px 0px;
+
 }
 
 .modal {

@@ -5,7 +5,7 @@
     </div>
     <div class="col-6 rev-txt">
       <p>Votre commentaire à <span><span></p>
-      <%= simple_form_for  [ @bookings, @review ] do |f| %>
+      <%= simple_form_for @review do |f| %>
         <%= f.input :comment ,label: " ", class: "space-form-review-comment"%>
         <%= f.input :rating, collection: (1..5).to_a, label: "Note :", class: "space-form-review" %>
         <%= f.submit "Envoyer le commentaire", class: "btn btn-primary w-100 txt-btn" %>

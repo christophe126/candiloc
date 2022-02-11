@@ -11,6 +11,8 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    #@review = Review.new
+    raise
   end
 
   def create
@@ -28,19 +30,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      raise
       render :new
     end
-    #-----------------Creation de la reviews-------------------
-    @review = Review.new(review_params)
-    @booking_rev = Booking.find(params[:booking_id])
-    @review.booking = @booking_rev
-    if @review.save
-      redirect_to bookings_path
-    else
-      render :new
-    end
-    #------------------------------------------------------------
   end
 
   def destroy
@@ -55,9 +46,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :total_price)
   end
-  #-----------------C'est pour la reviews-------------------
-  def reviews_params
-    params.require(:review).permit(:comment, :rating, :id)
-  end
-  #-----------------------------------------------------
 end
