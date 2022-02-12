@@ -40,7 +40,7 @@ User.create(
 )
 puts '----------Creating user Christophe Done---------'
 
-User.create(
+user_camille = User.create(
   first_name: 'Camille',
   last_name: 'Camille',
   email: 'camille@candiloc.com',
@@ -65,7 +65,7 @@ candidate_one = Candidate.new(
   first_name: 'Emmanuel',
   last_name: 'Macron',
   price_per_day: '1000',
-  description: "Lors de son émergence sur la scène politique française, Emmanuel Macron est alternativement qualifié de social-libéral ou de social-démocrate. Il est alors soutenu par l'aile droite du Parti socialiste et par une partie de la droite. Proche de Michel Rocardq, il revendique une filiation politique avec Pierre Mendès France et François Mitterrand. Mediapart relève au cours de sa campagne de 2017 qu'il « mobilise dans ses discours et entretiens un panthéon hétéroclite de figures politiques et intellectuelles » (« plus de 80 auteurs et intellectuels, philosophes, artistes et écrivains, souvent des classiques »), avec Charles de Gaulle comme « référence favorite »",
+  description: "Lors de son émergence sur la scène politique française, Emmanuel Macron est alternativement qualifié de social-libéral ou de social-démocrate. Il est alors soutenu par l'aile droite du Parti socialiste et par une partie de la droite. Proche de Michel Rocardq, il revendique une filiation politique avec Pierre Mendès France et François Mitterrand. Mediapart relève au cours de sa campagne de 2017 qu'il « mobilise dans ses discours et entretiens un panthéon hétéroclite de figures politiques et intellectuelles » (« plus de 80 auteurs et intellectuels, philosophes, artistes et écrivains, souvent des classiques »), avec Charles de Gaulle comme « référence favorite, une grande notoriete. »",
   latitude: 48.868938,
   longitude: 2.321658,
   address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris',
@@ -90,8 +90,8 @@ puts '----------Creating candidate 1/1 done----------'
 candidate_two = Candidate.new(
   first_name: 'Jean-Luc',
   last_name: 'Mélanchon',
-  price_per_day: '100',
-  description: "Si Jean-Luc Mélenchon se qualifie lui-même de socialiste républicain, son ambition est de parvenir à « être le rassembleur de toute la gauche » sur une ligne politique antilibérale voire anticapitaliste, dans le cadre de ce qu'il désigne comme « révolution citoyenne », pour gouverner et transformer profondément la France dans le sens du progrès massif de l'intérêt général (refondation républicaine).",
+  price_per_day: '700',
+  description: "Si Jean-Luc Mélenchon se qualifie lui-même de socialiste républicain, son ambition est de parvenir à « être le rassembleur de toute la gauche » sur une ligne politique antilibérale voire anticapitaliste, dans le cadre de ce qu'il désigne comme « révolution citoyenne », pour gouverner et transformer profondément la France dans le sens du progrès massif de l'intérêt général (refondation républicaine) une grande notoriete.",
   latitude: 48.880768,
   longitude: 2.350575,
   address: '43 rue de Dunkerque, 75010 Paris',
@@ -116,8 +116,8 @@ puts '----------Creating candidate 2/2 done----------'
 candidate_three = Candidate.new(
   first_name: 'Eric',
   last_name: 'Zemmour',
-  price_per_day: '10',
-  description: "Éric Zemmour indique avoir voté deux fois pour François Mitterrand et avoir rompu avec la gauche avec l'avènement de SOS Racisme au milieu des années 1980 et l'affaire de Creil en 1989164. Lors de la campagne du référendum français sur le traité de Maastricht en 1992, il revendique son attachement à Philippe Séguin et Jean-Pierre Chevènement.",
+  price_per_day: '850',
+  description: "Éric Zemmour indique avoir voté deux fois pour François Mitterrand et avoir rompu avec la gauche avec l'avènement de SOS Racisme au milieu des années 1980 et l'affaire de Creil en 1989164. Lors de la campagne du référendum français sur le traité de Maastricht en 1992, il revendique son attachement à Philippe Séguin et Jean-Pierre Chevènement une grande notoriete.",
   latitude: 48.880768,
   longitude: 2.308744,
   address: '10 rue jean goujon, 75008 Paris',
@@ -142,8 +142,8 @@ puts '----------Creating candidate 3/3 done----------'
 candidate_four = Candidate.new(
   first_name: 'Philippe',
   last_name: 'Poutou',
-  price_per_day: '10',
-  description: "Militant de la LCR devenue ensuite le Nouveau Parti anticapitaliste (NPA), Philippe Poutou est candidat pour ce parti aux élections législatives de 2007 en Gironde, puis conduit la liste du NPA aux élections régionales de 2010 en Aquitaine, qui recueille 2,52 % des suffrages exprimés.",
+  price_per_day: '500',
+  description: "Militant de la LCR devenue ensuite le Nouveau Parti anticapitaliste (NPA), Philippe Poutou est candidat pour ce parti aux élections législatives de 2007 en Gironde, puis conduit la liste du NPA aux élections régionales de 2010 en Aquitaine, qui recueille 2,52 % des suffrages exprimés une grande notoriete..",
   latitude: 48.854499,
   longitude: 2.418708,
   address: '2 rue Richard Lenoir, 93100 Montreuil',
@@ -169,7 +169,7 @@ candidate_five = Candidate.new(
   first_name: 'Valérie',
   last_name: 'Pécresse',
   price_per_day: '500',
-  description: "Se déclarant en faveur du libéralisme économique, elle affirme en août 2021 qu'elle est « deux tiers Merkel, un tiers Thatcher ». Dans la perspective de l'élection présidentielle de 2022, elle promet de diminuer les dépenses publiques et les impôts sur les entreprises et sur les donations successorales à travers quatre réformes majeures : la suppression de 200 000 postes dans la fonction publique avant d'en recréer 50 000114, le passage de l'âge légal de départ à la retraite de 62 à 65 ans, la fin des 35 heures, la diminution des allocations-chômage et le désengagement de l'État des entreprises concurrentielles dont il est actionnaire minoritaire. ",
+  description: "Se déclarant en faveur du libéralisme économique, elle affirme en août 2021 qu'elle est « deux tiers Merkel, un tiers Thatcher ». Dans la perspective de l'élection présidentielle de 2022, elle promet de diminuer les dépenses publiques et les impôts sur les entreprises et sur les donations successorales à travers quatre réformes majeures : la suppression de 200 000 postes dans la fonction publique avant d'en recréer 50 000114, le passage de l'âge légal de départ à la retraite de 62 à 65 ans, la fin des 35 heures, la diminution des allocations-chômage et le désengagement de l'État des entreprises concurrentielles dont il est actionnaire minoritaire une grande notoriete. ",
   latitude: 48.880438,
   longitude: 2.291582,
   address: '8 rue torricelli, 75017 paris',
@@ -186,7 +186,7 @@ photo_thumb_3_candidate_5 = URI.open('https://upload.wikimedia.org/wikipedia/com
 candidate_five.photos.attach(io: photo_thumb_3_candidate_5, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
 photo_thumb_4_candidate_5 = URI.open('https://media.lesechos.com/api/v1/images/view/62023120d286c2701017a336/1280x720/070906828453-web-tete.jpg')
 candidate_five.photos.attach(io: photo_thumb_4_candidate_5, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
-candidate_five.political_party = political_five
+candidate_five.political_party = political_one
 candidate_five.user = user_admin
 candidate_five.save
 puts '----------Creating candidate 5/5 done----------'
@@ -194,9 +194,9 @@ puts '----------Creating candidate 5/5 done----------'
 candidate_six = Candidate.new(
   first_name: 'Yannick',
   last_name: 'Jadot',
-  price_per_day: '300',
+  price_per_day: '600',
   description: "Le 28 septembre 2021, Yannick Jadot remporte la primaire présidentielle de l'écologie face à Sandrine Rousseau, avec 51,03 % des voix au second tour. Il devient ainsi le candidat du Pôle écologiste (Europe Écologie Les Verts, Génération.s, Génération écologie, Cap écologie, Mouvement des progressistes) à l'élection présidentielle de 2022.
-  Par rapport à ses propositions de la primaire écologiste, il propose notamment un plan de relance de 50 milliards d'euros par an sur le quinquennat (au lieu de 20 milliards).",
+  Par rapport à ses propositions de la primaire écologiste, il propose notamment un plan de relance de 50 milliards d'euros par an sur le quinquennat (au lieu de 20 milliards) une grande notoriete.",
   latitude: 48.874676,
   longitude: 2.332760,
   address: "58 rue de la chaussée d'antin, paris",
@@ -221,8 +221,8 @@ puts '----------Creating candidate 6/6 done----------'
 candidate_seven = Candidate.new(
   first_name: 'Hélène',
   last_name: 'Thouy',
-  price_per_day: '50',
-  description: "En 2016, Hélène Thouy participe à la fondation du Parti animaliste, qu'elle copréside depuis et dont elle devient la figure médiatique1. En 2017, candidate dans la deuxième circonscription de la Gironde, Hélène Thouy rassemble 0,96 % des voix. La même année, elle est tête de liste aux élections sénatoriales à Paris, où elle obtient 0,34 %.",
+  price_per_day: '500',
+  description: "En 2016, Hélène Thouy participe à la fondation du Parti animaliste, qu'elle copréside depuis et dont elle devient la figure médiatique1. En 2017, candidate dans la deuxième circonscription de la Gironde, Hélène Thouy rassemble 0,96 % des voix. La même année, elle est tête de liste aux élections sénatoriales à Paris, où elle obtient 0,34 % une grande notoriete.",
   latitude: 43.605769,
   longitude: 1.447566,
   address: "12 Place Léon Blum, 75011 Paris",
@@ -247,8 +247,8 @@ puts '----------Creating candidate 7/7 done----------'
 candidate_eight = Candidate.new(
   first_name: 'François',
   last_name: 'Asselineau',
-  price_per_day: '200',
-  description: "Il se fait connaître durant la campagne présidentielle en citant régulièrement des articles des traités européens et les grandes orientations des politiques économiques de la Commission européenne, qui témoigneraient selon lui de l'abandon de la souveraineté française au profit des institutions européennes.",
+  price_per_day: '800',
+  description: "Il se fait connaître durant la campagne présidentielle en citant régulièrement des articles des traités européens et les grandes orientations des politiques économiques de la Commission européenne, qui témoigneraient selon lui de l'abandon de la souveraineté française au profit des institutions européennes une grande notoriete.",
   latitude: 48.845965,
   longitude: 2.385109,
   address: "15 Rue Erard,
@@ -266,7 +266,7 @@ photo_thumb_3_candidate_8 = URI.open('https://i.la-croix.com/x/smart/2017/04/14/
 candidate_eight.photos.attach(io: photo_thumb_3_candidate_8, filename: "photo_thumb_3.jpg", content_type: 'image/jpg')
 photo_thumb_4_candidate_8 = URI.open('https://cloudfront-eu-central-1.images.arcpublishing.com/leparisien/U75VAYQSN6SOZYAD3LLFGLG4BY.jpg')
 candidate_eight.photos.attach(io: photo_thumb_4_candidate_8, filename: "photo_thumb_4.jpg", content_type: 'image/jpg')
-candidate_eight.political_party = political_eight
+candidate_eight.political_party = political_one
 candidate_eight.user = user_admin
 candidate_eight.save
 puts '----------Creating candidate 8/8 done----------'
@@ -274,45 +274,39 @@ puts '----------Creating candidate 8/8 done----------'
 puts 'Creating some bookings'
 book1 = Booking.new(
   start_date: '12/01/2022',
-  end_date: '16/01/2022',
-  total_price: 50,
-  status: false
+  end_date: '13/01/2022',
+  total_price: 1000,
+  status: true
 )
 book1.user = user_admin
 book1.candidate = candidate_one
 book1.save
 
 book2 = Booking.new(
-  start_date: '18/01/2022',
-  end_date: '22/01/2022',
-  total_price: 50,
+  start_date: '11/01/2022',
+  end_date: '13/01/2022',
+  total_price: 1000,
   status: true
 )
-book2.user = user_admin
+book2.user = user_camille
 book2.candidate = candidate_one
 book2.save
 
 puts '----------Generating reviews----------'
 puts '----------Interrogating customers----------'
 review_one = Review.new(
-  comment: "Emmanuel Macron, dont une des expressions favorites est ' et en même temps', pourrait se reconnaître dans le mouvement de balancier d'une horloge suisse. ",
+  comment: "Une réelle plus value, Monsieur Macron a été très disponible est présent.",
   rating: 3,
   booking: book1
 )
 review_one.save
+
 review_two = Review.new(
-  comment: "J'ai entendu un président de la République qui n'est pas face aux Français, mais un président de la République qui est avec les Français",
-  rating: 5,
-  booking: book1
+  comment: "Une réelle plus value, Monsieur Macron a été très disponible est présent.",
+  rating: 4,
+  booking: book2
 )
 review_two.save
-review_three = Review.new(
-  comment: "Un macron enjôleur, on dit qu'il a le sens de l'écoute, peut-être, mais cela ne change rien s'il a décidé de faire autrement. Macron manipulateur, orgueilleux, charmeur, opportuniste, très certainement. Macron c'est Dieu !",
-  rating: 4,
-  booking: book1
-)
-review_three.save
-
 puts '----------Writting it up----------'
 
 puts 'All done, go and hire a candidate'
