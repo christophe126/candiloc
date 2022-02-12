@@ -1,7 +1,7 @@
 <div class="banner">
   <%= render "shared/navbar_home"%>
   <div class="container-b">
-    <h1 class="textcenter">Candidats disponible à la location</h1>
+    <h1 class="textcenter">Candidats disponibles à la location</h1>
   </div>
   <div class="">
     <form action="" class="container_form">
@@ -17,7 +17,7 @@
   <% if @query %>
     <p>Vous avez recherché <strong>"<%= @query %>"</strong>. Nous avons trouvé <%= @candidates.count %> résultat(s) sur notre site.</p>
   <% else %>
-    <p>Voici les <%= Candidate.count %> candidats disponible.</p>
+    <p>Voici les <%= Candidate.count %> candidats disponibles.</p>
   <% end %>
   <div id="btswitch">
     <%= image_tag "toggleCard.png",alt: "Candiloc 2022", width: 72, height:35, display: true %>
