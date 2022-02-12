@@ -43,7 +43,7 @@
               <div class="comment">
                 <div class="comment-header">
                   <p id="user-name"><%= current_user.last_name %></p>
-                  <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
+                  <p id="date-comment"><%= review.created_at.strftime("%d/%m/%Y") %></p>
                 </div>
                 <div class="comment-body">
                   <p id="comment-background"><%= review.comment %></p>
