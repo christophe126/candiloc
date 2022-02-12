@@ -18,9 +18,11 @@ const bt_switch = document.getElementById("btswitch");
 
 const toggle_list_card = bt_switch.addEventListener("click", (event) => {
     event.preventDefault();
-    if (list.style.display = '') {
-      list.style.display = '';
+    if (card.style.display === 'flex') {
+      list.style.display = 'flex';
       card.style.display = 'none';
+      
+
     } else {
       list.style.display = 'none';
       card.style.display = 'flex';
