@@ -7,7 +7,7 @@
     <form action="" class="container_form">
       <div class="input-groups mb-3">
         <span class="input-group-textl"><%= image_tag "logosearch.png", alt: "Candiloc 2022", width: 24, height: 24 %></span>
-        <input type="search" class="form-controlm" name="query" value="<%= params[:query] %>" placeholder="Vous rechercher : un candidat ?, un parti politique ?, une compétence ? " >
+        <input type="search" class="form-controlm" name="query" value="<%= params[:query] %>" placeholder="Vous recherchez : un candidat ? un parti politique ? une compétence ? " >
         <span type="submit" class="input-group-textr">Search</span>
       </div>
     </form>
@@ -83,14 +83,13 @@
     </div>
   </div>
 
-  <div class="map">
-      <div id="map"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <%# <div class="map"> %>
+    <div id="map"
+      style="width: 100%; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  </div>
-
+  <%# </div> %>
 </div>
 <div>
   <%= render "shared/footer"%>

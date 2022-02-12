@@ -2,7 +2,10 @@
   max-width: 200px;
 }
 
-.mapboxgl-popup-content, [class*="mapboxgl-popup-anchor-"] {
+.mapboxgl-popup-content,
+[class*="mapboxgl-popup-anchor-"] {
+  // font-family: 'work sans';
+  padding-top: 5px;
   text-align: center;
   border-radius: 50%;
   // font-family: 'Open Sans', sans-serif;
@@ -14,4 +17,14 @@
       right: 10px;
     }
   }
+}
+.img-marker {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+.parti-prix {
+  display: flex;
+  justify-content: space-between;
 }

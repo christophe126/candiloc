@@ -20,7 +20,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-import { initMapbox } from "../components/init_mapbox";
+// import { initMapbox } from "../components/init_mapbox";
 import { initStarRating } from '../components/init_star_rating';
 import { toggle_list_card } from "../components/toggle_list_card";
 import { initFlatpickr } from "../components/flatpickr";
@@ -33,7 +33,7 @@ import { initFlatpickr } from "../components/flatpickr";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initMapbox();
+  // initMapbox();
   initStarRating();
   toggle_list_card();
   initFlatpickr();
