@@ -114,6 +114,10 @@ a {
 
 .item-description-show-card {
   margin-bottom: 40px;
+
+  > * {
+    font-family: 'Marianne';
+  }
 }
 
 .stats-show-card {
@@ -199,6 +203,7 @@ a {
   align-items: baseline;
   padding-left: 80px;
   padding-right: 40px;
+  height: auto;
   span {
     width: 30px;
     padding-top: 5px;
@@ -209,6 +214,16 @@ a {
 
 .stats-img {
   width: 80px;
+  display: flex;
+  align-items: center;
+
+  > img {
+    margin-right: 5px;
+  }
+
+  > span {
+    padding-top: 0;
+  }
 }
 .stats-price {
   font-size: 26px;
@@ -216,8 +231,33 @@ a {
   font-size: 26px;
   width: 110px;
   text-align: left;
+  color: #4e4e4e ;
   p {
     margin-left: 10px;
+  }
+}
+
+.comment > * {
+  font-family: 'Marianne';
+
+  > #date-comment {
+    margin-bottom: 5px;
+  }
+
+  > #comment-background {
+    margin-bottom: 25px;
+  }
+
+  > #user-name {
+    color: #01031B;
+  }
+
+  > .comment-body > #comment-background {
+    color: #4e4e4e;
+  }
+
+  > *:not(#user-name, #comment-background) {
+    color: #A9A9A9;
   }
 }
 
@@ -227,13 +267,15 @@ a {
   text-align: justify;
   margin-left: 80px;
   font-size: 15px;
-  color: rgba(78, 78, 78, 1);
   line-height: 28px;
 }
+
 .comment-body {
   font-size: small;
-  color: rgba(78, 78, 78, 1);
+  color: #4e4e4e;
+  line-height: 17px;
 }
+
 .Sidebar {
   grid-area: Sidebar;
 }
