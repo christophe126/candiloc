@@ -15,15 +15,33 @@
 
 .one-card {
   width: 285px;
-  height: 351px;
-  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
+  height: 364.5px;
+  box-shadow: 0px 5px 10px rgba(16, 40, 101, 0.26);
   border-radius: 15px;
   position: relative;
   margin-bottom: 50px;
+  background-color: white;
+
+  > a {
+    height: fit-content;
+  }
 }
 
 .one-card:hover {
   box-shadow: 0 0 0 3px rgb(71, 172, 255);
+  transition: 0.2s ease-in-out;
+
+   > a > .one-card-body > .one-card-title {
+     color: rgb(71, 172, 255);
+     transition: 0.2s ease-in-out;
+   }
+
+   > a > .card-imag-top {
+     filter: contrast(80%);
+     filter: hue-rotate(150deg);
+     opacity: 0.8;
+     transition: 0.2s ease-in-out;
+   }
 }
 
 
@@ -103,6 +121,7 @@
   border-top-right-radius: 15px;
   opacity: 1;
   object-fit: cover;
+  filter: contrast(100%);
 }
 
 .card-imag-list {
@@ -111,20 +130,17 @@
   object-fit: cover;
 }
 
-.card-imag-top:hover {
-  opacity: 0.8;
-}
-
 .card-imag-list:hover {
   opacity: 0.8;
 }
 
 .one-card-body {
   //flex: 1 1 auto;
+  height: fit-content;
   min-height: 1px;
   padding-top: 10px;
   padding-right: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
   padding-left: 5px;
   text-align: center;
   color: #01031B;
@@ -137,6 +153,8 @@
   margin-left: 14px;
   margin-top: 20px;
   height: 20px;
+  font-family: 'Marianne';
+  font-size: 20px;
 }
 
 .one-card-text {
@@ -144,6 +162,7 @@
   text-align: left;
   margin-left: 14px;
   margin-top: 8px;
+  margin-bottom: 4px;
   color: #4E4E4E;
   text-overflow: clip;
   width: 244px;
@@ -158,8 +177,9 @@
   color: #A9A9A9;
   text-overflow: clip;
   width: 244px;
-  height: 54px;
+  height: 64px;
   text-align: justify ;
+  line-height: 16px;
 }
 
 .one-card-text-data span {
@@ -170,8 +190,18 @@
 .one-card-price {
   display: flex;
   justify-content: space-between;
-  bottom: 11px;
+  padding-bottom: 11px;
   align-items: baseline;
+
+  > :last-child {
+    color: #4E4E4E;
+  }
+
+  > p {
+    font-family: 'Marianne';
+    font-feature-settings: 'tnum' on, 'onum' on, 'ordn' on, 'ss01' on;
+    letter-spacing: 1px;
+  }
 }
 
 .one-card-price-p {
@@ -184,4 +214,10 @@
   font-size: 12px;
   display: flex;
   align-items: center;
+}
+
+.one-card-mega-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

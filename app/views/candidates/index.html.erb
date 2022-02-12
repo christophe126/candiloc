@@ -15,12 +15,12 @@
 </div>
 <div class="container-number-candidates">
   <% if @query %>
-    <p>Vous avez recherché <strong>"<%= @query %>"</strong>. Nous avons trouvé <%= @candidates.count %> résultat(s) sur notre site.</p>
+    <p>Vous avez recherché <strong>"<%= @query %>"</strong>. Nous avons trouvé <%= @candidates.count %> résultat(s).</p>
   <% else %>
     <p>Voici les <%= Candidate.count %> candidats disponibles.</p>
   <% end %>
   <div id="btswitch">
-    <%= image_tag "toggleCard.png",alt: "Candiloc 2022", id: "img-tgle-switch", width: 72, height:35, display: true %>
+    <%= image_tag "toggleList.png",alt: "Candiloc 2022", id: "img-tgle-switch", width: 72, height:35, display: true %>
   </div>
 </div>
 <div  id="disp_card" class="container-card">
@@ -33,17 +33,16 @@
           <div class="one-card-logo">
             <%= image_tag candidate.political_party.logo, alt: "Candiloc 2022", width: 57, height:29 %>
           </div>
+            <div class="one-card-body">
+              <h5 class="one-card-title"><%= candidate.last_name %> <%= candidate.first_name %></h5>
+              <p class="one-card-text"><%= candidate.political_party.slogan[0,40] %></p>
+              <p class="one-card-text-data"><%= candidate.description[0,110] %>... <span>Lire plus</span></p>
+            </div>
 
-          <div class="one-card-body">
-            <h5 class="one-card-title"><%= candidate.last_name %> <%= candidate.first_name %></h5>
-            <p class="one-card-text"><%= candidate.political_party.slogan[0,40] %></p>
-            <p class="one-card-text-data"><%= candidate.description[0,110] %>... <span>Lire plus</span></p>
-          </div>
-
-          <div class="one-card-price">
-            <p class="one-card-price-p"><%= image_tag "Star.png", alt: "Candiloc 2022", width: 14, height: 14 %><%= candidate.score %></p>
-            <p class="one-card-price-p"><%= candidate.price_per_day %>€ / J</p>
-          </div>
+            <div class="one-card-price">
+              <p class="one-card-price-p"><%= image_tag "Star.png", alt: "Candiloc 2022", width: 14, height: 14 %><%= candidate.score %></p>
+              <p class="one-card-price-p"><%= candidate.price_per_day %>€ / J</p>
+            </div>
         <% end %>
       </div>
       <%# fin du each %>

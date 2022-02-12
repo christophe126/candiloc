@@ -5,6 +5,7 @@ class CandidatesController < ApplicationController
       @query = params[:query]
       sql_query = " \
         candidates.last_name ILIKE :query \
+        OR candidates.description ILIKE :query\
         OR candidates.first_name ILIKE :query \
         OR political_parties.name ILIKE :query \
       "

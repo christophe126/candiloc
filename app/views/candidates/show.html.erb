@@ -9,32 +9,35 @@
         <div class="show-card">
           <div class="intro-show-card">
             <div class="item-intro-show-card">
-              <h2 id="title-show-card"><%= @candidate.first_name %> <%= @candidate.last_name %></h2>
-              <h3 id="title-show-card"><%= @candidate.political_party.name %></h3>
+              <h2 id="title-show-card-h2"><%= @candidate.first_name %> <%= @candidate.last_name %></h2>
+              <h3 id="title-show-card-h3"><%= @candidate.political_party.name %></h3>
             </div>
             <div class="item-intro-show-card-logo">
               <%= image_tag("large/#{@candidate.political_party.logo}", alt: "La republique en marche", width: 160, height:60) %>
             </div>
           </div>
 
-          <div class="container">
-            <div class="Main_photo"><%= cl_image_tag @candidate.photos[0].key, width: 325, height: 325, crop: "fill" %></div>
-            <div class="Thumb_1"><%= cl_image_tag @candidate.photos[1].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
-            <div class="Thumb_2"><%= cl_image_tag @candidate.photos[2].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
-            <div class="Thumb_3"><%= cl_image_tag @candidate.photos[3].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
-            <div class="Thumb_4"><%= cl_image_tag @candidate.photos[4].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
+          <div class="candidate-photo-grid">
+            <%= cl_image_tag @candidate.photos[0].key, crop: "fill" %>
+            <%= cl_image_tag @candidate.photos[1].key, crop: "fill", effect: "improve", gravity: "faces" %>
+            <%= cl_image_tag @candidate.photos[2].key, crop: "fill", effect: "improve", gravity: "faces" %>
+            <%= cl_image_tag @candidate.photos[3].key, effect: "improve", gravity: "faces" %>
+            <%= cl_image_tag @candidate.photos[4].key, effect: "improve", gravity: "faces" %>
           </div>
-
-          <%= image_tag 'flag_line.png', class: "img_flag"%>
 
         <div class="card-bottom-container">
           <div class="Stats">
+            <div class="stats-img"><%=  image_tag "Star.png", height:30, width:30  %>
+            <span class="stats-score"><%= @candidate.score %></span>
+            </div>
+            <div class="stats-price"><p>1000 €/J</p></div>
           </div>
           <div class="Comments">
           <div class="item-description-show-card">
           <h3>Description</h3>
             <p><%= @candidate.description %></p>
           </div>
+           <%= image_tag 'flag_line.png', class: "img_flag"%>
             <h3>Commentaires</h3>
               <% @candidate.reviews.each do |review|  %>
               <div class="comment">
@@ -49,18 +52,17 @@
             <% end %>
           </div>
           <div class="sidebar">
-            <h3>Reserver votre candidat</h3>
+            <h3>Reservez votre candidat</h3>
             <div class="date-pickr"> 
               <%= simple_form_for [ @candidate, @booking ] do |f| %>
                 <%= f.input :start_date, label: "Date de début", as: :string, input_html: { class: "datepicker"} %>
                 <%= f.input :end_date, label: "Date de fin",  as: :string, input_html: { class: "datepicker"} %>
-                <%= f.submit "Reserver", class: 'btn btn-french' %>
+                <%= f.submit "Reservez", class: 'btn btn-french' %>
               <% end  %>
             </div>
           </div>
         </div>
           
-          <%= image_tag 'flag_line.png', class: "img_flag"%>
 
         </div> <!--show card -->
       </div>

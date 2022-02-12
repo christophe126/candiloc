@@ -115,7 +115,7 @@ puts '----------Creating candidate 2/2 done----------'
 
 candidate_three = Candidate.new(
   first_name: 'Eric',
-  last_name: 'Zemour',
+  last_name: 'Zemmour',
   price_per_day: '10',
   description: "Éric Zemmour indique avoir voté deux fois pour François Mitterrand et avoir rompu avec la gauche avec l'avènement de SOS Racisme au milieu des années 1980 et l'affaire de Creil en 1989164. Lors de la campagne du référendum français sur le traité de Maastricht en 1992, il revendique son attachement à Philippe Séguin et Jean-Pierre Chevènement.",
   latitude: 48.880768,

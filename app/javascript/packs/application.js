@@ -22,17 +22,18 @@ ActiveStorage.start()
 import "bootstrap";
 import { initMapbox } from "../components/init_mapbox";
 import { initStarRating } from '../components/init_star_rating';
-import { initFlatpickr } from "../components/flatpickr";
 import { toggle_list_card } from "../components/toggle_list_card";
+import { initFlatpickr } from "../components/flatpickr";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+initFlatpickr();
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   initStarRating();
-  initFlatpickr();
   toggle_list_card();
 });
