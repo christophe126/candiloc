@@ -1,6 +1,5 @@
 // MAPBOX
 import mapboxgl from '!mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 
 const addMarkersToMap = (map, markers) => {
@@ -27,7 +26,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
     const map = new mapboxgl.Map({
-      container: 'map', // container ID
+      container: mapElement, // container ID
       style: 'mapbox://styles/mapbox/streets-v10', // style URL
       // center: [2.3200410217200766, 48.8588897], // starting position [lng, lat]
       // zoom: 15 // starting zoom
