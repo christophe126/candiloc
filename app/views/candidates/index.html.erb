@@ -1,13 +1,13 @@
 <div class="banner">
   <%= render "shared/navbar_home"%>
   <div class="container-b">
-    <h1 class="textcenter">Candidats disponible à la location</h1>
+    <h1 class="textcenter">Candidats disponibles à la location</h1>
   </div>
   <div class="">
     <form action="" class="container_form">
       <div class="input-groups mb-3">
         <span class="input-group-textl"><%= image_tag "logosearch.png", alt: "Candiloc 2022", width: 24, height: 24 %></span>
-        <input type="search" class="form-controlm" name="query" value="<%= params[:query] %>" placeholder="Vous rechercher : un candidat ?, un parti politique ?, une compétence ? " >
+        <input type="search" class="form-controlm" name="query" value="<%= params[:query] %>" placeholder="Vous recherchez : un candidat ? un parti politique ? une compétence ? " >
         <span type="submit" class="input-group-textr">Search</span>
       </div>
     </form>
@@ -17,7 +17,7 @@
   <% if @query %>
     <p>Vous avez recherché <strong>"<%= @query %>"</strong>. Nous avons trouvé <%= @candidates.count %> résultat(s) sur notre site.</p>
   <% else %>
-    <p>Voici les <%= Candidate.count %> candidats disponible.</p>
+    <p>Voici les <%= Candidate.count %> candidats disponibles.</p>
   <% end %>
   <div id="btswitch">
     <%= image_tag "toggleCard.png",alt: "Candiloc 2022", id: "img-tgle-switch", width: 72, height:35, display: true %>
@@ -38,7 +38,7 @@
             <h5 class="one-card-title"><%= candidate.last_name %> <%= candidate.first_name %></h5>
             <p class="one-card-text"><%= candidate.political_party.slogan[0,40] %></p>
             <p class="one-card-text-data"><%= candidate.description[0,110] %>... <span>Lire plus</span></p>
-        </div>
+          </div>
 
           <div class="one-card-price">
             <p class="one-card-price-p"><%= image_tag "Star.png", alt: "Candiloc 2022", width: 14, height: 14 %><%= candidate.score %></p>
@@ -86,7 +86,7 @@
 
   <%# <div class="map"> %>
     <div id="map"
-      style="width: 100%; height: 600px;"
+      style="width: 100%; height: 1025px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>

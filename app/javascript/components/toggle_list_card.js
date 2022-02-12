@@ -1,3 +1,4 @@
+import { map } from "jquery";
 
 
 
@@ -17,10 +18,12 @@ const toggle_list_card = () => {
         img.attributes.src.value = '/assets/toggleCard-d527ec8e4fda89a1b4b6444ba9b7830a3dbfb84c1586502e5f68387ce81adc2c.png';
 
       } else {
+        // const map = document.getElementById('map')
         list.style.display = 'none';
         card.style.display = 'flex';
         img.attributes.src.value = '/assets/toggleList-9c8d442c3f016a96fb08e626b43cec95c20eca863e41502b8628635caf8ef42b.png'
       };
+      map.resize;
     });
   };
 

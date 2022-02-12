@@ -42,10 +42,11 @@
   }
 }
 
-// .map {
-//   height: 100vh;
-//   width: 50vw;
-// }
+#map {
+  z-index: -1;
+  position: sticky;
+  top: 0;
+}
 
 hr {
   margin: 15px 0 15px 0;
@@ -65,4 +66,3 @@ hr {
   height: 55px;
   align-items: center;
 }
-
