@@ -51,12 +51,7 @@ hr {
   margin: 15px 0 15px 0;
 }
 .container-number-candidates {
-  padding-left: 15px;
-  margin-left: 25px;
-  margin-right: 25px;
-  margin-top: 25px;
-  margin-bottom: 0;
-
+  padding: 20px 25px;
   > p {
     margin-bottom: 0;
   }
@@ -64,4 +59,8 @@ hr {
   display: flex;
   justify-content: space-between;
   height: 35px;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(16, 40, 101, 0.26);
+  height: auto;
+  align-items: center;
 }
