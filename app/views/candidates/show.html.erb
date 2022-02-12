@@ -53,16 +53,16 @@
           </div>
           <div class="sidebar">
             <h3>Reservez votre candidat</h3>
-            <div class="date-pickr"> 
+            <div class="date-pickr">
               <%= simple_form_for [ @candidate, @booking ] do |f| %>
-                <%= f.input :start_date, label: "Date de début", as: :string, input_html: { class: "datepicker"} %>
-                <%= f.input :end_date, label: "Date de fin",  as: :string, input_html: { class: "datepicker"} %>
+                <%= f.input :start_date, placeholder: 'Ajoutez une date', label: "DATE DE DÉBUT", as: :string, input_html: { class: "datepicker"} %>
+                <%= f.input :end_date, placeholder: 'Ajoutez une date', label: "DATE DE FIN",  as: :string, input_html: { class: "datepicker"} %>
                 <%= f.submit "Reservez", class: 'btn btn-french' %>
               <% end  %>
             </div>
           </div>
         </div>
-          
+
 
         </div> <!--show card -->
       </div>
