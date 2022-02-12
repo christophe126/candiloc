@@ -1,6 +1,3 @@
-
-
-
 const toggle_list_card = () => {
 
   const card = document.querySelector("#disp_card");
@@ -27,6 +24,7 @@ const toggle_list_card = () => {
 };
 
 
+
 // const toggle_list_card = bt_switch.addEventListener("click", (event) => {
 //     event.preventDefault();
 //     if (card.style.display === 'flex') {
@@ -39,4 +37,4 @@ const toggle_list_card = () => {
 // });
 
 
-export { toggle_list_card };
+// export { toggle_list_card };
