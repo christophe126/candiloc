@@ -15,12 +15,12 @@
 </div>
 <div class="container-number-candidates">
   <% if @query %>
-    <p>Vous avez recherché <strong>"<%= @query %>"</strong>. Nous avons trouvé <%= @candidates.count %> résultat(s) sur notre site.</p>
+    <p>Vous avez recherché <strong>"<%= @query %>"</strong>. Nous avons trouvé <%= @candidates.count %> résultat(s).</p>
   <% else %>
     <p>Voici les <%= Candidate.count %> candidats disponible.</p>
   <% end %>
   <div id="btswitch">
-    <%= image_tag "toggleCard.png",alt: "Candiloc 2022", id: "img-tgle-switch", width: 72, height:35, display: true %>
+    <%= image_tag "toggleList.png",alt: "Candiloc 2022", id: "img-tgle-switch", width: 72, height:35, display: true %>
   </div>
 </div>
 <div  id="disp_card" class="container-card">
