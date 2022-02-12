@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :candidates, only: %i[index show new create update destroy] do
     resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[index update edit] do
-    resources :reviews, only: %i[new create]
-  end
+  resources :bookings, only: %i[index update edit]
+  resources :reviews, only: %i[new create]
 end

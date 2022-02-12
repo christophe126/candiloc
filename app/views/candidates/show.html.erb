@@ -5,17 +5,17 @@
 
     <div class="wrapper">
 
-    <div class="main-show-card">
-      <div class="show-card">
-        <div class="intro-show-card">
-          <div class="item-intro-show-card">
-            <h2 id="title-show-card"><%= @candidate.first_name %> <%= @candidate.last_name %></h2>
-            <h3 id="title-show-card"><%= @candidate.political_party.name %></h3>
+      <div class="main-show-card">
+        <div class="show-card">
+          <div class="intro-show-card">
+            <div class="item-intro-show-card">
+              <h2 id="title-show-card"><%= @candidate.first_name %> <%= @candidate.last_name %></h2>
+              <h3 id="title-show-card"><%= @candidate.political_party.name %></h3>
+            </div>
+            <div class="item-intro-show-card-logo">
+              <%= image_tag("large/#{@candidate.political_party.logo}", alt: "La republique en marche", width: 160, height:60) %>
+            </div>
           </div>
-          <div class="item-intro-show-card">
-            <%= image_tag @candidate.political_party.logo, alt: "Candiloc 2022", width: 57, height:29 %>
-          </div>
-        </div>
 
           <div class="container">
             <div class="Main_photo"><%= cl_image_tag @candidate.photos[0].key, width: 325, height: 325, crop: "fill" %></div>
@@ -25,53 +25,48 @@
             <div class="Thumb_4"><%= cl_image_tag @candidate.photos[4].key, width: 150, height: 150, crop: "fill", effect: "improve", gravity: "faces" %></div>
           </div>
 
-        <div class="description-show-card">
+          <%= image_tag 'flag_line.png', class: "img_flag"%>
+
+        <div class="card-bottom-container">
+          <div class="Stats">
+          </div>
+          <div class="Comments">
           <div class="item-description-show-card">
+          <h3>Description</h3>
             <p><%= @candidate.description %></p>
           </div>
-        </div>
-
-        <%= image_tag 'flag_line.png', class: "img_flag"%>
-        
-        <div class="stats-show-card">
-          <div >
-            <%= image_tag "Star.png", alt: "Candiloc 2022", width: 18, height: 18 %><%= @candidate.score %></p>
+            <h3>Commentaires</h3>
+              <% @candidate.reviews.each do |review|  %>
+              <div class="comment">
+                <div class="comment-header">
+                  <p id="user-name"><%= current_user.last_name %></p>
+                  <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
+                </div>
+                <div class="comment-body">
+                  <p id="comment-background"><%= review.comment %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="sidebar">
+            <h3>Reserver votre candidat</h3>
+            <div class="date-pickr"> 
+              <%= simple_form_for [ @candidate, @booking ] do |f| %>
+                <%= f.input :start_date, label: "Date de début", as: :string, input_html: { class: "datepicker"} %>
+                <%= f.input :end_date, label: "Date de fin",  as: :string, input_html: { class: "datepicker"} %>
+                <%= f.submit "Reserver", class: 'btn btn-french' %>
+              <% end  %>
+            </div>
           </div>
         </div>
+          
+          <%= image_tag 'flag_line.png', class: "img_flag"%>
 
-        <div class="comments-show-card">
-        <h3>Commentaires</h3>
-        <% @candidate.reviews.each do |review|  %>
-          <div class="comment">
-            <div class="comment-header">
-              <p id="user-name"><%= current_user.last_name %></p>
-              <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
-            </div>
-            <div class="comment-body">
-              <p id="comment-background"><%= review.comment %></p>
-            </div>
-          </div>
-        <% end %>
-        </div>
-        <%= image_tag 'flag_line.png', class: "img_flag"%>
+        </div> <!--show card -->
+      </div>
+    </div> <!-- wrapper -->
 
-        <div class="logo_test">
-            <i class="fa-solid fa-grip-lines"></i>
-        </div>
-
-      </div> <!--show card -->
-    </div>
-
-    <div class="sidebar">
-      <h3>Reserver votre candidat</h3>
-        <div class="button-show-card text-center mt-5">
-          <button type="button" class="btn btn-action"><%= link_to "BOOKER CE CANDIDAT", new_candidate_booking_path(@candidate) %></button>
-        </div>
-    </div>
-
-    </div> <!-- container -->
-
-<div class="show-footer">
-  <%= render "shared/footer"%>
+  <div class="show-footer">
+    <%= render "shared/footer"%>
+  </div>
 </div>
-
