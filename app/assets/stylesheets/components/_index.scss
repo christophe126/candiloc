@@ -43,7 +43,6 @@
 }
 
 #map {
-  z-index: -1;
   position: sticky;
   top: 0;
 }
@@ -52,6 +51,8 @@ hr {
   margin: 15px 0 15px 0;
 }
 .container-number-candidates {
+  z-index: 1;
+  position: relative;
   padding: 20px 25px;
   > p {
     margin-bottom: 0;

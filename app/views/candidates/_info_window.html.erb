@@ -1,5 +1,7 @@
+<%= cl_image_tag candidate.photos[0].key, class: "img-marker", alt: "Candiloc 2022", gravity: "faces" %>
 <h2><%= candidate.first_name %> <%= candidate.last_name %> </h2>
 <p><%= candidate.address %></p>
 <p><%= candidate.political_party.slogan[0,40] %></p>
 
+<p class="parti-prix"><%= candidate.price_per_day %>€ / Jour <%= image_tag candidate.political_party.logo, alt: "logo du parti politique", width: 57, height:29 %></p>
 
