@@ -9,8 +9,8 @@
 
 .show-card {
   flex-direction: row;
-  background-color: whitesmoke;
-  height: fit-content;
+  background-color: white;
+  height: 2000px;
   box-shadow: 0px 5px 10px 0px #10286542;
   padding: 2rem 2rem;
   border-radius: 20px;
@@ -19,7 +19,7 @@
   position: relative;
   top: -150px;
   margin: 0 auto;
-  width: 1100px;
+  width: 1150px;
 }
 
 .intro-show-card {
@@ -29,7 +29,9 @@
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 30px;
-  width: 680px;
+  width: 100%;
+  padding-left: 80px;
+  padding-right: 80px;
   font-family: Marianne-Regular;
   .h3 {
     margin-bottom: Opx;
@@ -39,12 +41,25 @@
 #title-show-card {
   color: black;
   font-family: Marianne-Regular;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  width: 680px;
 }
 
 .item-intro-show-card-logo {
   position: relative;
   top: -27px;
+}
+
+#title-show-card-h2 {
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#title-show-card-h3 {
+  color: #4e4e4e;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 a {
@@ -69,6 +84,8 @@ a {
   margin: 0 auto;
   width: 680px;
   text-align: justify;
+  font-size: 15px;
+  color: rgba(78, 78, 78, 1);
 }
 
 .description-intro-show-card {
@@ -89,6 +106,10 @@ a {
   font-weight: lighter;
   opacity: 1;
   transition: opacity 0.3s ease;
+}
+
+.card-bottom-container {
+  width: 95%;
 }
 
 .item-description-show-card {
@@ -126,6 +147,7 @@ a {
 
 #user-name {
   margin-right: 10px;
+  margin-bottom: 3px;
 }
 
 .logo_test {
@@ -134,54 +156,28 @@ a {
   margin-top: 20px;
 }
 
-.container {
+.candidate-photo-grid {
+  padding-left: 80px;
+  padding-right: 80px;
   margin-bottom: 80px;
-  margin-right: 220px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 25px 25px;
-  grid-template-areas:
-    "Main_photo Main_photo Thumb_1 Thumb_3"
-    "Main_photo Main_photo Thumb_2 Thumb_4"
-    ". . . .";
-  width: 645px;
-  height: 325px;
-}
-.Main_photo {
-  grid-area: Main_photo;
-  width: 325px;
-  height: 325px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
-}
-.Thumb_1 {
-  grid-area: Thumb_1;
-  width: 150px;
-  height: 150px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
-}
-.Thumb_2 {
-  grid-area: Thumb_2;
-  width: 150px;
-  height: 150px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
-}
-.Thumb_3 {
-  grid-area: Thumb_3;
-  width: 150px;
-  height: 150px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
-}
-.Thumb_4 {
-  grid-area: Thumb_4;
-  width: 150px;
-  height: 150px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px 30px;
+  // grid-template-areas:
+  //   "Main_photo Main_photo Thumb_1 Thumb_3"
+  //   "Main_photo Main_photo Thumb_2 Thumb_4"
+  //   ". . . .";
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.07);
+  }
+  img:first-child {
+    grid-row: 1 / span 2;
+  }
 }
 
 .card-bottom-container {
@@ -198,16 +194,45 @@ a {
 }
 
 .Stats {
-  grid-area: Stats;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-left: 80px;
+  padding-right: 40px;
+  span {
+    width: 30px;
+    padding-top: 5px;
+    font-size: 26px;
+    font-weight: bold;
+  }
 }
+
+.stats-img {
+  width: 80px;
+}
+.stats-price {
+  font-size: 26px;
+  width: 250px;
+  font-size: 26px;
+  width: 110px;
+  text-align: left;
+  p {
+    margin-left: 10px;
+  }
+}
+
 .Comments {
   grid-area: Comments;
-  width: 550px;
+  width: 486px;
   text-align: justify;
-  margin-left: 20px;
+  margin-left: 80px;
+  font-size: 15px;
+  color: rgba(78, 78, 78, 1);
+  line-height: 28px;
 }
 .comment-body {
   font-size: small;
+  color: rgba(78, 78, 78, 1);
 }
 .Sidebar {
   grid-area: Sidebar;
@@ -219,13 +244,12 @@ a {
   border-radius: 10px;
   padding: 15px;
   width: 400px;
-  height: 40vh;
+  height: 45vh;
   min-height: 200px;
   overflow: auto;
   position: sticky;
   top: 5%;
-  margin-left: 20px;
-  margin-right: 100px;
+  margin-left: 10px;
   margin-top: 40px;
   text-align: center;
 }
@@ -237,9 +261,20 @@ a {
 }
 
 .btn-french {
-  width: 110px;
+  width: 100%;
   height: 50px;
   margin-top: 20px;
-  background-color: #e1000f;
-  border-radius: 20px;
+  background: linear-gradient(to right, #b92b27, #1565c0);
+  border-radius: 6px;
+  color: white;
+}
+
+.btn-french:hoover {
+  color: white !important;
+}
+
+.img_flag {
+  height: 4px;
+  width: 100%;
+  margin-bottom: 40px;
 }

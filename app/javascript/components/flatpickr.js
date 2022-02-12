@@ -16,4 +16,3 @@ const initFlatpickr = () => {
 
 export { initFlatpickr };
 
-import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
