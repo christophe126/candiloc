@@ -33,7 +33,6 @@
           <div class="one-card-logo">
             <%= image_tag candidate.political_party.logo, alt: "Candiloc 2022", width: 57, height:29 %>
           </div>
-          <div class="one-card-mega-content">
             <div class="one-card-body">
               <h5 class="one-card-title"><%= candidate.last_name %> <%= candidate.first_name %></h5>
               <p class="one-card-text"><%= candidate.political_party.slogan[0,40] %></p>
@@ -44,7 +43,6 @@
               <p class="one-card-price-p"><%= image_tag "Star.png", alt: "Candiloc 2022", width: 14, height: 14 %><%= candidate.score %></p>
               <p class="one-card-price-p"><%= candidate.price_per_day %>€ / J</p>
             </div>
-          </div>
         <% end %>
       </div>
       <%# fin du each %>
