@@ -28,7 +28,7 @@ import { initFlatpickr } from "../components/flatpickr";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-initFlatpickr();
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -36,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initStarRating();
   toggle_list_card();
+  initFlatpickr();
 });
