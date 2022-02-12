@@ -18,7 +18,7 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 50, maxZoom: 15, duration: 0 });
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
 const initMapbox = () => {
@@ -28,8 +28,8 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/streets-v10', // style URL
-      center: [2.3200410217200766, 48.8588897], // starting position [lng, lat]
-      zoom: 15 // starting zoom
+      // center: [2.3200410217200766, 48.8588897], // starting position [lng, lat]
+      // zoom: 15 // starting zoom
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);

@@ -20,4 +20,10 @@
 .img-marker {
   width: 100%;
   height: auto;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+.parti-prix {
+  display: flex;
+  justify-content: space-between;
 }

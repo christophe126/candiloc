@@ -34,5 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initStarRating();
   initFlatpickr();
-  toggle_list_card();
+  // toggle_list_card();
 });
